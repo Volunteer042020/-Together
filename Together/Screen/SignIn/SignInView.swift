@@ -3,11 +3,11 @@ import UIKit
 
 
 protocol SignInViewImpl {
-    
+    //функции типа, покажи данные
 }
 
 
-class SignInView: UIView {
+final class SignInView: UIView {
 
 
 }
