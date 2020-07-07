@@ -10,6 +10,10 @@ final class SignInCoordinator: BaseCoordirator {
     
     //MARK: - Init
     init(navController: UINavigationController) {
+        navController.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navController.navigationBar.shadowImage = UIImage()
+        navController.navigationBar.isTranslucent = true
+        navController.view.backgroundColor = UIColor.clear
         self.navController = navController
     }
     
