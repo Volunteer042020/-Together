@@ -2,7 +2,15 @@
 import UIKit
 
 
-class SignInViewController: UIViewController {
+final class SignInViewController: UIViewController {
+    
+    //MARK: - Open properties
+    var presenter: SignInViewAction?
+    
+    
+    //MARK: - Private properties
+    private lazy var signInView = view as? SignInView
+    
     
     //MARK: - Life cycle
     override func viewDidLoad() {
@@ -17,4 +25,12 @@ class SignInViewController: UIViewController {
         title = "SignIn"
     }
 }
+
+
+extension SignInViewController: SignInViewControllerImpl {
+    
+}
+
+
+
 

@@ -22,6 +22,9 @@ final class SignInCoordinator: BaseCoordirator {
             withIdentifier: "SignInViewController"
             ) as! SignInViewController
         
+        let presenter = SignInPresenter(view: vc, coordinator: self)
+        vc.presenter = presenter
+        
         navController.pushViewController(vc, animated: false)
     }
     
