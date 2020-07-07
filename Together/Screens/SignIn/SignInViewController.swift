@@ -32,7 +32,7 @@ final class SignInViewController: UIViewController {
     
     //Устанавливаем навигацию, заголовок навигейшен контроллера, кнопки на навиг контроллере
     private func setNavigation() {
-        title = "SignIn"
+        self.navigationController?.navigationBar.isHidden = true
     }
 }
 

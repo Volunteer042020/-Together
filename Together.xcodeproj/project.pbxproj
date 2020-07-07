@@ -7,10 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		566DB78524B4EFE8007409BE /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566DB78424B4EFE8007409BE /* LogoView.swift */; };
+		566DB78824B4F6D3007409BE /* VerticalStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566DB78724B4F6D3007409BE /* VerticalStack.swift */; };
 		569AF46824B4503B00D9DC88 /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569AF46724B4503B00D9DC88 /* SignInPresenter.swift */; };
 		569AF46A24B4542A00D9DC88 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569AF46924B4542A00D9DC88 /* SignInView.swift */; };
 		569AF46C24B45B8D00D9DC88 /* IdHaving+id.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569AF46B24B45B8D00D9DC88 /* IdHaving+id.swift */; };
 		569AF46F24B45E6800D9DC88 /* UIStoryboard+instantiate().swift in Sources */ = {isa = PBXBuildFile; fileRef = 569AF46E24B45E6800D9DC88 /* UIStoryboard+instantiate().swift */; };
+		569AF47F24B498CA00D9DC88 /* GrayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569AF47E24B498CA00D9DC88 /* GrayView.swift */; };
+		569AF48424B4A65800D9DC88 /* GrayTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569AF48324B4A65800D9DC88 /* GrayTextField.swift */; };
+		569AF48624B4AAB800D9DC88 /* RoundedButtonWithShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569AF48524B4AAB800D9DC88 /* RoundedButtonWithShadow.swift */; };
 		56D7E43C24B3601800933B04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D7E43B24B3601800933B04 /* AppDelegate.swift */; };
 		56D7E43E24B3601800933B04 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D7E43D24B3601800933B04 /* SceneDelegate.swift */; };
 		56D7E44024B3601800933B04 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D7E43F24B3601800933B04 /* SignInViewController.swift */; };
@@ -23,10 +28,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		566DB78424B4EFE8007409BE /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		566DB78724B4F6D3007409BE /* VerticalStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStack.swift; sourceTree = "<group>"; };
 		569AF46724B4503B00D9DC88 /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
 		569AF46924B4542A00D9DC88 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		569AF46B24B45B8D00D9DC88 /* IdHaving+id.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IdHaving+id.swift"; sourceTree = "<group>"; };
 		569AF46E24B45E6800D9DC88 /* UIStoryboard+instantiate().swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+instantiate().swift"; sourceTree = "<group>"; };
+		569AF47E24B498CA00D9DC88 /* GrayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayView.swift; sourceTree = "<group>"; };
+		569AF48324B4A65800D9DC88 /* GrayTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayTextField.swift; sourceTree = "<group>"; };
+		569AF48524B4AAB800D9DC88 /* RoundedButtonWithShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonWithShadow.swift; sourceTree = "<group>"; };
 		56D7E43824B3601800933B04 /* Together.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Together.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56D7E43B24B3601800933B04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56D7E43D24B3601800933B04 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,13 +61,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		569AF46D24B45E1300D9DC88 /* Extention */ = {
+		566DB78624B4F698007409BE /* StackViews */ = {
+			isa = PBXGroup;
+			children = (
+				566DB78724B4F6D3007409BE /* VerticalStack.swift */,
+			);
+			path = StackViews;
+			sourceTree = "<group>";
+		};
+		569AF46D24B45E1300D9DC88 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
 				569AF46B24B45B8D00D9DC88 /* IdHaving+id.swift */,
 				569AF46E24B45E6800D9DC88 /* UIStoryboard+instantiate().swift */,
 			);
-			path = Extention;
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		569AF48024B4A1F200D9DC88 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				569AF47E24B498CA00D9DC88 /* GrayView.swift */,
+				566DB78424B4EFE8007409BE /* LogoView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		569AF48724B4AB6000D9DC88 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				569AF48524B4AAB800D9DC88 /* RoundedButtonWithShadow.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		569AF48924B4AB7700D9DC88 /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				569AF48324B4A65800D9DC88 /* GrayTextField.swift */,
+			);
+			path = TextFields;
 			sourceTree = "<group>";
 		};
 		56D7E42F24B3601800933B04 = {
@@ -82,7 +125,7 @@
 				56D7E44F24B3776500933B04 /* Application */,
 				56D7E45324B377E400933B04 /* Repo */,
 				56D7E45224B377CC00933B04 /* Base */,
-				56D7E45124B377C100933B04 /* Screen */,
+				56D7E45124B377C100933B04 /* Screens */,
 				56D7E44124B3601800933B04 /* Main.storyboard */,
 				56D7E44624B3601D00933B04 /* LaunchScreen.storyboard */,
 				56D7E45024B3779500933B04 /* Resources */,
@@ -109,19 +152,23 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		56D7E45124B377C100933B04 /* Screen */ = {
+		56D7E45124B377C100933B04 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				56D7E45824B37BC700933B04 /* SignIn */,
 			);
-			path = Screen;
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		56D7E45224B377CC00933B04 /* Base */ = {
 			isa = PBXGroup;
 			children = (
 				56D7E45424B3783E00933B04 /* BaseCoordirator.swift */,
-				569AF46D24B45E1300D9DC88 /* Extention */,
+				566DB78624B4F698007409BE /* StackViews */,
+				569AF48724B4AB6000D9DC88 /* Buttons */,
+				569AF48924B4AB7700D9DC88 /* TextFields */,
+				569AF48024B4A1F200D9DC88 /* Views */,
+				569AF46D24B45E1300D9DC88 /* Extentions */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -220,9 +267,14 @@
 				569AF46F24B45E6800D9DC88 /* UIStoryboard+instantiate().swift in Sources */,
 				56D7E45724B3792900933B04 /* AppCoordinator.swift in Sources */,
 				56D7E43E24B3601800933B04 /* SceneDelegate.swift in Sources */,
+				569AF47F24B498CA00D9DC88 /* GrayView.swift in Sources */,
 				569AF46824B4503B00D9DC88 /* SignInPresenter.swift in Sources */,
+				569AF48424B4A65800D9DC88 /* GrayTextField.swift in Sources */,
 				569AF46C24B45B8D00D9DC88 /* IdHaving+id.swift in Sources */,
 				56D7E45A24B37C2100933B04 /* SignInCoordinator.swift in Sources */,
+				569AF48624B4AAB800D9DC88 /* RoundedButtonWithShadow.swift in Sources */,
+				566DB78824B4F6D3007409BE /* VerticalStack.swift in Sources */,
+				566DB78524B4EFE8007409BE /* LogoView.swift in Sources */,
 				569AF46A24B4542A00D9DC88 /* SignInView.swift in Sources */,
 				56D7E45524B3783E00933B04 /* BaseCoordirator.swift in Sources */,
 			);
