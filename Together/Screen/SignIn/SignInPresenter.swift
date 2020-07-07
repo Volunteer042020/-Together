@@ -3,11 +3,11 @@ import Foundation
 
 
 protocol SignInViewAction: class {
-    //фунции типа кнопка была нажата
+    //фунции типа кнопка войти, забыли пароль, и тп. была нажата
 }
 
 protocol SignInViewControllerImpl: class {
-    //функции типа показать что-то
+    //функции типа показать загрузку, установить делегатов
 }
 
 
