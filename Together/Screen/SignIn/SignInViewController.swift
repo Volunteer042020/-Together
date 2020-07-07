@@ -9,7 +9,7 @@ final class SignInViewController: UIViewController {
     
     
     //MARK: - Private properties
-    private lazy var signInView = view as? SignInView
+    private lazy var signInView = view as? SignInViewImpl
     
     
     //MARK: - Life cycle

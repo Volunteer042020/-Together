@@ -16,11 +16,8 @@ final class SignInCoordinator: BaseCoordirator {
     
     //MARK: - Open properties
     override func start() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let vc = storyboard.instantiateViewController(
-            withIdentifier: "SignInViewController"
-            ) as! SignInViewController
+        let vc: SignInViewController = UIStoryboard.main.instantiate()
         
         let presenter = SignInPresenter(view: vc, coordinator: self)
         vc.presenter = presenter
@@ -29,3 +26,4 @@ final class SignInCoordinator: BaseCoordirator {
     }
     
 }
+
