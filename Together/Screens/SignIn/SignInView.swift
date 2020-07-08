@@ -4,11 +4,13 @@ import UIKit
 
 protocol SignInViewImpl {
     //функции типа, покажи данные
-    func viewDidLayoutSubviewsSignInView()
+    func setPresenter(_ presenter: SignInViewAction)
 }
 
 
 final class SignInView: UIView {
+    
+    private var presenter: SignInViewAction?
     
     //MARK: - Private properties
     private let scrollView: UIScrollView = {
@@ -38,8 +40,8 @@ final class SignInView: UIView {
         return GrayTextField()
     }()
     
-    private lazy var logLineView: UIView = {
-        return GrayView()
+    private lazy var loginLineView: UIView = {
+        return GrayLineView()
     }()
     
     private lazy var passwordLabel: UILabel = {
@@ -56,7 +58,7 @@ final class SignInView: UIView {
         let button = UIButton()
         button.setTitle("Забыли пароль?", for: .normal)
         button.setTitleColor(.lightGray, for: .normal)
-        //        button.addTarget(self, action: #selector(restoreAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(restoreAction), for: .touchUpInside)
         textField.rightView = button
         textField.rightViewMode = .always
         
@@ -64,15 +66,17 @@ final class SignInView: UIView {
         return textField
     }()
     
-    private lazy var pasLineView: UIView = {
-        return GrayView()
+    private lazy var passwordLineView: UIView = {
+        return GrayLineView()
     }()
     
     private lazy var logInButton: UIButton = {
-        let button = RoundedButtonWithShadow()
+        let button = RoundedButtonWithShadow(type: .system)
         button.setTitle("ВОЙТИ", for: .normal)
-        button.backgroundColor = .systemBlue
-        //        button.addTarget(self, action: #selector(logInAction), for: .touchUpInside)
+        button.titleLabel?.font = UIFont(name: "", size: 20)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .blueButton
+        button.addTarget(self, action: #selector(logInAction), for: .touchUpInside)
         return button
     }()
     
@@ -87,7 +91,7 @@ final class SignInView: UIView {
     }()
     
     private lazy var leftRestoreTextViewLine: UIView = {
-        let view = GrayView()
+        let view = GrayLineView()
         return view
     }()
     
@@ -100,15 +104,17 @@ final class SignInView: UIView {
     }()
     
     private lazy var rightRestoreTextViewLine: UIView = {
-        let view = GrayView()
+        let view = GrayLineView()
         return view
     }()
     
     private lazy var registerButton: UIButton = {
-        let button = RoundedButtonWithShadow()
-        button.backgroundColor = .systemGreen
+        let button = RoundedButtonWithShadow(type: .system)
+        button.backgroundColor = .greenButton
         button.setTitle("ЗАРЕГИСТРИРОВАТЬСЯ", for: .normal)
-        //        button.addTarget(self, action: #selector(registerAction), for: .touchUpInside)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont(name: "", size: 20)
+        button.addTarget(self, action: #selector(registerAction), for: .touchUpInside)
         return button
     }()
     
@@ -164,13 +170,11 @@ final class SignInView: UIView {
         
         loginStack.addArrangedSubview(emailLabel)
         loginStack.addArrangedSubview(emailTextField)
-        loginStack.addArrangedSubview(logLineView)
+        loginStack.addArrangedSubview(loginLineView)
         loginStack.addArrangedSubview(passwordLabel)
         loginStack.addArrangedSubview(passwordTextField)
-        loginStack.addArrangedSubview(pasLineView)
-        //подумать и перенести определение высоты в класс GrayView и переименовать после этого в GrayLineView
-        logLineView.heightAnchor.constraint(equalToConstant: 0.5).isActive = true
-        pasLineView.heightAnchor.constraint(equalToConstant: 0.5).isActive = true
+        loginStack.addArrangedSubview(passwordLineView)
+        
         loginStack.topAnchor.constraint(equalTo: logoView.bottomAnchor, constant: 20).isActive = true
         loginStack.leftAnchor.constraint(equalTo: scrollView.leftAnchor,
                                          constant: sideArchoreConctant).isActive = true
@@ -195,9 +199,7 @@ final class SignInView: UIView {
         restoreStack.addArrangedSubview(leftRestoreTextViewLine)
         restoreStack.addArrangedSubview(restoreLabel)
         restoreStack.addArrangedSubview(rightRestoreTextViewLine)
-        //подумать и перенести определение высоты в класс GrayView и переименовать после этого в GrayLineView
-        leftRestoreTextViewLine.heightAnchor.constraint(equalToConstant: 0.5).isActive = true
-        rightRestoreTextViewLine.heightAnchor.constraint(equalToConstant: 0.5).isActive = true
+        
         restoreLabel.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
         restoreStack.topAnchor.constraint(equalTo: logInButton.bottomAnchor, constant: 150).isActive = true
         restoreStack.leftAnchor.constraint(equalTo: loginStack.leftAnchor).isActive = true
@@ -221,21 +223,21 @@ final class SignInView: UIView {
 
 extension SignInView: SignInViewImpl {
     
-    func viewDidLayoutSubviewsSignInView() {
-        scrollView.contentSize.height = registerButton.frame.maxY + 5
+    func setPresenter(_ presenter: SignInViewAction) {
+        self.presenter = presenter
     }
-    //
-    //    @objc func logInAction(_ sender: UIButton) {
-    //        print("log action")
-    //    }
-    //
-    //    @objc func restoreAction(_ sender: UIButton) {
-    //        print("Oyy press me restore")
-    //    }
-    //
-    //    @objc func registerAction(_ sender: UIButton) {
-    //        print("Oy press me register")
-    //    }
+    
+    @objc func logInAction(_ sender: UIButton) {
+        presenter?.signInButtonTappedLogin()
+    }
+    
+    @objc func restoreAction(_ sender: UIButton) {
+        presenter?.signInButtonTappedRestore()
+    }
+    
+    @objc func registerAction(_ sender: UIButton) {
+        presenter?.signInButtonTappedRegister()
+    }
 }
 
 

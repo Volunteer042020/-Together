@@ -22,5 +22,20 @@
             </objects>
             <point key="canvasLocation" x="-277" y="40"/>
         </scene>
+        <!--Register Account View Controller-->
+        <scene sceneID="Zpr-ip-Ntl">
+            <objects>
+                <viewController storyboardIdentifier="RegisterAccountViewController" id="FtI-Jv-MJ9" customClass="RegisterAccountViewController" customModule="Together" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yQ4-QA-S1g" customClass="RegisterAccountView" customModule="Together" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="sgg-r1-Dfs"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0e2-q3-HoD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="597" y="40"/>
+        </scene>
     </scenes>
 </document>
