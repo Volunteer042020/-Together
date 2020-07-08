@@ -2,7 +2,7 @@
 import UIKit
 
 
-class GrayView: UIView {
+class GrayLineView: UIView {
     
     //MARK: - Life cycle
     override init(frame: CGRect) {
@@ -20,5 +20,6 @@ class GrayView: UIView {
     private func setupUI() {
         self.backgroundColor = .gray
         self.translatesAutoresizingMaskIntoConstraints = false
+        self.heightAnchor.constraint(equalToConstant: 0.5).isActive = true 
     }
 }

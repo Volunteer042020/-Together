@@ -4,6 +4,9 @@ import Foundation
 
 protocol SignInViewAction: class {
     //фунции типа кнопка войти, забыли пароль, и тп. была нажата
+    func signInButtonTappedRegister()
+    func signInButtonTappedLogin()
+    func signInButtonTappedRestore()
 }
 
 protocol SignInViewControllerImpl: class {
@@ -15,11 +18,11 @@ final class SignInPresenter {
     
     //MARK: - Private properties
     private weak var view: SignInViewControllerImpl?
-    private let coordinator: Coordinator
+    private let coordinator: SignInCoordination
     
     
     //MARK: - Init
-    init(view: SignInViewControllerImpl, coordinator: Coordinator) {
+    init(view: SignInViewControllerImpl, coordinator: SignInCoordination) {
         self.view = view
         self.coordinator = coordinator
     }
@@ -27,5 +30,19 @@ final class SignInPresenter {
 
 
 extension SignInPresenter: SignInViewAction {
+    
+    func signInButtonTappedRegister() {
+        coordinator.showRegisterAccount()
+    }
+    
+    func signInButtonTappedLogin() {
+        print("Complited Login")
+    }
+    
+    func signInButtonTappedRestore() {
+        print("Restore password")
+    }
+    
+    
     
 }

@@ -1,6 +1,17 @@
 
 import UIKit
 
+protocol SignInCoordination {
+    func showMain()
+    //создаем main презентер
+    func showSignUp()
+
+    func showRestorePassword()
+    // создаем restore презетер
+    
+    func showRegisterAccount()
+    // создаем register презентер
+}
 
 final class SignInCoordinator: BaseCoordirator {
     
@@ -10,10 +21,6 @@ final class SignInCoordinator: BaseCoordirator {
     
     //MARK: - Init
     init(navController: UINavigationController) {
-        navController.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        navController.navigationBar.shadowImage = UIImage()
-        navController.navigationBar.isTranslucent = true
-        navController.view.backgroundColor = UIColor.clear
         self.navController = navController
     }
     
@@ -31,17 +38,30 @@ final class SignInCoordinator: BaseCoordirator {
     
     
     //MARK: - Private metods
-    private func showMain() {
-        //создаем main презентер
+    
+}
+
+extension SignInCoordinator: SignInCoordination {
+    
+    func showMain() {
+        print("Show Main View")
+    }
+
+    func showSignUp() {
+        print("Show SignUp View")
+    }
+
+    func showRestorePassword() {
+        print("Show Restore View")
+    }
+
+    func showRegisterAccount() {
+        let registerAccountCoordinator = RegisterAccountCoordinator(navController: navController)
+        childCoordinators.append(registerAccountCoordinator)
+        registerAccountCoordinator.parentCoordinator = self
+        registerAccountCoordinator.start()
     }
     
-    private func showSignUp() {
-        
-    }
-    
-    private func showRestorePassword() {
-        
-    }
     
 }
 

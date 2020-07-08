@@ -13,7 +13,7 @@
 		569AF46A24B4542A00D9DC88 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569AF46924B4542A00D9DC88 /* SignInView.swift */; };
 		569AF46C24B45B8D00D9DC88 /* IdHaving+id.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569AF46B24B45B8D00D9DC88 /* IdHaving+id.swift */; };
 		569AF46F24B45E6800D9DC88 /* UIStoryboard+instantiate().swift in Sources */ = {isa = PBXBuildFile; fileRef = 569AF46E24B45E6800D9DC88 /* UIStoryboard+instantiate().swift */; };
-		569AF47F24B498CA00D9DC88 /* GrayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569AF47E24B498CA00D9DC88 /* GrayView.swift */; };
+		569AF47F24B498CA00D9DC88 /* GrayLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569AF47E24B498CA00D9DC88 /* GrayLineView.swift */; };
 		569AF48424B4A65800D9DC88 /* GrayTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569AF48324B4A65800D9DC88 /* GrayTextField.swift */; };
 		569AF48624B4AAB800D9DC88 /* RoundedButtonWithShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569AF48524B4AAB800D9DC88 /* RoundedButtonWithShadow.swift */; };
 		56D7E43C24B3601800933B04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D7E43B24B3601800933B04 /* AppDelegate.swift */; };
@@ -25,6 +25,11 @@
 		56D7E45524B3783E00933B04 /* BaseCoordirator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D7E45424B3783E00933B04 /* BaseCoordirator.swift */; };
 		56D7E45724B3792900933B04 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D7E45624B3792900933B04 /* AppCoordinator.swift */; };
 		56D7E45A24B37C2100933B04 /* SignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D7E45924B37C2100933B04 /* SignInCoordinator.swift */; };
+		A904DCD824B5B67F00ACB761 /* UIColor + customColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A904DCD724B5B67E00ACB761 /* UIColor + customColor.swift */; };
+		A904DCDB24B5C0FD00ACB761 /* RegisterAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A904DCDA24B5C0FD00ACB761 /* RegisterAccountViewController.swift */; };
+		A904DCDD24B5C59000ACB761 /* RegisterAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A904DCDC24B5C59000ACB761 /* RegisterAccountView.swift */; };
+		A904DCDF24B5C63700ACB761 /* RegisterAccountCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A904DCDE24B5C63700ACB761 /* RegisterAccountCoordinator.swift */; };
+		A904DCE124B5C66200ACB761 /* RegisterAccountPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A904DCE024B5C66200ACB761 /* RegisterAccountPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +39,7 @@
 		569AF46924B4542A00D9DC88 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		569AF46B24B45B8D00D9DC88 /* IdHaving+id.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IdHaving+id.swift"; sourceTree = "<group>"; };
 		569AF46E24B45E6800D9DC88 /* UIStoryboard+instantiate().swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+instantiate().swift"; sourceTree = "<group>"; };
-		569AF47E24B498CA00D9DC88 /* GrayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayView.swift; sourceTree = "<group>"; };
+		569AF47E24B498CA00D9DC88 /* GrayLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayLineView.swift; sourceTree = "<group>"; };
 		569AF48324B4A65800D9DC88 /* GrayTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayTextField.swift; sourceTree = "<group>"; };
 		569AF48524B4AAB800D9DC88 /* RoundedButtonWithShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonWithShadow.swift; sourceTree = "<group>"; };
 		56D7E43824B3601800933B04 /* Together.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Together.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +53,11 @@
 		56D7E45424B3783E00933B04 /* BaseCoordirator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordirator.swift; sourceTree = "<group>"; };
 		56D7E45624B3792900933B04 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		56D7E45924B37C2100933B04 /* SignInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCoordinator.swift; sourceTree = "<group>"; };
+		A904DCD724B5B67E00ACB761 /* UIColor + customColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + customColor.swift"; sourceTree = "<group>"; };
+		A904DCDA24B5C0FD00ACB761 /* RegisterAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAccountViewController.swift; sourceTree = "<group>"; };
+		A904DCDC24B5C59000ACB761 /* RegisterAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAccountView.swift; sourceTree = "<group>"; };
+		A904DCDE24B5C63700ACB761 /* RegisterAccountCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAccountCoordinator.swift; sourceTree = "<group>"; };
+		A904DCE024B5C66200ACB761 /* RegisterAccountPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAccountPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +84,7 @@
 			children = (
 				569AF46B24B45B8D00D9DC88 /* IdHaving+id.swift */,
 				569AF46E24B45E6800D9DC88 /* UIStoryboard+instantiate().swift */,
+				A904DCD724B5B67E00ACB761 /* UIColor + customColor.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -81,7 +92,7 @@
 		569AF48024B4A1F200D9DC88 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				569AF47E24B498CA00D9DC88 /* GrayView.swift */,
+				569AF47E24B498CA00D9DC88 /* GrayLineView.swift */,
 				566DB78424B4EFE8007409BE /* LogoView.swift */,
 			);
 			path = Views;
@@ -155,6 +166,7 @@
 		56D7E45124B377C100933B04 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				A904DCD924B5C0D200ACB761 /* RegisterAccount */,
 				56D7E45824B37BC700933B04 /* SignIn */,
 			);
 			path = Screens;
@@ -189,6 +201,17 @@
 				569AF46724B4503B00D9DC88 /* SignInPresenter.swift */,
 			);
 			path = SignIn;
+			sourceTree = "<group>";
+		};
+		A904DCD924B5C0D200ACB761 /* RegisterAccount */ = {
+			isa = PBXGroup;
+			children = (
+				A904DCDA24B5C0FD00ACB761 /* RegisterAccountViewController.swift */,
+				A904DCDC24B5C59000ACB761 /* RegisterAccountView.swift */,
+				A904DCDE24B5C63700ACB761 /* RegisterAccountCoordinator.swift */,
+				A904DCE024B5C66200ACB761 /* RegisterAccountPresenter.swift */,
+			);
+			path = RegisterAccount;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,9 +290,14 @@
 				569AF46F24B45E6800D9DC88 /* UIStoryboard+instantiate().swift in Sources */,
 				56D7E45724B3792900933B04 /* AppCoordinator.swift in Sources */,
 				56D7E43E24B3601800933B04 /* SceneDelegate.swift in Sources */,
-				569AF47F24B498CA00D9DC88 /* GrayView.swift in Sources */,
+				569AF47F24B498CA00D9DC88 /* GrayLineView.swift in Sources */,
 				569AF46824B4503B00D9DC88 /* SignInPresenter.swift in Sources */,
+				A904DCE124B5C66200ACB761 /* RegisterAccountPresenter.swift in Sources */,
 				569AF48424B4A65800D9DC88 /* GrayTextField.swift in Sources */,
+				A904DCDB24B5C0FD00ACB761 /* RegisterAccountViewController.swift in Sources */,
+				A904DCDF24B5C63700ACB761 /* RegisterAccountCoordinator.swift in Sources */,
+				A904DCDD24B5C59000ACB761 /* RegisterAccountView.swift in Sources */,
+				A904DCD824B5B67F00ACB761 /* UIColor + customColor.swift in Sources */,
 				569AF46C24B45B8D00D9DC88 /* IdHaving+id.swift in Sources */,
 				56D7E45A24B37C2100933B04 /* SignInCoordinator.swift in Sources */,
 				569AF48624B4AAB800D9DC88 /* RoundedButtonWithShadow.swift in Sources */,
