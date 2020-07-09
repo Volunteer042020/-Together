@@ -1,18 +1,18 @@
 //
-//  RegisterAccountCoordinate.swift
+//  RestorePasswordCoordinator.swift
 //  Together
 //
-//  Created by Евгений Шварцкопф on 08.07.2020.
+//  Created by Евгений Шварцкопф on 09.07.2020.
 //  Copyright © 2020 GermanyHome. All rights reserved.
 //
 
 import UIKit
 
-protocol RegisterAccountCoordination {
+protocol RestorePasswordCoordination {
     
 }
 
-final class RegisterAccountCoordinator: BaseCoordirator {
+final class RestorePasswordCoordinator: BaseCoordirator {
     
     //MARK: - Private properties
     private let navController: UINavigationController
@@ -27,9 +27,9 @@ final class RegisterAccountCoordinator: BaseCoordirator {
     //MARK: - Open properties
     override func start() {
         
-        let vc: RegisterAccountViewController = UIStoryboard.main.instantiate()
+        let vc: RestorePasswordViewController = UIStoryboard.main.instantiate()
         
-        let presenter = RegisterAccountPresenter(view: vc, coordinator: self)
+        let presenter = RestorePasswordPresenter(view: vc, coordinator: self)
         vc.presenter = presenter
         
         navController.pushViewController(vc, animated: true)
@@ -39,8 +39,6 @@ final class RegisterAccountCoordinator: BaseCoordirator {
     
 }
 
-extension RegisterAccountCoordinator: RegisterAccountCoordination {
+extension RestorePasswordCoordinator: RestorePasswordCoordination {
     
 }
-
-

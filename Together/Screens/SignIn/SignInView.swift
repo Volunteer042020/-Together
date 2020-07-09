@@ -201,7 +201,7 @@ final class SignInView: UIView {
         restoreStack.addArrangedSubview(rightRestoreTextViewLine)
         
         restoreLabel.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        restoreStack.topAnchor.constraint(equalTo: logInButton.bottomAnchor, constant: 150).isActive = true
+        restoreStack.topAnchor.constraint(equalTo: logInButton.bottomAnchor, constant: 50).isActive = true
         restoreStack.leftAnchor.constraint(equalTo: loginStack.leftAnchor).isActive = true
         restoreStack.rightAnchor.constraint(equalTo: loginStack.rightAnchor).isActive = true
         
@@ -213,9 +213,9 @@ final class SignInView: UIView {
         registerButton.topAnchor.constraint(equalTo: restoreStack.bottomAnchor, constant: 20).isActive = true
         registerButton.bottomAnchor.constraint(equalToSystemSpacingBelow: scrollView.bottomAnchor, multiplier: 0).isActive = true
         registerButton.leftAnchor.constraint(equalTo: scrollView.leftAnchor,
-                                             constant: sideArchoreConctant).isActive = true
+                                             constant: self.sideArchoreConctant).isActive = true
         registerButton.rightAnchor.constraint(equalTo: scrollView.rightAnchor,
-                                              constant: -sideArchoreConctant).isActive = true
+                                              constant: -self.sideArchoreConctant).isActive = true
         registerButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
     
@@ -242,9 +242,9 @@ extension SignInView: SignInViewImpl {
 
 
 //MARK: - Size constant
-extension SignInView {
-    
-    private var sideArchoreConctant: CGFloat {
-        return 20
-    }
-}
+//extension SignInView {
+//
+//    private var sideArchoreConctant: CGFloat {
+//        return 20
+//    }
+//}

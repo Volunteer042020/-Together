@@ -1,29 +1,36 @@
+//
+//  RestorePasswordViewController.swift
+//  Together
+//
+//  Created by Евгений Шварцкопф on 09.07.2020.
+//  Copyright © 2020 GermanyHome. All rights reserved.
+//
 
 import UIKit
 
 
-final class SignInViewController: UIViewController {
+final class RestorePasswordViewController: UIViewController {
     
     //MARK: - Open properties
     
     // презентору сообщаем обо всех действиях и передаем данные, например: презентер, была нажата кнопка войти,
-    // presenter.didTappedLoginButton(email: String, password: String)
-    var presenter: SignInViewAction?
+    var presenter: RestorePasswordViewAction?
     
     
     //MARK: - Private properties
     
     //вью просим отобразить контент
-    private lazy var signInView = view as? SignInViewImpl
+    private lazy var restorePasswordView = view as? RestorePasswordViewImpl
     
     
     //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let view = signInView, let presenter = presenter {
+        if let view = restorePasswordView , let presenter = presenter {
             view.setPresenter(presenter)
         }
+        
         setNavigation()
     }
     
@@ -31,15 +38,11 @@ final class SignInViewController: UIViewController {
     
     //Устанавливаем навигацию, заголовок навигейшен контроллера, кнопки на навиг контроллере
     private func setNavigation() {
-        self.navigationController?.navigationBar.isHidden = true
+        self.navigationController?.navigationItem.title = "Восстановления пароля"
     }
 }
 
 
-extension SignInViewController: SignInViewControllerImpl {
+extension RestorePasswordViewController: RestorePasswordViewControllerImpl {
     
 }
-
-
-
-

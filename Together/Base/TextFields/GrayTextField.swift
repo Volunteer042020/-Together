@@ -21,7 +21,9 @@ class GrayTextField: UITextField {
         self.textColor = .gray
         self.tintColor = .customGray
         self.textAlignment = .left
+        self.inputAccessoryView = getToolBar()
         self.translatesAutoresizingMaskIntoConstraints = false
     }
     
 }
+

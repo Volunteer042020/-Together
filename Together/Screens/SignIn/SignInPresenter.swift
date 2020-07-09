@@ -40,7 +40,7 @@ extension SignInPresenter: SignInViewAction {
     }
     
     func signInButtonTappedRestore() {
-        print("Restore password")
+        coordinator.showRestorePassword()
     }
     
     

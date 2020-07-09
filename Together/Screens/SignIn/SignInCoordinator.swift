@@ -2,6 +2,7 @@
 import UIKit
 
 protocol SignInCoordination {
+    
     func showMain()
     //создаем main презентер
     func showSignUp()
@@ -33,7 +34,7 @@ final class SignInCoordinator: BaseCoordirator {
         let presenter = SignInPresenter(view: vc, coordinator: self)
         vc.presenter = presenter
         
-        navController.pushViewController(vc, animated: false)
+        navController.pushViewController(vc, animated: true)
     }
     
     
@@ -52,7 +53,10 @@ extension SignInCoordinator: SignInCoordination {
     }
 
     func showRestorePassword() {
-        print("Show Restore View")
+        let restorePasswordCoordinator = RestorePasswordCoordinator(navController: navController)
+        childCoordinators.append(restorePasswordCoordinator)
+        restorePasswordCoordinator.parentCoordinator = self
+        restorePasswordCoordinator.start()
     }
 
     func showRegisterAccount() {
