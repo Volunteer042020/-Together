@@ -94,7 +94,7 @@ final class RegisterAccountView: UIView {
         let button = RoundedButtonWithShadow()
         button.backgroundColor = .white
         button.isSelected = false
-        button.addTarget(self, action: #selector(checkmarkAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(checkmarkAction), for: .touchDown)
         return button
     }()
     
@@ -215,7 +215,7 @@ extension RegisterAccountView: RegisterAccountViewImpl {
     
     @objc func checkmarkAction(_ sender: UIButton) {
         if sender.isSelected != true {
-            checkmarkButton.setImage(UIImage(systemName: "checkmark"), for: .normal)
+            checkmarkButton.setImage(UIImage(systemName: "checkmark"), for: .selected)
             checkmarkButton.backgroundColor = .blueButton
             checkmarkButton.tintColor = .white
             checkmarkButton.layer.cornerRadius = 10
