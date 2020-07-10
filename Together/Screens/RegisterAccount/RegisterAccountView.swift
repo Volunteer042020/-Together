@@ -39,8 +39,7 @@ final class RegisterAccountView: UIView {
     }()
     
     private lazy var emailTextField: UITextField = {
-        let textField = GrayTextField()
-        return textField
+        return GrayTextField()
     }()
     
     private lazy var emailLine: UIView = {
@@ -55,8 +54,7 @@ final class RegisterAccountView: UIView {
     }()
     
     private lazy var numberTextField: UITextField = {
-        let textField = GrayTextField()
-        return textField
+      return GrayTextField()
     }()
     
     private lazy var numberLine: UIView = {
@@ -71,13 +69,11 @@ final class RegisterAccountView: UIView {
     }()
     
     private lazy var passwordTextField: UITextField = {
-        let textField = GrayTextField()
-        return textField
+        return GrayTextField()
     }()
     
     private lazy var passwordLine: UIView = {
-        let view = GrayLineView()
-        return view
+        return GrayLineView()
     }()
     
     private lazy var repeatPasswordLabel: UILabel = {
@@ -87,13 +83,11 @@ final class RegisterAccountView: UIView {
     }()
     
     private lazy var repeatPasswordTextField: UITextField = {
-        let textField = GrayTextField()
-        return textField
+        return GrayTextField()
     }()
     
     private lazy var repeatPasswordLine: UIView = {
-        let view = GrayLineView()
-        return view
+        return GrayLineView()
     }()
     
     private lazy var checkmarkButton: UIButton = {
@@ -199,7 +193,7 @@ final class RegisterAccountView: UIView {
     private func setupRegisterButton() {
         scrollView.addSubview(registerButton)
         
-        registerButton.topAnchor.constraint(equalTo: checkmarkLabel.bottomAnchor, constant: 200).isActive = true
+        registerButton.topAnchor.constraint(equalTo: checkmarkLabel.bottomAnchor, constant: 98).isActive = true
         registerButton.bottomAnchor.constraint(equalToSystemSpacingBelow: scrollView.bottomAnchor, multiplier: 0).isActive = true
         registerButton.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: sideArchoreConctant).isActive = true
         registerButton.rightAnchor.constraint(equalTo: scrollView.rightAnchor, constant: -sideArchoreConctant).isActive = true
@@ -236,9 +230,9 @@ extension RegisterAccountView: RegisterAccountViewImpl {
 
 
 //MARK: - Size constant
-extension RegisterAccountView {
-    
-    private var sideArchoreConctant: CGFloat {
-        return 20
-    }
-}
+//extension RegisterAccountView {
+//    
+//    private var sideArchoreConctant: CGFloat {
+//        return 20
+//    }
+//}

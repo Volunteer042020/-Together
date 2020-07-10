@@ -37,5 +37,20 @@
             </objects>
             <point key="canvasLocation" x="597" y="40"/>
         </scene>
+        <!--Restore Password View Controller-->
+        <scene sceneID="2KF-pf-M8l">
+            <objects>
+                <viewController storyboardIdentifier="RestorePasswordViewController" id="FQa-Sv-KaN" customClass="RestorePasswordViewController" customModule="Together" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="31U-d3-tY5" customClass="RestorePasswordView" customModule="Together" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="PFd-ad-18q"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G50-fK-Prb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1446" y="40"/>
+        </scene>
     </scenes>
 </document>
