@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 protocol MainMapViewImpl {
     //функции типа, покажи данные
@@ -16,14 +17,31 @@ protocol MainMapViewImpl {
 
 final class MainMapView: UIView {
     
+    // переменная для использования менеджера
+    private var locationManager: CLLocationManager = {
+        let locationManager = CLLocationManager()
+        
+        locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
+        //Точность измерения самой системой - чем она лучше, тем больше энергии потребляеет приложение. Задаётся через набор k-констант. Старайтесь использовать ту точность, что реально важна для приложения
+        locationManager.distanceFilter = 10
+        //Свойство отвечает за фильтр дистанции - величину, лишь при изменении на которую будет срабатывать изменение локации
+        
+        locationManager.pausesLocationUpdatesAutomatically = true
+        //Позволяет системе автоматически останавливать обновление локации для балансировщика энергии
+        locationManager.activityType = .fitness
+        //Через это свойство Вы можете указать тип действий, для которого используется геопозиция, это позволит системе лучше обрабатывать балансировку геопозиции
+        locationManager.showsBackgroundLocationIndicator = true
+        //С помощью этого свойства мы решаем, показывать или нет значок геопозиции для работы в фоновом режиме
+        return locationManager
+    }()
+    
     lazy var mapView: MKMapView = {
         let mapView = MKMapView()
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.delegate = self
         
-        // Set initial location in Omsk
-        let initialLocation = CLLocation(latitude: 54.989342, longitude: 73.368212)
-        mapView.centerToLocation(initialLocation)
+        locationManager.delegate = self
+        locationManager.startUpdatingLocation()
         
         return mapView
     }()
@@ -87,3 +105,47 @@ private extension MKMapView {
     }
 }
 
+extension MainMapView: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        //Статус авторизации
+        switch status {
+        //Если он не определён (то есть ни одного запроса на авторизацию не было, то попросим базовую авторизацию)
+        case .notDetermined:
+            manager.requestWhenInUseAuthorization()
+        //Если она ограничена или запрещена, то уведомим об отключении
+        case .restricted, .denied:
+            print("Отключаем локацию")
+        //Если авторизация базовая, то попросим предоставить полную
+        case .authorizedWhenInUse:
+            print("Включаем базовые функции")
+            manager.requestAlwaysAuthorization()
+        //Хи-хи
+        case .authorizedAlways:
+            print("Теперь мы знаем, с кем Вы трахаетесь")
+        }
+    }
+
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        // проверяем есть ли данные в locations после чего начинаем передавать их для отображения
+        if !locations.isEmpty {
+            let lon = locations[0].coordinate.longitude
+            let lat = locations[0].coordinate.latitude
+            let initialLocation = CLLocation(latitude: lat, longitude: lon)
+            mapView.centerToLocation(initialLocation)
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        //Если ошибку можно превратить в ошибку геопоозии, то сделаем это
+        guard let locationError = error as? CLError else {
+            //Иначе выведем как есть
+            print(error)
+            return
+        }
+        
+        //Если получилось, то можно получить локализованное описание ошибки
+        NSLog(locationError.localizedDescription)
+    }
+}

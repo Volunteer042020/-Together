@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreLocation
 
 final class MainMapViewController: UIViewController {
     
@@ -15,8 +14,6 @@ final class MainMapViewController: UIViewController {
     
     // презентору сообщаем обо всех действиях и передаем данные, например: презентер, была нажата кнопка войти,
     var presenter: MainMapViewAction?
-    // переменная для использования менеджера
-    var locationManager = CLLocationManager()
     
     
     //MARK: - Private properties
@@ -28,11 +25,6 @@ final class MainMapViewController: UIViewController {
     //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        locationManager.delegate = self
-        // осуществляеться запрос о разрешении геолокации
-        
-        locationManager.requestWhenInUseAuthorization()
         
         if let view = mainMapView , let presenter = presenter {
             view.setPresenter(presenter)
@@ -55,13 +47,4 @@ extension MainMapViewController: MainMapViewControllerImpl {
     
 }
 
-extension MainMapViewController: CLLocationManagerDelegate {
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print(manager.location.debugDescription)
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error.localizedDescription)
-    }
-}
+
