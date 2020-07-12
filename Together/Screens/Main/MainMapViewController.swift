@@ -15,6 +15,7 @@ final class MainMapViewController: UIViewController {
     
     // презентору сообщаем обо всех действиях и передаем данные, например: презентер, была нажата кнопка войти,
     var presenter: MainMapViewAction?
+    // переменная для использования менеджера
     var locationManager = CLLocationManager()
     
     
@@ -27,7 +28,10 @@ final class MainMapViewController: UIViewController {
     //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         locationManager.delegate = self
+        // осуществляеться запрос о разрешении геолокации
+        
         locationManager.requestWhenInUseAuthorization()
         
         if let view = mainMapView , let presenter = presenter {

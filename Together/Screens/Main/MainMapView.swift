@@ -72,6 +72,8 @@ extension MainMapView: MKMapViewDelegate {
     
 }
 
+// для начального отображения, настройка радиуса.
+
 private extension MKMapView {
     func centerToLocation(
         _ location: CLLocation,
