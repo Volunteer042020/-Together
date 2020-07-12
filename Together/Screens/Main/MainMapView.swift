@@ -81,12 +81,12 @@ extension MainMapView: MainMapViewImpl {
     func setPresenter(_ presenter: MainMapViewAction) {
         self.presenter = presenter
     }
-
+    
 }
 
 
 extension MainMapView: MKMapViewDelegate {
-
+    
     
 }
 
@@ -125,7 +125,7 @@ extension MainMapView: CLLocationManagerDelegate {
             print("Теперь мы знаем, с кем Вы трахаетесь")
         }
     }
-
+    
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         // проверяем есть ли данные в locations после чего начинаем передавать их для отображения
