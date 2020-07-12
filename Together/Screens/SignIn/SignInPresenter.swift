@@ -36,6 +36,7 @@ extension SignInPresenter: SignInViewAction {
     }
     
     func signInButtonTappedLogin() {
+        coordinator.showMain()
         print("Complited Login")
     }
     
