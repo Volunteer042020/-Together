@@ -94,7 +94,8 @@ final class RegisterAccountView: UIView {
         let button = RoundedButtonWithShadow()
         button.backgroundColor = .white
         button.isSelected = false
-        button.addTarget(self, action: #selector(checkmarkAction), for: .touchDown)
+        button.addTarget(self, action: #selector(checkmarkAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(checkmarkColor), for: .touchDown)
         return button
     }()
     
@@ -209,6 +210,12 @@ extension RegisterAccountView: RegisterAccountViewImpl {
     
     @objc func registerAction(_ sender: UIButton) {
         print("Аккаунт удачно зарегестирован")
+    }
+        
+    // для плавного изменения цвета
+    
+    @objc private func checkmarkColor(_ sender: UIButton) {
+        sender.backgroundColor = .blueButton
     }
     
     // Кнопка для подтверждения конфиденциальности
