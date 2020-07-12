@@ -1,7 +1,6 @@
 
 import UIKit
 
-
 final class SignInViewController: UIViewController {
     
     //MARK: - Open properties
@@ -9,7 +8,6 @@ final class SignInViewController: UIViewController {
     // презентору сообщаем обо всех действиях и передаем данные, например: презентер, была нажата кнопка войти,
     // presenter.didTappedLoginButton(email: String, password: String)
     var presenter: SignInViewAction?
-    
     
     //MARK: - Private properties
     
@@ -39,7 +37,5 @@ final class SignInViewController: UIViewController {
 extension SignInViewController: SignInViewControllerImpl {
     
 }
-
-
 
 

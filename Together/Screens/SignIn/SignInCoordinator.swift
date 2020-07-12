@@ -36,8 +36,6 @@ final class SignInCoordinator: BaseCoordirator {
         
         navController.pushViewController(vc, animated: true)
     }
-    
-    
     //MARK: - Private metods
     
 }
@@ -45,7 +43,10 @@ final class SignInCoordinator: BaseCoordirator {
 extension SignInCoordinator: SignInCoordination {
     
     func showMain() {
-        print("Show Main View")
+        let mainMapCoordinator = MainMapCoordinator(navController: navController)
+        childCoordinators.append(mainMapCoordinator)
+        mainMapCoordinator.parentCoordinator = self
+        mainMapCoordinator.start()
     }
 
     func showSignUp() {
