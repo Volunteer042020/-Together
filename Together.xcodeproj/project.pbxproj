@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		566DB78524B4EFE8007409BE /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566DB78424B4EFE8007409BE /* LogoView.swift */; };
 		566DB78824B4F6D3007409BE /* VerticalStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566DB78724B4F6D3007409BE /* VerticalStack.swift */; };
+		566DB78B24BCDE98007409BE /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566DB78A24BCDE98007409BE /* MainCoordinator.swift */; };
+		566DB78D24BCDF4A007409BE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566DB78C24BCDF4A007409BE /* MainViewController.swift */; };
+		566DB78F24BCEB5C007409BE /* UINavigationController+setTabBarTitleAndImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566DB78E24BCEB5C007409BE /* UINavigationController+setTabBarTitleAndImage.swift */; };
 		569AF46824B4503B00D9DC88 /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569AF46724B4503B00D9DC88 /* SignInPresenter.swift */; };
 		569AF46A24B4542A00D9DC88 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569AF46924B4542A00D9DC88 /* SignInView.swift */; };
 		569AF46C24B45B8D00D9DC88 /* IdHaving+id.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569AF46B24B45B8D00D9DC88 /* IdHaving+id.swift */; };
@@ -45,6 +48,9 @@
 /* Begin PBXFileReference section */
 		566DB78424B4EFE8007409BE /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		566DB78724B4F6D3007409BE /* VerticalStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStack.swift; sourceTree = "<group>"; };
+		566DB78A24BCDE98007409BE /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		566DB78C24BCDF4A007409BE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		566DB78E24BCEB5C007409BE /* UINavigationController+setTabBarTitleAndImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+setTabBarTitleAndImage.swift"; sourceTree = "<group>"; };
 		569AF46724B4503B00D9DC88 /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
 		569AF46924B4542A00D9DC88 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		569AF46B24B45B8D00D9DC88 /* IdHaving+id.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IdHaving+id.swift"; sourceTree = "<group>"; };
@@ -99,6 +105,31 @@
 			path = StackViews;
 			sourceTree = "<group>";
 		};
+		566DB78924BCDE78007409BE /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				A91769DF24BAEFED00EEE26A /* MainMapViewController.swift */,
+				A91769E124BAF01100EEE26A /* MainMapView.swift */,
+				A91769E524BAF03400EEE26A /* MainMapPresenter.swift */,
+				A91769E324BAF02400EEE26A /* MainMapCoordinator.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		566DB79024BCF4C8007409BE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		566DB79124BCF4D5007409BE /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		569AF46D24B45E1300D9DC88 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +138,7 @@
 				A904DCD724B5B67E00ACB761 /* UIColor + customColor.swift */,
 				A981FB1E24B73E8300A3D205 /* UIView + getToolBar().swift */,
 				A981FB2924B761A700A3D205 /* UIViewController + indicator + basicAlert.swift */,
+				566DB78E24BCEB5C007409BE /* UINavigationController+setTabBarTitleAndImage.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -221,8 +253,8 @@
 			children = (
 				56D7E43F24B3601800933B04 /* SignInViewController.swift */,
 				569AF46924B4542A00D9DC88 /* SignInView.swift */,
-				56D7E45924B37C2100933B04 /* SignInCoordinator.swift */,
 				569AF46724B4503B00D9DC88 /* SignInPresenter.swift */,
+				56D7E45924B37C2100933B04 /* SignInCoordinator.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -241,10 +273,11 @@
 		A91769DE24BAEF8D00EEE26A /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				A91769DF24BAEFED00EEE26A /* MainMapViewController.swift */,
-				A91769E124BAF01100EEE26A /* MainMapView.swift */,
-				A91769E324BAF02400EEE26A /* MainMapCoordinator.swift */,
-				A91769E524BAF03400EEE26A /* MainMapPresenter.swift */,
+				566DB78A24BCDE98007409BE /* MainCoordinator.swift */,
+				566DB78C24BCDF4A007409BE /* MainViewController.swift */,
+				566DB79024BCF4C8007409BE /* Profile */,
+				566DB78924BCDE78007409BE /* Map */,
+				566DB79124BCF4D5007409BE /* Chat */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -347,12 +380,15 @@
 				A91769E424BAF02400EEE26A /* MainMapCoordinator.swift in Sources */,
 				A91769E624BAF03400EEE26A /* MainMapPresenter.swift in Sources */,
 				A904DCDF24B5C63700ACB761 /* RegisterAccountCoordinator.swift in Sources */,
+				566DB78F24BCEB5C007409BE /* UINavigationController+setTabBarTitleAndImage.swift in Sources */,
 				A904DCDD24B5C59000ACB761 /* RegisterAccountView.swift in Sources */,
 				A904DCD824B5B67F00ACB761 /* UIColor + customColor.swift in Sources */,
 				569AF46C24B45B8D00D9DC88 /* IdHaving+id.swift in Sources */,
 				56D7E45A24B37C2100933B04 /* SignInCoordinator.swift in Sources */,
+				566DB78B24BCDE98007409BE /* MainCoordinator.swift in Sources */,
 				569AF48624B4AAB800D9DC88 /* RoundedButtonWithShadow.swift in Sources */,
 				A981FB2824B7456700A3D205 /* RestorePasswordPresenter.swift in Sources */,
+				566DB78D24BCDF4A007409BE /* MainViewController.swift in Sources */,
 				566DB78824B4F6D3007409BE /* VerticalStack.swift in Sources */,
 				A981FB2424B7452A00A3D205 /* RestorePasswordView.swift in Sources */,
 				A91769E224BAF01100EEE26A /* MainMapView.swift in Sources */,

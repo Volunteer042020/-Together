@@ -6,7 +6,7 @@ protocol SignInCoordination {
     func showMain()
     //создаем main презентер
     func showSignUp()
-
+    
     func showRestorePassword()
     // создаем restore презетер
     
@@ -40,31 +40,32 @@ final class SignInCoordinator: BaseCoordirator {
     
 }
 
+
 extension SignInCoordinator: SignInCoordination {
     
     func showMain() {
-        let mainMapCoordinator = MainMapCoordinator(navController: navController)
-        childCoordinators.append(mainMapCoordinator)
-        mainMapCoordinator.parentCoordinator = self
-        mainMapCoordinator.start()
+        let mainCoordinator = MainCoordinator(navController: navController)
+        self.setDependence(withChildCoordinator: mainCoordinator)
+        mainCoordinator.start()
+        self.didFinish(coordinator: self)
     }
-
+    
     func showSignUp() {
         print("Show SignUp View")
     }
-
+    
     func showRestorePassword() {
         let restorePasswordCoordinator = RestorePasswordCoordinator(navController: navController)
-        childCoordinators.append(restorePasswordCoordinator)
-        restorePasswordCoordinator.parentCoordinator = self
+        self.setDependence(withChildCoordinator: restorePasswordCoordinator)
         restorePasswordCoordinator.start()
+        self.didFinish(coordinator: self)
     }
-
+    
     func showRegisterAccount() {
         let registerAccountCoordinator = RegisterAccountCoordinator(navController: navController)
-        childCoordinators.append(registerAccountCoordinator)
-        registerAccountCoordinator.parentCoordinator = self
+        self.setDependence(withChildCoordinator: registerAccountCoordinator)
         registerAccountCoordinator.start()
+        self.didFinish(coordinator: self)
     }
     
     
