@@ -24,6 +24,12 @@ class BaseCoordirator: Coordinator {
 
 extension BaseCoordirator {
     
+    //добавляет координатор в дочерние и себя в его родителя
+    func setDependence(withChildCoordinator coordinator: BaseCoordirator) {
+        childCoordinators.append(coordinator)
+        coordinator.parentCoordinator = self
+    }
+    
     //когда закрываеем экран, удаляем координатор из дочерних родителя
     func didFinish(coordinator: Coordinator) {
         if let index = childCoordinators.firstIndex(where: { $0 === coordinator }) {

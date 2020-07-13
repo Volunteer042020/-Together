@@ -27,8 +27,7 @@ final class AppCoordinator: BaseCoordirator {
     
     private func showSignIn() {
         let signInCoordinator = SignInCoordinator(navController: navController)
-        childCoordinators.append(signInCoordinator)
-        signInCoordinator.parentCoordinator = self
+        self.setDependence(withChildCoordinator: signInCoordinator)
         signInCoordinator.start()
     }
     

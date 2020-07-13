@@ -67,10 +67,10 @@ final class MainMapView: UIView {
     private func setupMapView() {
         self.addSubview(mapView)
         
-        mapView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        mapView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor).isActive = true
         mapView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
         mapView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-        mapView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        mapView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
     
     

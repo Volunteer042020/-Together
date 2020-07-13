@@ -26,7 +26,7 @@ final class MainMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let view = mainMapView , let presenter = presenter {
+        if let view = mainMapView, let presenter = presenter {
             view.setPresenter(presenter)
         }
         
@@ -39,9 +39,9 @@ final class MainMapViewController: UIViewController {
     private func setNavigation() {
         navigationController?.navigationBar.isHidden = false
         navigationItem.title = "Главная"
-        navigationItem.hidesBackButton = true
     }
 }
+
 
 extension MainMapViewController: MainMapViewControllerImpl {
     
