@@ -34,11 +34,17 @@ extension UIViewController {
     
     // MARK: - общий alert для отображения информации гостю
     
-    func showBasicAlert(title: String, message: String){
+    func showBasicAlert(_ title: String,_ message: String?,_ url: URL?) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-        alert.addAction(okAction)
+        let settingsAction = UIAlertAction(title: "Настройки", style: .default) { (alert) in
+            if let urls = url {
+                UIApplication.shared.open(urls, options: [:], completionHandler: nil)
+            }
+        }
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+        
+        alert.addAction(settingsAction)
+        alert.addAction(cancelAction)
         self.present(alert, animated: true, completion: nil)
     }
-    
 }
