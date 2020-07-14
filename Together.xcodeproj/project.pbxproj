@@ -45,6 +45,10 @@
 		A981FB2624B7454100A3D205 /* RestorePasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A981FB2524B7454100A3D205 /* RestorePasswordCoordinator.swift */; };
 		A981FB2824B7456700A3D205 /* RestorePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A981FB2724B7456700A3D205 /* RestorePasswordPresenter.swift */; };
 		A981FB2A24B761A700A3D205 /* UIViewController + indicator + basicAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A981FB2924B761A700A3D205 /* UIViewController + indicator + basicAlert.swift */; };
+		A9D6102924BE48B100C1C207 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D6102824BE48B100C1C207 /* ProfileViewController.swift */; };
+		A9D6102B24BE48C400C1C207 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D6102A24BE48C400C1C207 /* ProfileView.swift */; };
+		A9D6102D24BE48DC00C1C207 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D6102C24BE48DC00C1C207 /* ProfileCoordinator.swift */; };
+		A9D6102F24BE48FA00C1C207 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D6102E24BE48FA00C1C207 /* ProfilePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +92,10 @@
 		A981FB2524B7454100A3D205 /* RestorePasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePasswordCoordinator.swift; sourceTree = "<group>"; };
 		A981FB2724B7456700A3D205 /* RestorePasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePasswordPresenter.swift; sourceTree = "<group>"; };
 		A981FB2924B761A700A3D205 /* UIViewController + indicator + basicAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + indicator + basicAlert.swift"; sourceTree = "<group>"; };
+		A9D6102824BE48B100C1C207 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Together/Base/Extentions/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
+		A9D6102A24BE48C400C1C207 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = Together/Base/Extentions/ProfileView.swift; sourceTree = SOURCE_ROOT; };
+		A9D6102C24BE48DC00C1C207 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileCoordinator.swift; path = Together/Base/Extentions/ProfileCoordinator.swift; sourceTree = SOURCE_ROOT; };
+		A9D6102E24BE48FA00C1C207 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfilePresenter.swift; path = Together/Base/Extentions/ProfilePresenter.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +131,10 @@
 		566DB79024BCF4C8007409BE /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				A9D6102824BE48B100C1C207 /* ProfileViewController.swift */,
+				A9D6102A24BE48C400C1C207 /* ProfileView.swift */,
+				A9D6102C24BE48DC00C1C207 /* ProfileCoordinator.swift */,
+				A9D6102E24BE48FA00C1C207 /* ProfilePresenter.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -384,8 +396,11 @@
 				569AF46F24B45E6800D9DC88 /* UIStoryboard+instantiate().swift in Sources */,
 				A981FB2224B7451800A3D205 /* RestorePasswordViewController.swift in Sources */,
 				56D7E45724B3792900933B04 /* AppCoordinator.swift in Sources */,
+				A9D6102B24BE48C400C1C207 /* ProfileView.swift in Sources */,
+				A9D6102924BE48B100C1C207 /* ProfileViewController.swift in Sources */,
 				56D7E43E24B3601800933B04 /* SceneDelegate.swift in Sources */,
 				569AF47F24B498CA00D9DC88 /* GrayLineView.swift in Sources */,
+				A9D6102D24BE48DC00C1C207 /* ProfileCoordinator.swift in Sources */,
 				A981FB2A24B761A700A3D205 /* UIViewController + indicator + basicAlert.swift in Sources */,
 				569AF46824B4503B00D9DC88 /* SignInPresenter.swift in Sources */,
 				A904DCE124B5C66200ACB761 /* RegisterAccountPresenter.swift in Sources */,
@@ -413,6 +428,7 @@
 				A91769E024BAEFED00EEE26A /* MainMapViewController.swift in Sources */,
 				569AF46A24B4542A00D9DC88 /* SignInView.swift in Sources */,
 				56D7E45524B3783E00933B04 /* BaseCoordirator.swift in Sources */,
+				A9D6102F24BE48FA00C1C207 /* ProfilePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
