@@ -9,7 +9,7 @@
 import CoreLocation
 import UIKit
 
-class LocationService: NSObject, CLLocationManagerDelegate {
+final class LocationService: NSObject, CLLocationManagerDelegate {
     
     private var mapView: MainMapViewImpl?
     private var mapViewController: MainMapViewController?
