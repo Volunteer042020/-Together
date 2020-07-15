@@ -14,14 +14,19 @@ protocol MainMapViewImpl {
     func setPresenter(_ presenter: MainMapViewAction)
     func presentLocationUser(_ location: CLLocation)
     func showUserLocation(_ value: Bool)
+    func getArtWork()
 }
 
 final class MainMapView: UIView {
     
     lazy var mapView: MKMapView = {
         let mapView = MKMapView()
+        let zoomRage = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 20000)
+        mapView.setCameraZoomRange(zoomRage, animated: true)
+        mapView.userLocation.title = "Вы здесь"
+        
         mapView.translatesAutoresizingMaskIntoConstraints = false
-        mapView.delegate = self        
+        mapView.delegate = self
         return mapView
     }()
     
@@ -68,9 +73,43 @@ extension MainMapView: MainMapViewImpl {
     func showUserLocation(_ value: Bool) {
         mapView.showsUserLocation = value
     }
-    
+  
+    // проверка для построения точек на карте, здесь координаты из омска, в другом городе не увидеть, но работает))
+    func getArtWork() {
+        let artWork = Artwork(title: "Скульптура Любочка",
+                              locationName: "Карла Либкнехта, 8А, Омск, Омская обл., 644099",
+                              discipline: "Скульптура",
+                              coordinate: CLLocationCoordinate2D(latitude: 54.9856985, longitude: 73.3747697))
+        mapView.addAnnotation(artWork)
+    }
 }
 
+// для изменения вида отображение обьектов на карте, с более подробной информации
+
 extension MainMapView: MKMapViewDelegate {
-    
+    // 1 вызывается для каждой аннотации, которую я буду добавлять на карту
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        // 2 проверка аннотация являеться ли она исскуством, а не пользователем
+        guard let annotation = annotation as? Artwork else {
+            return nil
+        }
+        // 3 создаем обьект MKMarkerAnnotationView для отображения изображения вместе маркеров
+        let identifier = "artwork"
+        var view: MKMarkerAnnotationView
+        // 4  используются виды аннотаций, которые больше не видны.
+        if let dequeuedView = mapView.dequeueReusableAnnotationView(
+            withIdentifier: identifier) as? MKMarkerAnnotationView {
+            dequeuedView.annotation = annotation
+            view = dequeuedView
+        } else {
+            // 5 Здесь я создаю новый MKMarkerAnnotationView объект, если представление аннотации не может быть удалено из очереди
+            view = MKMarkerAnnotationView(
+                annotation: annotation,
+                reuseIdentifier: identifier)
+            view.canShowCallout = true
+            view.calloutOffset = CGPoint(x: -5, y: 5)
+            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        }
+        return view
+    }
 }

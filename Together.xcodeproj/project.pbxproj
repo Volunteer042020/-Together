@@ -33,6 +33,7 @@
 		A904DCDD24B5C59000ACB761 /* RegisterAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A904DCDC24B5C59000ACB761 /* RegisterAccountView.swift */; };
 		A904DCDF24B5C63700ACB761 /* RegisterAccountCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A904DCDE24B5C63700ACB761 /* RegisterAccountCoordinator.swift */; };
 		A904DCE124B5C66200ACB761 /* RegisterAccountPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A904DCE024B5C66200ACB761 /* RegisterAccountPresenter.swift */; };
+		A90B8F2D24BF061F003BE9EF /* example.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90B8F2C24BF061F003BE9EF /* example.swift */; };
 		A91769E024BAEFED00EEE26A /* MainMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91769DF24BAEFED00EEE26A /* MainMapViewController.swift */; };
 		A91769E224BAF01100EEE26A /* MainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91769E124BAF01100EEE26A /* MainMapView.swift */; };
 		A91769E424BAF02400EEE26A /* MainMapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91769E324BAF02400EEE26A /* MainMapCoordinator.swift */; };
@@ -80,6 +81,7 @@
 		A904DCDC24B5C59000ACB761 /* RegisterAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAccountView.swift; sourceTree = "<group>"; };
 		A904DCDE24B5C63700ACB761 /* RegisterAccountCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAccountCoordinator.swift; sourceTree = "<group>"; };
 		A904DCE024B5C66200ACB761 /* RegisterAccountPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAccountPresenter.swift; sourceTree = "<group>"; };
+		A90B8F2C24BF061F003BE9EF /* example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = example.swift; sourceTree = "<group>"; };
 		A91769DF24BAEFED00EEE26A /* MainMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapViewController.swift; sourceTree = "<group>"; };
 		A91769E124BAF01100EEE26A /* MainMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapView.swift; sourceTree = "<group>"; };
 		A91769E324BAF02400EEE26A /* MainMapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapCoordinator.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		56D7E43A24B3601800933B04 /* Together */ = {
 			isa = PBXGroup;
 			children = (
+				A90B8F2B24BF0608003BE9EF /* Model */,
 				56D7E44F24B3776500933B04 /* Application */,
 				56D7E45324B377E400933B04 /* Repo */,
 				56D7E45224B377CC00933B04 /* Base */,
@@ -286,6 +289,14 @@
 				A904DCE024B5C66200ACB761 /* RegisterAccountPresenter.swift */,
 			);
 			path = RegisterAccount;
+			sourceTree = "<group>";
+		};
+		A90B8F2B24BF0608003BE9EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A90B8F2C24BF061F003BE9EF /* example.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		A91769DE24BAEF8D00EEE26A /* Main */ = {
@@ -410,6 +421,7 @@
 				A91769E624BAF03400EEE26A /* MainMapPresenter.swift in Sources */,
 				A904DCDF24B5C63700ACB761 /* RegisterAccountCoordinator.swift in Sources */,
 				566DB78F24BCEB5C007409BE /* UINavigationController+setTabBarTitleAndImage.swift in Sources */,
+				A90B8F2D24BF061F003BE9EF /* example.swift in Sources */,
 				A904DCDD24B5C59000ACB761 /* RegisterAccountView.swift in Sources */,
 				A946126F24BD795A00FD57CB /* LocationService.swift in Sources */,
 				A904DCD824B5B67F00ACB761 /* UIColor + customColor.swift in Sources */,
