@@ -37,7 +37,7 @@
 		A91769E224BAF01100EEE26A /* MainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91769E124BAF01100EEE26A /* MainMapView.swift */; };
 		A91769E424BAF02400EEE26A /* MainMapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91769E324BAF02400EEE26A /* MainMapCoordinator.swift */; };
 		A91769E624BAF03400EEE26A /* MainMapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91769E524BAF03400EEE26A /* MainMapPresenter.swift */; };
-		A946126F24BD795A00FD57CB /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A946126E24BD795A00FD57CB /* LocationManager.swift */; };
+		A946126F24BD795A00FD57CB /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A946126E24BD795A00FD57CB /* LocationService.swift */; };
 		A946127124BD7AF900FD57CB /* UIMapView + centerLocation().swift in Sources */ = {isa = PBXBuildFile; fileRef = A946127024BD7AF900FD57CB /* UIMapView + centerLocation().swift */; };
 		A981FB1F24B73E8300A3D205 /* UIView + getToolBar().swift in Sources */ = {isa = PBXBuildFile; fileRef = A981FB1E24B73E8300A3D205 /* UIView + getToolBar().swift */; };
 		A981FB2224B7451800A3D205 /* RestorePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A981FB2124B7451800A3D205 /* RestorePasswordViewController.swift */; };
@@ -84,7 +84,7 @@
 		A91769E124BAF01100EEE26A /* MainMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapView.swift; sourceTree = "<group>"; };
 		A91769E324BAF02400EEE26A /* MainMapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapCoordinator.swift; sourceTree = "<group>"; };
 		A91769E524BAF03400EEE26A /* MainMapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapPresenter.swift; sourceTree = "<group>"; };
-		A946126E24BD795A00FD57CB /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		A946126E24BD795A00FD57CB /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		A946127024BD7AF900FD57CB /* UIMapView + centerLocation().swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIMapView + centerLocation().swift"; sourceTree = "<group>"; };
 		A981FB1E24B73E8300A3D205 /* UIView + getToolBar().swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + getToolBar().swift"; sourceTree = "<group>"; };
 		A981FB2124B7451800A3D205 /* RestorePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePasswordViewController.swift; sourceTree = "<group>"; };
@@ -248,7 +248,7 @@
 		56D7E45224B377CC00933B04 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				A946126D24BD793800FD57CB /* Location manager */,
+				A946126D24BD793800FD57CB /* Location service */,
 				56D7E45424B3783E00933B04 /* BaseCoordirator.swift */,
 				566DB78624B4F698007409BE /* StackViews */,
 				569AF48724B4AB6000D9DC88 /* Buttons */,
@@ -300,12 +300,12 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		A946126D24BD793800FD57CB /* Location manager */ = {
+		A946126D24BD793800FD57CB /* Location service */ = {
 			isa = PBXGroup;
 			children = (
-				A946126E24BD795A00FD57CB /* LocationManager.swift */,
+				A946126E24BD795A00FD57CB /* LocationService.swift */,
 			);
-			path = "Location manager";
+			path = "Location service";
 			sourceTree = "<group>";
 		};
 		A981FB2024B744EA00A3D205 /* RestorePassword */ = {
@@ -411,7 +411,7 @@
 				A904DCDF24B5C63700ACB761 /* RegisterAccountCoordinator.swift in Sources */,
 				566DB78F24BCEB5C007409BE /* UINavigationController+setTabBarTitleAndImage.swift in Sources */,
 				A904DCDD24B5C59000ACB761 /* RegisterAccountView.swift in Sources */,
-				A946126F24BD795A00FD57CB /* LocationManager.swift in Sources */,
+				A946126F24BD795A00FD57CB /* LocationService.swift in Sources */,
 				A904DCD824B5B67F00ACB761 /* UIColor + customColor.swift in Sources */,
 				569AF46C24B45B8D00D9DC88 /* IdHaving+id.swift in Sources */,
 				56D7E45A24B37C2100933B04 /* SignInCoordinator.swift in Sources */,

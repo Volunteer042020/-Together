@@ -15,7 +15,7 @@ final class MainMapViewController: UIViewController {
     
     // презентору сообщаем обо всех действиях и передаем данные, например: презентер, была нажата кнопка войти,
     var presenter: MainMapViewAction?
-    var locationService = LocationManager()
+    var locationService: LocationService?
     
 //    var locationManager: CLLocationManager = {
 //        let locationManager = CLLocationManager()
@@ -45,9 +45,8 @@ final class MainMapViewController: UIViewController {
         
         if let view = mainMapView, let presenter = presenter {
             view.setPresenter(presenter)
-            locationService.mainMapView = view
-            locationService.mainMapViewController = self
-            locationService.checkLocationEnabled()
+            locationService = LocationService(view: view, viewController: self)
+
         }
         setNavigation()
     }
