@@ -36,6 +36,7 @@ final class SignInCoordinator: BaseCoordirator {
         
         navController.pushViewController(vc, animated: true)
     }
+    
     //MARK: - Private metods
     
 }

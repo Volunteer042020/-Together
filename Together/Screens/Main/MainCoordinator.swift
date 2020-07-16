@@ -45,12 +45,11 @@ final class MainCoordinator: BaseCoordirator {
         showChat()
     }
     
-    
     //MARK: - Private metods
     private func showProfile() {
-        //        let coordinator = ProfileCoordinator()
-        //        setDependence(withChildCoordinator: coordinator)
-        //        coordinator.start()
+        let coordinator = ProfileCoordinator(navController: profileNavController)
+        self.setDependence(withChildCoordinator: coordinator)
+        coordinator.start()
     }
     
     private func showMap() {

@@ -37,6 +37,21 @@
             </objects>
             <point key="canvasLocation" x="597" y="40"/>
         </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="Qaw-U2-lxe">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" id="2Uh-m0-Vt8" customClass="ProfileViewController" customModule="Together" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="v9m-hh-X9U" customClass="ProfileView" customModule="Together" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="eWE-2T-2HY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uEO-UT-ff7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1158" y="748"/>
+        </scene>
         <!--Main View Controller-->
         <scene sceneID="JiO-3W-vYc">
             <objects>
@@ -49,7 +64,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pzo-Td-EV0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-300" y="806"/>
+            <point key="canvasLocation" x="-278" y="748"/>
         </scene>
         <!--Main Map View Controller-->
         <scene sceneID="K19-Qv-qBd">

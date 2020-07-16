@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ProfileCoordination {
-    
+    func showSignIn()
 }
 
 final class ProfileCoordinator: BaseCoordirator {
@@ -32,14 +32,18 @@ final class ProfileCoordinator: BaseCoordirator {
         let presenter = ProfilePresenter(view: vc, coordinator: self)
         vc.presenter = presenter
         
-        navController.pushViewController(vc, animated: true)
+        navController.pushViewController(vc, animated: false)
     }
-    
     //MARK: - Private metods
-    
 }
 
 extension ProfileCoordinator: ProfileCoordination {
     
+    func showSignIn() {
+        let signCoordinator = SignInCoordinator(navController: navController)
+        self.setDependence(withChildCoordinator: signCoordinator)
+        signCoordinator.start()
+        self.didFinish(coordinator: self)
+    }
 }
 

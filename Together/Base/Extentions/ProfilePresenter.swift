@@ -6,12 +6,17 @@
 //  Copyright © 2020 GermanyHome. All rights reserved.
 //
 
+import UIKit
+
 protocol ProfileViewAction: class {
     //фунции типа кнопка войти, забыли пароль, и тп. была нажата
+    func quitProfileAndShowSignIn()
+    func showAlert()
 }
 
 protocol ProfileViewControllerImpl: class {
     //функции типа показать загрузку, установить делегатов
+    func showAlertUserQuit()
 }
 
 
@@ -31,5 +36,14 @@ final class ProfilePresenter {
 
 
 extension ProfilePresenter: ProfileViewAction {
+    
+    func showAlert() {
+        view?.showAlertUserQuit()
+    }
+    
+    func quitProfileAndShowSignIn() {
+        coordinator.showSignIn()
+        print("Начинаю осуществлять переход на другой экран")
+    }
     
 }
