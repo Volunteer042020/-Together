@@ -37,11 +37,36 @@ final class ProfileViewController: UIViewController {
     
     //Устанавливаем навигацию, заголовок навигейшен контроллера, кнопки на навиг контроллере
     private func setNavigation() {
-        self.navigationController?.navigationItem.title = "Восстановления пароля"
+        navigationController?.navigationBar.isHidden = false
+        navigationItem.title = "Профиль"
+        
+        let settingButton = UIBarButtonItem(image: UIImage(systemName: "square.and.pencil"), style: .plain, target: self, action: #selector(settingButtonAction))
+        settingButton.tintColor = .customGray
+        navigationItem.rightBarButtonItem = settingButton
     }
+    
 }
 
 
 extension ProfileViewController: ProfileViewControllerImpl {
     
+    func showAlertUserQuit() {
+        let alert = UIAlertController(title: "Подтвердите выход", message: "Вы действительно хотите выйти?", preferredStyle: .alert)
+        let settingsAction = UIAlertAction(title: "Да", style: .default) { (alert) in
+            self.presenter?.quitProfileAndShowSignIn()
+            print("пользователь потвердил и я вытаюсю перейти на другой экран")
+        }
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel) { (alert) in
+            self.dismiss(animated: false, completion: nil)
+            print("сообственно отклонил продолжаю работу в этом профиле")
+        }
+        
+        alert.addAction(settingsAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    @objc func settingButtonAction(_ sender: UIButton) {
+        print("Перехожу на редактирования пользователя!!!")
+    }
 }

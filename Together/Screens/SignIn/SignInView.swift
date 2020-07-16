@@ -76,6 +76,7 @@ final class SignInView: UIView {
         button.titleLabel?.font = UIFont(name: "", size: 20)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .blueButton
+        
         button.addTarget(self, action: #selector(logInAction), for: .touchUpInside)
         return button
     }()
@@ -114,6 +115,7 @@ final class SignInView: UIView {
         button.setTitle("ЗАРЕГИСТРИРОВАТЬСЯ", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont(name: "", size: 20)
+        
         button.addTarget(self, action: #selector(registerAction), for: .touchUpInside)
         return button
     }()
