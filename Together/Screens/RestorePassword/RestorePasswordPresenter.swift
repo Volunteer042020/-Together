@@ -8,10 +8,12 @@
 
 protocol RestorePasswordViewAction: class {
     //фунции типа кнопка войти, забыли пароль, и тп. была нажата
+    func showAlert()
 }
 
 protocol RestorePasswordViewControllerImpl: class {
     //функции типа показать загрузку, установить делегатов
+    func restorePasswordUsers()
 }
 
 
@@ -31,5 +33,10 @@ final class RestorePasswordPresenter {
 
 
 extension RestorePasswordPresenter: RestorePasswordViewAction {
+    
+    func showAlert() {
+        view?.restorePasswordUsers()
+    }
+    
     
 }

@@ -39,12 +39,13 @@ final class RestorePasswordViewController: UIViewController {
     //Устанавливаем навигацию, заголовок навигейшен контроллера, кнопки на навиг контроллере
     private func setNavigation() {
         self.navigationController?.navigationItem.title = "Восстановления пароля"
-        // обратно вернуть слайд эффект для возвращение на предыдущий экран
-        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
 }
 
 
 extension RestorePasswordViewController: RestorePasswordViewControllerImpl {
     
+    func restorePasswordUsers() {
+        showBasicAlertCheck("Подвердите сброс пароля.", "Вы действительно хотите сбросить свой пароль от учетной записи? Если вы подтверждаете сброс, то изменения нельзя вернуть.")
+    }
 }

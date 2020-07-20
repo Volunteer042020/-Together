@@ -96,5 +96,20 @@
             </objects>
             <point key="canvasLocation" x="1446" y="40"/>
         </scene>
+        <!--Profile Setting View Controller-->
+        <scene sceneID="mpI-KI-x7T">
+            <objects>
+                <viewController storyboardIdentifier="ProfileSettingViewController" id="yeu-ns-WWq" customClass="ProfileSettingViewController" customModule="Together" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JxT-eC-pa8" customClass="ProfileSettingView" customModule="Together" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="4lD-ws-9FD"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FSP-3W-vYb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2052" y="748"/>
+        </scene>
     </scenes>
 </document>

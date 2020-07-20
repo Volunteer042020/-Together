@@ -103,7 +103,7 @@ extension RestorePasswordView: RestorePasswordViewImpl {
     }
     
     @objc func restorePasswordAction(_ sender: UIButton) {
-        print("Пароль удачно восстановлен")
+        self.presenter?.showAlert()
     }
     
 }

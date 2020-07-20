@@ -27,8 +27,8 @@ final class SignInViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-         // убераем слайд эффект
-        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        // убераем кнопку назад после перехода
+        navigationItem.hidesBackButton = true
     }
     
     //MARK: - Private metods

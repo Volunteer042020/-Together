@@ -12,6 +12,8 @@ protocol ProfileViewAction: class {
     //фунции типа кнопка войти, забыли пароль, и тп. была нажата
     func quitProfileAndShowSignIn()
     func showAlert()
+    // потом исправим, когда появиться база данных
+    func getProfileSettingView()
 }
 
 protocol ProfileViewControllerImpl: class {
@@ -36,6 +38,10 @@ final class ProfilePresenter {
 
 
 extension ProfilePresenter: ProfileViewAction {
+    
+    func getProfileSettingView() {
+        coordinator.showProfileSetting()
+    }
     
     func showAlert() {
         view?.showAlertUserQuit()

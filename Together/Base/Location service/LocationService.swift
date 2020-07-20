@@ -44,7 +44,7 @@ final class LocationService: NSObject, CLLocationManagerDelegate {
     
     private func checkLocationEnabled(_ view: MainMapViewImpl,_ viewController: MainMapViewController) {
         if !CLLocationManager.locationServicesEnabled() {
-            viewController.showBasicAlert("У вас выключена служба локации.", "Хотите включить?", URL(string: "App-Prefs:root=LOCATION-SERVICES"))
+            viewController.showBasicAlertMap("У вас выключена служба локации.", "Хотите включить?", URL(string: "App-Prefs:root=LOCATION-SERVICES"))
         }
     }
     
@@ -57,7 +57,7 @@ final class LocationService: NSObject, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
         //Если она ограничена или запрещена, то уведомим об отключении
         case .denied, .restricted:
-            viewController.showBasicAlert("Вы запретили использования вашего местоположения.", "Хотите это изменить?", URL(string: UIApplication.openSettingsURLString))
+            viewController.showBasicAlertMap("Вы запретили использования вашего местоположения.", "Хотите это изменить?", URL(string: UIApplication.openSettingsURLString))
         //Если авторизация базовая, то попросим предоставить полную
         case .authorizedWhenInUse:
             locationManager.requestAlwaysAuthorization()

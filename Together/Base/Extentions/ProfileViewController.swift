@@ -44,7 +44,6 @@ final class ProfileViewController: UIViewController {
         settingButton.tintColor = .customGray
         navigationItem.rightBarButtonItem = settingButton
     }
-    
 }
 
 
@@ -59,10 +58,10 @@ extension ProfileViewController: ProfileViewControllerImpl {
             UserDefaults.standard.set(false, forKey: "UID")
             // убераем таб бар
             self.tabBarController?.tabBar.isHidden = true
-            print("пользователь потвердил и я вытаюсю перейти на другой экран")
+            print("пользователь потвердил и я выполняю переход на другой экран")
         }
         let cancelAction = UIAlertAction(title: "Отмена", style: .cancel) { (alert) in
-            self.dismiss(animated: false, completion: nil)
+            self.dismiss(animated: true, completion: nil)
             print("сообственно отклонил продолжаю работу в этом профиле")
         }
         
@@ -72,6 +71,6 @@ extension ProfileViewController: ProfileViewControllerImpl {
     }
     
     @objc func settingButtonAction(_ sender: UIButton) {
-        print("Перехожу на редактирования пользователя!!!")
+        self.presenter?.getProfileSettingView()
     }
 }
