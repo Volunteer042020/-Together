@@ -40,6 +40,9 @@ final class MainCoordinator: BaseCoordirator {
         navController.setViewControllers([mainVC], animated: false)
         mainVC.viewControllers = [profileNavController, mapNavController, chatNavController]
         
+        // отображать первую карту при входе в приложение
+        mainVC.selectedViewController = mainVC.viewControllers![1]
+        
         showProfile()
         showMap()
         showChat()
