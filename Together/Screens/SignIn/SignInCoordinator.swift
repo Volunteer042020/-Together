@@ -34,7 +34,7 @@ final class SignInCoordinator: BaseCoordirator {
         let presenter = SignInPresenter(view: vc, coordinator: self)
         vc.presenter = presenter
         
-        navController.pushViewController(vc, animated: true)
+        navController.pushViewController(vc, animated: false)
     }
     
     //MARK: - Private metods

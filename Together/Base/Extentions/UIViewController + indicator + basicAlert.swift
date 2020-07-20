@@ -34,7 +34,7 @@ extension UIViewController {
     
     // MARK: - общий alert для отображения информации гостю
     
-    func showBasicAlert(_ title: String,_ message: String?,_ url: URL?) {
+    func showBasicAlertMap(_ title: String,_ message: String?,_ url: URL?) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let settingsAction = UIAlertAction(title: "Настройки", style: .default) { (alert) in
             if let urls = url {
@@ -46,5 +46,21 @@ extension UIViewController {
         alert.addAction(settingsAction)
         alert.addAction(cancelAction)
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func showBasicAlertCheck(_ title: String,_ message: String?) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let settingsAction = UIAlertAction(title: "Да", style: .default) { (alert) in
+            self.navigationController?.popViewController(animated: false)
+            print("Настройки успешно изменены!")
+        }
+        let cancelAction = UIAlertAction(title: "Нет", style: .cancel) { (alert) in
+            self.dismiss(animated: false, completion: nil)
+            print("Я передумал, если решусь потом обновлю")
+        }
+        
+        alert.addAction(settingsAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
     }
 }

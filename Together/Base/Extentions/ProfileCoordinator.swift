@@ -10,6 +10,7 @@ import UIKit
 
 protocol ProfileCoordination {
     func showSignIn()
+    func showProfileSetting()
 }
 
 final class ProfileCoordinator: BaseCoordirator {
@@ -33,18 +34,28 @@ final class ProfileCoordinator: BaseCoordirator {
         let presenter = ProfilePresenter(view: vc, coordinator: self)
         vc.presenter = presenter
         
-        navController.pushViewController(vc, animated: false)
+        navController.pushViewController(vc, animated: true)
     }
     //MARK: - Private metods
 }
 
 extension ProfileCoordinator: ProfileCoordination {
     
+    func showProfileSetting() {
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+        backButton.tintColor = UIColor.customGray
+        navController.navigationBar.topItem?.backBarButtonItem = backButton
+        
+        let profileSettingCoordinator = ProfileSettingCoordinator(navController: navController)
+        self.setDependence(withChildCoordinator: profileSettingCoordinator)
+        profileSettingCoordinator.start()
+        self.didFinish(coordinator: self)
+    }
+    
     func showSignIn() {
-        navController.navigationItem.hidesBackButton = false
         let signCoordinator = SignInCoordinator(navController: navController)
         self.setDependence(withChildCoordinator: signCoordinator)
-        navController.interactivePopGestureRecognizer?.isEnabled = false
         signCoordinator.start()
         self.didFinish(coordinator: self)
         let mainView = MainCoordinator(navController: navController)

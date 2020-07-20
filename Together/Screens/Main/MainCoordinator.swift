@@ -42,6 +42,7 @@ final class MainCoordinator: BaseCoordirator {
         
         // отображать первую карту при входе в приложение
         mainVC.selectedViewController = mainVC.viewControllers![1]
+        mainVC.tabBar.tintColor = UIColor.customGray
         
         showProfile()
         showMap()
