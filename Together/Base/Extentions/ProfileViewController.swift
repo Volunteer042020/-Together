@@ -53,7 +53,12 @@ extension ProfileViewController: ProfileViewControllerImpl {
     func showAlertUserQuit() {
         let alert = UIAlertController(title: "Подтвердите выход", message: "Вы действительно хотите выйти?", preferredStyle: .alert)
         let settingsAction = UIAlertAction(title: "Да", style: .default) { (alert) in
+            // вызываем фукнцию перехода
             self.presenter?.quitProfileAndShowSignIn()
+            // завершаем сессию пользователя
+            UserDefaults.standard.set(false, forKey: "UID")
+            // убераем таб бар
+            self.tabBarController?.tabBar.isHidden = true
             print("пользователь потвердил и я вытаюсю перейти на другой экран")
         }
         let cancelAction = UIAlertAction(title: "Отмена", style: .cancel) { (alert) in

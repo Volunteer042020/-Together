@@ -39,6 +39,8 @@ final class RestorePasswordViewController: UIViewController {
     //Устанавливаем навигацию, заголовок навигейшен контроллера, кнопки на навиг контроллере
     private func setNavigation() {
         self.navigationController?.navigationItem.title = "Восстановления пароля"
+        // обратно вернуть слайд эффект для возвращение на предыдущий экран
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
 }
 

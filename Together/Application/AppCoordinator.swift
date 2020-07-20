@@ -1,5 +1,6 @@
 
 import UIKit
+import CoreData
 
 
 final class AppCoordinator: BaseCoordirator {
@@ -21,8 +22,13 @@ final class AppCoordinator: BaseCoordirator {
         window.rootViewController = navController
         window.makeKeyAndVisible()
         parentCoordinator = nil
-        //TODO:  -------------------------------- проверка наличия в юзер дефолтс значения по ключу isSignIn, показываем экран входа или главный
-        showSignIn()
+        
+        if UserDefaults.standard.bool(forKey: "UID") == false {
+            //TODO:  -------------------------------- проверка наличия в юзер дефолтс значения по ключу isSignIn, показываем экран входа или главный
+            showSignIn()
+        } else {
+            showMain()
+        }
     }
     
     private func showSignIn() {
@@ -32,7 +38,10 @@ final class AppCoordinator: BaseCoordirator {
     }
     
     private func showMain() {
-        
+        let mainInCoordinator = MainCoordinator(navController: navController)
+        navController.navigationBar.isHidden = true
+        self.setDependence(withChildCoordinator: mainInCoordinator)
+        mainInCoordinator.start()
     }
     
 }

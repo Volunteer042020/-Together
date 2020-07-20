@@ -14,6 +14,7 @@ protocol ProfileCoordination {
 
 final class ProfileCoordinator: BaseCoordirator {
     
+    
     //MARK: - Private properties
     private let navController: UINavigationController
     
@@ -40,10 +41,14 @@ final class ProfileCoordinator: BaseCoordirator {
 extension ProfileCoordinator: ProfileCoordination {
     
     func showSignIn() {
+        navController.navigationItem.hidesBackButton = false
         let signCoordinator = SignInCoordinator(navController: navController)
         self.setDependence(withChildCoordinator: signCoordinator)
+        navController.interactivePopGestureRecognizer?.isEnabled = false
         signCoordinator.start()
         self.didFinish(coordinator: self)
+        let mainView = MainCoordinator(navController: navController)
+        mainView.didFinish(coordinator: mainView)
     }
 }
 

@@ -45,6 +45,7 @@ final class SignInCoordinator: BaseCoordirator {
 extension SignInCoordinator: SignInCoordination {
     
     func showMain() {
+        UserDefaults.standard.set(true, forKey: "UID")
         let mainCoordinator = MainCoordinator(navController: navController)
         self.setDependence(withChildCoordinator: mainCoordinator)
         mainCoordinator.start()

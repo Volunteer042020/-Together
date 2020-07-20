@@ -25,6 +25,12 @@ final class SignInViewController: UIViewController {
         setNavigation()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+         // убераем слайд эффект
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+    }
+    
     //MARK: - Private metods
     
     //Устанавливаем навигацию, заголовок навигейшен контроллера, кнопки на навиг контроллере
