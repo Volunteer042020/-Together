@@ -92,6 +92,7 @@ final class ProfileView: UIView {
         let label = UILabel()
         label.text = "Не указано"
         label.textColor = .lightGray
+        label.numberOfLines = 0
         return label
     }()
     
@@ -101,15 +102,19 @@ final class ProfileView: UIView {
         button.titleLabel?.font = UIFont(name: "", size: 20)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .marineButton
+        
+        button.addTarget(self, action: #selector(actionEventPresent), for: .touchUpInside)
         return button
     }()
     
     lazy var myEventButton: UIButton = {
         let button = RoundedButtonWithShadow(type: .system)
-        button.setTitle("МОИ МЕРОПРИЯТИЯ", for: .normal)
+        button.setTitle("ВЫПОЛНЕННЫЕ МЕРОПРИЯТИЯ", for: .normal)
         button.titleLabel?.font = UIFont(name: "", size: 20)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .marineButton
+        
+        button.addTarget(self, action: #selector(completionEventPresent), for: .touchUpInside)
         return button
     }()
     
@@ -210,6 +215,16 @@ extension ProfileView: ProfileViewImpl {
     
     func setPresenter(_ presenter: ProfileViewAction) {
         self.presenter = presenter
+    }
+    
+    @objc func actionEventPresent(_ sender: UIButton) {
+        self.presenter?.showActionEvent()
+        print("Показываю мероприятия на которые пользователь подписался")
+    }
+    
+    @objc func completionEventPresent(_ sender: UIButton) {
+        self.presenter?.showCompletionEvent()
+        print("Показываю выполненые мероприятия данного пользователя")
     }
     
     @objc func quitProfileAction(_ sender: UIButton) {

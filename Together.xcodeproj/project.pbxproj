@@ -46,6 +46,19 @@
 		A981FB2624B7454100A3D205 /* RestorePasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A981FB2524B7454100A3D205 /* RestorePasswordCoordinator.swift */; };
 		A981FB2824B7456700A3D205 /* RestorePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A981FB2724B7456700A3D205 /* RestorePasswordPresenter.swift */; };
 		A981FB2A24B761A700A3D205 /* UIViewController + indicator + basicAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A981FB2924B761A700A3D205 /* UIViewController + indicator + basicAlert.swift */; };
+		A995BE4824C6C57400B2E63A /* CompletionEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A995BE4724C6C57400B2E63A /* CompletionEventViewController.swift */; };
+		A995BE4A24C6C58900B2E63A /* CompletionEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A995BE4924C6C58900B2E63A /* CompletionEventView.swift */; };
+		A995BE4C24C6C5A000B2E63A /* CompletionEventCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A995BE4B24C6C5A000B2E63A /* CompletionEventCoordinator.swift */; };
+		A995BE4E24C6C5B900B2E63A /* CompletionEventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A995BE4D24C6C5B900B2E63A /* CompletionEventPresenter.swift */; };
+		A995BE5024C6C5CA00B2E63A /* ActionEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A995BE4F24C6C5CA00B2E63A /* ActionEventViewController.swift */; };
+		A995BE5224C6C5DB00B2E63A /* ActionEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A995BE5124C6C5DB00B2E63A /* ActionEventView.swift */; };
+		A995BE5424C6C5F300B2E63A /* ActionEventCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A995BE5324C6C5F300B2E63A /* ActionEventCoordinator.swift */; };
+		A995BE5624C6C61800B2E63A /* ActionEventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A995BE5524C6C61800B2E63A /* ActionEventPresenter.swift */; };
+		A995BE5824C6C98000B2E63A /* CompletionEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A995BE5724C6C98000B2E63A /* CompletionEventCell.swift */; };
+		A995BE5B24C6CAE500B2E63A /* CompletionEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A995BE5A24C6CAE500B2E63A /* CompletionEventCell.xib */; };
+		A995BE5D24C6E37B00B2E63A /* exampleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A995BE5C24C6E37B00B2E63A /* exampleEvent.swift */; };
+		A995BE6024C6EA2F00B2E63A /* ActionEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A995BE5F24C6EA2F00B2E63A /* ActionEventCell.swift */; };
+		A995BE6224C6EA4000B2E63A /* ActionEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A995BE6124C6EA4000B2E63A /* ActionEventCell.xib */; };
 		A9C2FC4C24C5886100756DE6 /* ProfileSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2FC4B24C5886100756DE6 /* ProfileSettingViewController.swift */; };
 		A9C2FC4E24C5887000756DE6 /* ProfileSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2FC4D24C5887000756DE6 /* ProfileSettingView.swift */; };
 		A9C2FC5024C5888700756DE6 /* ProfileSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2FC4F24C5888700756DE6 /* ProfileSettingCoordinator.swift */; };
@@ -98,6 +111,19 @@
 		A981FB2524B7454100A3D205 /* RestorePasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePasswordCoordinator.swift; sourceTree = "<group>"; };
 		A981FB2724B7456700A3D205 /* RestorePasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePasswordPresenter.swift; sourceTree = "<group>"; };
 		A981FB2924B761A700A3D205 /* UIViewController + indicator + basicAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + indicator + basicAlert.swift"; sourceTree = "<group>"; };
+		A995BE4724C6C57400B2E63A /* CompletionEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionEventViewController.swift; sourceTree = "<group>"; };
+		A995BE4924C6C58900B2E63A /* CompletionEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionEventView.swift; sourceTree = "<group>"; };
+		A995BE4B24C6C5A000B2E63A /* CompletionEventCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionEventCoordinator.swift; sourceTree = "<group>"; };
+		A995BE4D24C6C5B900B2E63A /* CompletionEventPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionEventPresenter.swift; sourceTree = "<group>"; };
+		A995BE4F24C6C5CA00B2E63A /* ActionEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionEventViewController.swift; sourceTree = "<group>"; };
+		A995BE5124C6C5DB00B2E63A /* ActionEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionEventView.swift; sourceTree = "<group>"; };
+		A995BE5324C6C5F300B2E63A /* ActionEventCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionEventCoordinator.swift; sourceTree = "<group>"; };
+		A995BE5524C6C61800B2E63A /* ActionEventPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionEventPresenter.swift; sourceTree = "<group>"; };
+		A995BE5724C6C98000B2E63A /* CompletionEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionEventCell.swift; sourceTree = "<group>"; };
+		A995BE5A24C6CAE500B2E63A /* CompletionEventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompletionEventCell.xib; sourceTree = "<group>"; };
+		A995BE5C24C6E37B00B2E63A /* exampleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = exampleEvent.swift; sourceTree = "<group>"; };
+		A995BE5F24C6EA2F00B2E63A /* ActionEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionEventCell.swift; sourceTree = "<group>"; };
+		A995BE6124C6EA4000B2E63A /* ActionEventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionEventCell.xib; sourceTree = "<group>"; };
 		A9C2FC4B24C5886100756DE6 /* ProfileSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewController.swift; sourceTree = "<group>"; };
 		A9C2FC4D24C5887000756DE6 /* ProfileSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingView.swift; sourceTree = "<group>"; };
 		A9C2FC4F24C5888700756DE6 /* ProfileSettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingCoordinator.swift; sourceTree = "<group>"; };
@@ -141,6 +167,8 @@
 		566DB79024BCF4C8007409BE /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				A995BE4624C6C3D600B2E63A /* Completion Event */,
+				A995BE4524C6C3D100B2E63A /* Action Event */,
 				A9C2FC4A24C5864C00756DE6 /* Profile Setting */,
 				A9D6102824BE48B100C1C207 /* ProfileViewController.swift */,
 				A9D6102A24BE48C400C1C207 /* ProfileView.swift */,
@@ -304,6 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				A90B8F2C24BF061F003BE9EF /* example.swift */,
+				A995BE5C24C6E37B00B2E63A /* exampleEvent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -337,6 +366,48 @@
 				A981FB2724B7456700A3D205 /* RestorePasswordPresenter.swift */,
 			);
 			path = RestorePassword;
+			sourceTree = "<group>";
+		};
+		A995BE4524C6C3D100B2E63A /* Action Event */ = {
+			isa = PBXGroup;
+			children = (
+				A995BE5E24C6EA1100B2E63A /* Action Event Cell */,
+				A995BE4F24C6C5CA00B2E63A /* ActionEventViewController.swift */,
+				A995BE5124C6C5DB00B2E63A /* ActionEventView.swift */,
+				A995BE5324C6C5F300B2E63A /* ActionEventCoordinator.swift */,
+				A995BE5524C6C61800B2E63A /* ActionEventPresenter.swift */,
+			);
+			path = "Action Event";
+			sourceTree = "<group>";
+		};
+		A995BE4624C6C3D600B2E63A /* Completion Event */ = {
+			isa = PBXGroup;
+			children = (
+				A995BE5924C6CACC00B2E63A /* Completion Event Cell */,
+				A995BE4724C6C57400B2E63A /* CompletionEventViewController.swift */,
+				A995BE4924C6C58900B2E63A /* CompletionEventView.swift */,
+				A995BE4B24C6C5A000B2E63A /* CompletionEventCoordinator.swift */,
+				A995BE4D24C6C5B900B2E63A /* CompletionEventPresenter.swift */,
+			);
+			path = "Completion Event";
+			sourceTree = "<group>";
+		};
+		A995BE5924C6CACC00B2E63A /* Completion Event Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A995BE5724C6C98000B2E63A /* CompletionEventCell.swift */,
+				A995BE5A24C6CAE500B2E63A /* CompletionEventCell.xib */,
+			);
+			path = "Completion Event Cell";
+			sourceTree = "<group>";
+		};
+		A995BE5E24C6EA1100B2E63A /* Action Event Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A995BE5F24C6EA2F00B2E63A /* ActionEventCell.swift */,
+				A995BE6124C6EA4000B2E63A /* ActionEventCell.xib */,
+			);
+			path = "Action Event Cell";
 			sourceTree = "<group>";
 		};
 		A9C2FC4A24C5864C00756DE6 /* Profile Setting */ = {
@@ -408,8 +479,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A995BE5B24C6CAE500B2E63A /* CompletionEventCell.xib in Resources */,
 				56D7E44824B3601D00933B04 /* LaunchScreen.storyboard in Resources */,
 				56D7E44524B3601D00933B04 /* Assets.xcassets in Resources */,
+				A995BE6224C6EA4000B2E63A /* ActionEventCell.xib in Resources */,
 				56D7E44324B3601800933B04 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,15 +498,20 @@
 				A981FB1F24B73E8300A3D205 /* UIView + getToolBar().swift in Sources */,
 				56D7E43C24B3601800933B04 /* AppDelegate.swift in Sources */,
 				569AF46F24B45E6800D9DC88 /* UIStoryboard+instantiate().swift in Sources */,
+				A995BE4824C6C57400B2E63A /* CompletionEventViewController.swift in Sources */,
 				A981FB2224B7451800A3D205 /* RestorePasswordViewController.swift in Sources */,
 				56D7E45724B3792900933B04 /* AppCoordinator.swift in Sources */,
+				A995BE4C24C6C5A000B2E63A /* CompletionEventCoordinator.swift in Sources */,
 				A9D6102B24BE48C400C1C207 /* ProfileView.swift in Sources */,
+				A995BE5424C6C5F300B2E63A /* ActionEventCoordinator.swift in Sources */,
 				A9D6102924BE48B100C1C207 /* ProfileViewController.swift in Sources */,
 				56D7E43E24B3601800933B04 /* SceneDelegate.swift in Sources */,
 				A9C2FC4E24C5887000756DE6 /* ProfileSettingView.swift in Sources */,
+				A995BE5624C6C61800B2E63A /* ActionEventPresenter.swift in Sources */,
 				569AF47F24B498CA00D9DC88 /* GrayLineView.swift in Sources */,
 				A9D6102D24BE48DC00C1C207 /* ProfileCoordinator.swift in Sources */,
 				A981FB2A24B761A700A3D205 /* UIViewController + indicator + basicAlert.swift in Sources */,
+				A995BE5224C6C5DB00B2E63A /* ActionEventView.swift in Sources */,
 				569AF46824B4503B00D9DC88 /* SignInPresenter.swift in Sources */,
 				A904DCE124B5C66200ACB761 /* RegisterAccountPresenter.swift in Sources */,
 				569AF48424B4A65800D9DC88 /* GrayTextField.swift in Sources */,
@@ -448,6 +526,8 @@
 				A904DCDD24B5C59000ACB761 /* RegisterAccountView.swift in Sources */,
 				A946126F24BD795A00FD57CB /* LocationService.swift in Sources */,
 				A904DCD824B5B67F00ACB761 /* UIColor + customColor.swift in Sources */,
+				A995BE5024C6C5CA00B2E63A /* ActionEventViewController.swift in Sources */,
+				A995BE4E24C6C5B900B2E63A /* CompletionEventPresenter.swift in Sources */,
 				569AF46C24B45B8D00D9DC88 /* IdHaving+id.swift in Sources */,
 				56D7E45A24B37C2100933B04 /* SignInCoordinator.swift in Sources */,
 				566DB78B24BCDE98007409BE /* MainCoordinator.swift in Sources */,
@@ -459,12 +539,16 @@
 				A981FB2424B7452A00A3D205 /* RestorePasswordView.swift in Sources */,
 				A91769E224BAF01100EEE26A /* MainMapView.swift in Sources */,
 				A981FB2624B7454100A3D205 /* RestorePasswordCoordinator.swift in Sources */,
+				A995BE6024C6EA2F00B2E63A /* ActionEventCell.swift in Sources */,
+				A995BE5824C6C98000B2E63A /* CompletionEventCell.swift in Sources */,
 				566DB78524B4EFE8007409BE /* LogoView.swift in Sources */,
 				A9C2FC5224C588AF00756DE6 /* ProfileSettingPresenter.swift in Sources */,
+				A995BE4A24C6C58900B2E63A /* CompletionEventView.swift in Sources */,
 				A91769E024BAEFED00EEE26A /* MainMapViewController.swift in Sources */,
 				569AF46A24B4542A00D9DC88 /* SignInView.swift in Sources */,
 				56D7E45524B3783E00933B04 /* BaseCoordirator.swift in Sources */,
 				A9D6102F24BE48FA00C1C207 /* ProfilePresenter.swift in Sources */,
+				A995BE5D24C6E37B00B2E63A /* exampleEvent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

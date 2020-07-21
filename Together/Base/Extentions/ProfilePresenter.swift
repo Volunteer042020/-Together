@@ -14,6 +14,8 @@ protocol ProfileViewAction: class {
     func showAlert()
     // потом исправим, когда появиться база данных
     func getProfileSettingView()
+    func showActionEvent()
+    func showCompletionEvent()
 }
 
 protocol ProfileViewControllerImpl: class {
@@ -38,6 +40,14 @@ final class ProfilePresenter {
 
 
 extension ProfilePresenter: ProfileViewAction {
+    
+    func showActionEvent() {
+        coordinator.showActionEvent()
+    }
+    
+    func showCompletionEvent() {
+        coordinator.showCompletionEvent()
+    }
     
     func getProfileSettingView() {
         coordinator.showProfileSetting()
