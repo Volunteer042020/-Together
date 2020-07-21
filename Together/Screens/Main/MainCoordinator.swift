@@ -49,6 +49,10 @@ final class MainCoordinator: BaseCoordirator {
         showChat()
     }
     
+    func finished() {
+        self.didFinish(coordinator: self)
+    }
+    
     //MARK: - Private metods
     private func showProfile() {
         let coordinator = ProfileCoordinator(navController: profileNavController)

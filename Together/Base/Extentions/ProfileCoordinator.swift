@@ -11,6 +11,8 @@ import UIKit
 protocol ProfileCoordination {
     func showSignIn()
     func showProfileSetting()
+    func showActionEvent()
+    func showCompletionEvent()
 }
 
 final class ProfileCoordinator: BaseCoordirator {
@@ -41,6 +43,30 @@ final class ProfileCoordinator: BaseCoordirator {
 
 extension ProfileCoordinator: ProfileCoordination {
     
+    func showActionEvent() {
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+        backButton.tintColor = UIColor.customGray
+        navController.navigationBar.topItem?.backBarButtonItem = backButton
+        
+        let actionEventCoordinator = ActionEventCoordinator(navController: navController)
+        self.setDependence(withChildCoordinator: actionEventCoordinator)
+        actionEventCoordinator.start()
+        self.didFinish(coordinator: self)
+    }
+    
+    func showCompletionEvent() {
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+        backButton.tintColor = UIColor.customGray
+        navController.navigationBar.topItem?.backBarButtonItem = backButton
+        
+        let completionEventCoordinator = CompletionEventCoordinator(navController: navController)
+        self.setDependence(withChildCoordinator: completionEventCoordinator)
+        completionEventCoordinator.start()
+        self.didFinish(coordinator: self)
+    }
+    
     func showProfileSetting() {
         let backButton = UIBarButtonItem()
         backButton.title = ""
@@ -58,7 +84,7 @@ extension ProfileCoordinator: ProfileCoordination {
         self.setDependence(withChildCoordinator: signCoordinator)
         signCoordinator.start()
         self.didFinish(coordinator: self)
-        let mainView = MainCoordinator(navController: navController)
+        let mainView = MainCoordinator(navController: navController) as MainCoordinator
         mainView.didFinish(coordinator: mainView)
     }
 }

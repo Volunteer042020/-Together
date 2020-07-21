@@ -58,7 +58,7 @@ extension ProfileViewController: ProfileViewControllerImpl {
             UserDefaults.standard.set(false, forKey: "UID")
             // убераем таб бар
             self.tabBarController?.tabBar.isHidden = true
-            print("пользователь потвердил и я выполняю переход на другой экран")
+            print("пользователь потвердил и я выхожу из профиля")
         }
         let cancelAction = UIAlertAction(title: "Отмена", style: .cancel) { (alert) in
             self.dismiss(animated: true, completion: nil)
