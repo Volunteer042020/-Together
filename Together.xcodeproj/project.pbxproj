@@ -126,10 +126,10 @@
 		A9C2FC4D24C5887000756DE6 /* ProfileSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingView.swift; sourceTree = "<group>"; };
 		A9C2FC4F24C5888700756DE6 /* ProfileSettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingCoordinator.swift; sourceTree = "<group>"; };
 		A9C2FC5124C588AF00756DE6 /* ProfileSettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingPresenter.swift; sourceTree = "<group>"; };
-		A9D6102824BE48B100C1C207 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Together/Base/Extentions/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
-		A9D6102A24BE48C400C1C207 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = Together/Base/Extentions/ProfileView.swift; sourceTree = SOURCE_ROOT; };
-		A9D6102C24BE48DC00C1C207 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileCoordinator.swift; path = Together/Base/Extentions/ProfileCoordinator.swift; sourceTree = SOURCE_ROOT; };
-		A9D6102E24BE48FA00C1C207 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfilePresenter.swift; path = Together/Base/Extentions/ProfilePresenter.swift; sourceTree = SOURCE_ROOT; };
+		A9D6102824BE48B100C1C207 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Together/Screens/Main/ProfileModule/Profile/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
+		A9D6102A24BE48C400C1C207 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = Together/Screens/Main/ProfileModule/Profile/ProfileView.swift; sourceTree = SOURCE_ROOT; };
+		A9D6102C24BE48DC00C1C207 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileCoordinator.swift; path = Together/Screens/Main/ProfileModule/Profile/ProfileCoordinator.swift; sourceTree = SOURCE_ROOT; };
+		A9D6102E24BE48FA00C1C207 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfilePresenter.swift; path = Together/Screens/Main/ProfileModule/Profile/ProfilePresenter.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,20 +160,6 @@
 				A91769E324BAF02400EEE26A /* MainMapCoordinator.swift */,
 			);
 			path = Map;
-			sourceTree = "<group>";
-		};
-		566DB79024BCF4C8007409BE /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				A995BE4624C6C3D600B2E63A /* Completion Event */,
-				A995BE4524C6C3D100B2E63A /* Action Event */,
-				A9C2FC4A24C5864C00756DE6 /* Profile Setting */,
-				A9D6102824BE48B100C1C207 /* ProfileViewController.swift */,
-				A9D6102A24BE48C400C1C207 /* ProfileView.swift */,
-				A9D6102C24BE48DC00C1C207 /* ProfileCoordinator.swift */,
-				A9D6102E24BE48FA00C1C207 /* ProfilePresenter.swift */,
-			);
-			path = Profile;
 			sourceTree = "<group>";
 		};
 		566DB79124BCF4D5007409BE /* Chat */ = {
@@ -244,6 +230,7 @@
 				A90B8F2B24BF0608003BE9EF /* Model */,
 				56D7E44F24B3776500933B04 /* Application */,
 				56D7E45324B377E400933B04 /* Repo */,
+				A946126D24BD793800FD57CB /* LocationService */,
 				56D7E45224B377CC00933B04 /* Base */,
 				56D7E45124B377C100933B04 /* Screens */,
 				56D7E44624B3601D00933B04 /* LaunchScreen.storyboard */,
@@ -285,7 +272,6 @@
 		56D7E45224B377CC00933B04 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				A946126D24BD793800FD57CB /* Location service */,
 				56D7E45424B3783E00933B04 /* BaseCoordirator.swift */,
 				566DB78624B4F698007409BE /* StackViews */,
 				569AF48724B4AB6000D9DC88 /* Buttons */,
@@ -314,6 +300,28 @@
 			path = SignIn;
 			sourceTree = "<group>";
 		};
+		56DCF7F524C9B4EB0037B97B /* ProfileModule */ = {
+			isa = PBXGroup;
+			children = (
+				56DCF7F624C9B5000037B97B /* Profile */,
+				A9C2FC4A24C5864C00756DE6 /* ProfileSetting */,
+				A995BE4524C6C3D100B2E63A /* ActionEvent */,
+				A995BE4624C6C3D600B2E63A /* CompletionEvent */,
+			);
+			path = ProfileModule;
+			sourceTree = "<group>";
+		};
+		56DCF7F624C9B5000037B97B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A9D6102824BE48B100C1C207 /* ProfileViewController.swift */,
+				A9D6102A24BE48C400C1C207 /* ProfileView.swift */,
+				A9D6102C24BE48DC00C1C207 /* ProfileCoordinator.swift */,
+				A9D6102E24BE48FA00C1C207 /* ProfilePresenter.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		A904DCD924B5C0D200ACB761 /* RegisterAccount */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,19 +347,19 @@
 			children = (
 				566DB78A24BCDE98007409BE /* MainCoordinator.swift */,
 				566DB78C24BCDF4A007409BE /* MainViewController.swift */,
-				566DB79024BCF4C8007409BE /* Profile */,
+				56DCF7F524C9B4EB0037B97B /* ProfileModule */,
 				566DB78924BCDE78007409BE /* Map */,
 				566DB79124BCF4D5007409BE /* Chat */,
 			);
 			path = Main;
 			sourceTree = "<group>";
 		};
-		A946126D24BD793800FD57CB /* Location service */ = {
+		A946126D24BD793800FD57CB /* LocationService */ = {
 			isa = PBXGroup;
 			children = (
 				A946126E24BD795A00FD57CB /* LocationService.swift */,
 			);
-			path = "Location service";
+			path = LocationService;
 			sourceTree = "<group>";
 		};
 		A981FB2024B744EA00A3D205 /* RestorePassword */ = {
@@ -365,7 +373,7 @@
 			path = RestorePassword;
 			sourceTree = "<group>";
 		};
-		A995BE4524C6C3D100B2E63A /* Action Event */ = {
+		A995BE4524C6C3D100B2E63A /* ActionEvent */ = {
 			isa = PBXGroup;
 			children = (
 				A995BE5E24C6EA1100B2E63A /* Action Event Cell */,
@@ -374,10 +382,10 @@
 				A995BE5324C6C5F300B2E63A /* ActionEventCoordinator.swift */,
 				A995BE5524C6C61800B2E63A /* ActionEventPresenter.swift */,
 			);
-			path = "Action Event";
+			path = ActionEvent;
 			sourceTree = "<group>";
 		};
-		A995BE4624C6C3D600B2E63A /* Completion Event */ = {
+		A995BE4624C6C3D600B2E63A /* CompletionEvent */ = {
 			isa = PBXGroup;
 			children = (
 				A995BE5924C6CACC00B2E63A /* Completion Event Cell */,
@@ -386,7 +394,7 @@
 				A995BE4B24C6C5A000B2E63A /* CompletionEventCoordinator.swift */,
 				A995BE4D24C6C5B900B2E63A /* CompletionEventPresenter.swift */,
 			);
-			path = "Completion Event";
+			path = CompletionEvent;
 			sourceTree = "<group>";
 		};
 		A995BE5924C6CACC00B2E63A /* Completion Event Cell */ = {
@@ -407,7 +415,7 @@
 			path = "Action Event Cell";
 			sourceTree = "<group>";
 		};
-		A9C2FC4A24C5864C00756DE6 /* Profile Setting */ = {
+		A9C2FC4A24C5864C00756DE6 /* ProfileSetting */ = {
 			isa = PBXGroup;
 			children = (
 				A9C2FC4B24C5886100756DE6 /* ProfileSettingViewController.swift */,
@@ -415,7 +423,7 @@
 				A9C2FC4F24C5888700756DE6 /* ProfileSettingCoordinator.swift */,
 				A9C2FC5124C588AF00756DE6 /* ProfileSettingPresenter.swift */,
 			);
-			path = "Profile Setting";
+			path = ProfileSetting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
