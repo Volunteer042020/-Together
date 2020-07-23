@@ -135,6 +135,8 @@ final class SignInView: UIView {
     
     //MARK: - Private metods
     fileprivate func setupUI() {
+        self.backgroundColor = .white
+        
         setupScrollView()
         setupLogo()
         setupLoginStack()

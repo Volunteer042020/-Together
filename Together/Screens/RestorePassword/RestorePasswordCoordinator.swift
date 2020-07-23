@@ -27,7 +27,7 @@ final class RestorePasswordCoordinator: BaseCoordirator {
     //MARK: - Open properties
     override func start() {
         
-        let vc: RestorePasswordViewController = UIStoryboard.main.instantiate()
+        let vc = RestorePasswordViewController()
         
         let presenter = RestorePasswordPresenter(view: vc, coordinator: self)
         vc.presenter = presenter

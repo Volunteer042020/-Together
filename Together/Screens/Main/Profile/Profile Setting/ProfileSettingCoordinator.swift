@@ -28,7 +28,7 @@ final class ProfileSettingCoordinator: BaseCoordirator {
     //MARK: - Open properties
     override func start() {
         
-        let vc: ProfileSettingViewController = UIStoryboard.main.instantiate()
+        let vc = ProfileSettingViewController()
         
         let presenter = ProfileSettingPresenter(view: vc, coordinator: self)
         vc.presenter = presenter

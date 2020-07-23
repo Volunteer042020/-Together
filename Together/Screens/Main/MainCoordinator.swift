@@ -36,7 +36,7 @@ final class MainCoordinator: BaseCoordirator {
     
     //MARK: - Open metods
     override func start() {
-        let mainVC: MainViewController = UIStoryboard.main.instantiate()
+        let mainVC = MainViewController()
         navController.setViewControllers([mainVC], animated: false)
         mainVC.viewControllers = [profileNavController, mapNavController, chatNavController]
         

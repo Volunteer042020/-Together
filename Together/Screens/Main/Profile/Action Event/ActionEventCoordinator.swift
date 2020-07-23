@@ -26,7 +26,7 @@ final class ActionEventCoordinator: BaseCoordirator {
     
     //MARK: - Open properties
     override func start() {
-        let vc: ActionEventViewController = UIStoryboard.main.instantiate()
+        let vc = ActionEventViewController()
         let presenter = ActionEventPresenter(view: vc, coordinator: self)
         vc.presenter = presenter
         

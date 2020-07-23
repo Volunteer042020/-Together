@@ -21,6 +21,10 @@ final class CompletionEventViewController: UIViewController {
     private lazy var completionEventView = view as? CompletionEventViewImpl
     
     //MARK: - Life cycle
+    override func loadView() {
+        view = CompletionEventView(frame: UIScreen.main.bounds)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

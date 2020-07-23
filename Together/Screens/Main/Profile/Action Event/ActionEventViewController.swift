@@ -21,6 +21,10 @@ final class ActionEventViewController: UIViewController {
     private lazy var actionEventView = view as? ActionEventViewImpl
     
     //MARK: - Life cycle
+    override func loadView() {
+        view = ActionEventView(frame: UIScreen.main.bounds)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

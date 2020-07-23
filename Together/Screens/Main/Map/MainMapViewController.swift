@@ -23,6 +23,10 @@ final class MainMapViewController: UIViewController {
     private lazy var mainMapView = view as? MainMapViewImpl
     
     //MARK: - Life cycle
+    override func loadView() {
+        view = MainMapView(frame: UIScreen.main.bounds)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

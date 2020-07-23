@@ -26,7 +26,7 @@ final class CompletionEventCoordinator: BaseCoordirator {
     
     //MARK: - Open properties
     override func start() {
-        let vc: CompletionEventViewController = UIStoryboard.main.instantiate()
+        let vc = CompletionEventViewController()
         let presenter = CompletionEventPresenter(view: vc, coordinator: self)
         vc.presenter = presenter
         

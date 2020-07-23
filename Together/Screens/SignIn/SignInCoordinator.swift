@@ -5,7 +5,6 @@ protocol SignInCoordination {
     
     func showMain()
     //создаем main презентер
-    func showSignUp()
     
     func showRestorePassword()
     // создаем restore презетер
@@ -13,6 +12,7 @@ protocol SignInCoordination {
     func showRegisterAccount()
     // создаем register презентер
 }
+
 
 final class SignInCoordinator: BaseCoordirator {
     
@@ -29,8 +29,8 @@ final class SignInCoordinator: BaseCoordirator {
     //MARK: - Open properties
     override func start() {
         
-        let vc: SignInViewController = UIStoryboard.main.instantiate()
-        
+        //let vc: SignInViewController = UIStoryboard.main.instantiate()
+        let vc = SignInViewController()
         let presenter = SignInPresenter(view: vc, coordinator: self)
         vc.presenter = presenter
         
@@ -52,10 +52,6 @@ extension SignInCoordinator: SignInCoordination {
         self.didFinish(coordinator: self)
     }
     
-    func showSignUp() {
-        print("Show SignUp View")
-    }
-    
     func showRestorePassword() {
         let restorePasswordCoordinator = RestorePasswordCoordinator(navController: navController)
         self.setDependence(withChildCoordinator: restorePasswordCoordinator)
@@ -69,7 +65,6 @@ extension SignInCoordinator: SignInCoordination {
         registerAccountCoordinator.start()
         self.didFinish(coordinator: self)
     }
-    
-    
+
 }
 
