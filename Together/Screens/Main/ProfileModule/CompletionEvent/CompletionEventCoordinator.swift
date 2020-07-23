@@ -1,5 +1,5 @@
 //
-//  ActionEventCoordinator.swift
+//  CompletionEventCoordinator.swift
 //  Together
 //
 //  Created by Евгений Шварцкопф on 21.07.2020.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol ActionEventCoordination {
+protocol CompletionEventCoordination {
     
 }
 
-final class ActionEventCoordinator: BaseCoordirator {
+final class CompletionEventCoordinator: BaseCoordirator {
     
     //MARK: - Private properties
     private let navController: UINavigationController
@@ -26,8 +26,8 @@ final class ActionEventCoordinator: BaseCoordirator {
     
     //MARK: - Open properties
     override func start() {
-        let vc: ActionEventViewController = UIStoryboard.main.instantiate()
-        let presenter = ActionEventPresenter(view: vc, coordinator: self)
+        let vc = CompletionEventViewController()
+        let presenter = CompletionEventPresenter(view: vc, coordinator: self)
         vc.presenter = presenter
         
         navController.pushViewController(vc, animated: true)
@@ -37,7 +37,6 @@ final class ActionEventCoordinator: BaseCoordirator {
 }
 
 
-extension ActionEventCoordinator: ActionEventCoordination {
+extension CompletionEventCoordinator: CompletionEventCoordination {
     
 }
-

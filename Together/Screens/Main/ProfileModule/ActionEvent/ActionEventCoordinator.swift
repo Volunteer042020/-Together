@@ -1,19 +1,18 @@
 //
-//  ProfileSettingCoordinator.swift
+//  ActionEventCoordinator.swift
 //  Together
 //
-//  Created by Евгений Шварцкопф on 20.07.2020.
+//  Created by Евгений Шварцкопф on 21.07.2020.
 //  Copyright © 2020 GermanyHome. All rights reserved.
 //
 
 import UIKit
 
-protocol ProfileSettingCoordination {
+protocol ActionEventCoordination {
     
 }
 
-final class ProfileSettingCoordinator: BaseCoordirator {
-    
+final class ActionEventCoordinator: BaseCoordirator {
     
     //MARK: - Private properties
     private let navController: UINavigationController
@@ -27,18 +26,18 @@ final class ProfileSettingCoordinator: BaseCoordirator {
     
     //MARK: - Open properties
     override func start() {
-        
-        let vc: ProfileSettingViewController = UIStoryboard.main.instantiate()
-        
-        let presenter = ProfileSettingPresenter(view: vc, coordinator: self)
+        let vc = ActionEventViewController()
+        let presenter = ActionEventPresenter(view: vc, coordinator: self)
         vc.presenter = presenter
         
         navController.pushViewController(vc, animated: true)
     }
+    
     //MARK: - Private metods
 }
 
-extension ProfileSettingCoordinator: ProfileSettingCoordination {
 
+extension ActionEventCoordinator: ActionEventCoordination {
+    
 }
 

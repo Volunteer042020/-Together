@@ -23,6 +23,10 @@ final class ProfileViewController: UIViewController {
     
     
     //MARK: - Life cycle
+    override func loadView() {
+        view = ProfileView(frame: UIScreen.main.bounds)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

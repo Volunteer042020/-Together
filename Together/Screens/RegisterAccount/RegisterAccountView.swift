@@ -132,6 +132,8 @@ final class RegisterAccountView: UIView {
     }
     
     private func setupUI() {
+        self.backgroundColor = .white
+        
         setupScrollView()
         setupLoginStack()
         setupCheckmarkButtonAndCheckmarkLabel()

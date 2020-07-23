@@ -24,6 +24,10 @@ final class RestorePasswordViewController: UIViewController {
     
     
     //MARK: - Life cycle
+    override func loadView() {
+        view = RestorePasswordView(frame: UIScreen.main.bounds)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

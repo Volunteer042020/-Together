@@ -27,7 +27,7 @@ final class RegisterAccountCoordinator: BaseCoordirator {
     //MARK: - Open properties
     override func start() {
         
-        let vc: RegisterAccountViewController = UIStoryboard.main.instantiate()
+        let vc = RegisterAccountViewController()
         
         let presenter = RegisterAccountPresenter(view: vc, coordinator: self)
         vc.presenter = presenter

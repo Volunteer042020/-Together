@@ -23,6 +23,10 @@ final class ProfileSettingViewController: UIViewController {
     
     
     //MARK: - Life cycle
+    override func loadView() {
+        view = ProfileSettingView(frame: UIScreen.main.bounds)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

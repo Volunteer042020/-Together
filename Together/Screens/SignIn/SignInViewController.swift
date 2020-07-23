@@ -16,6 +16,11 @@ final class SignInViewController: UIViewController {
     
     
     //MARK: - Life cycle
+    //устанавливаем вью
+    override func loadView() {
+        view = SignInView(frame: UIScreen.main.bounds)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -1,18 +1,19 @@
 //
-//  CompletionEventCoordinator.swift
+//  ProfileSettingCoordinator.swift
 //  Together
 //
-//  Created by Евгений Шварцкопф on 21.07.2020.
+//  Created by Евгений Шварцкопф on 20.07.2020.
 //  Copyright © 2020 GermanyHome. All rights reserved.
 //
 
 import UIKit
 
-protocol CompletionEventCoordination {
+protocol ProfileSettingCoordination {
     
 }
 
-final class CompletionEventCoordinator: BaseCoordirator {
+final class ProfileSettingCoordinator: BaseCoordirator {
+    
     
     //MARK: - Private properties
     private let navController: UINavigationController
@@ -26,17 +27,18 @@ final class CompletionEventCoordinator: BaseCoordirator {
     
     //MARK: - Open properties
     override func start() {
-        let vc: CompletionEventViewController = UIStoryboard.main.instantiate()
-        let presenter = CompletionEventPresenter(view: vc, coordinator: self)
+        
+        let vc = ProfileSettingViewController()
+        
+        let presenter = ProfileSettingPresenter(view: vc, coordinator: self)
         vc.presenter = presenter
         
         navController.pushViewController(vc, animated: true)
     }
-    
     //MARK: - Private metods
 }
 
+extension ProfileSettingCoordinator: ProfileSettingCoordination {
 
-extension CompletionEventCoordinator: CompletionEventCoordination {
-    
 }
+

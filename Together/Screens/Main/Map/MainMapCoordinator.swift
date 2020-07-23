@@ -26,7 +26,7 @@ final class MainMapCoordinator: BaseCoordirator {
     
     //MARK: - Open properties
     override func start() {
-        let vc: MainMapViewController = UIStoryboard.main.instantiate()
+        let vc = MainMapViewController()
         let presenter = MainMapPresenter(view: vc, coordinator: self)
         vc.presenter = presenter
         
