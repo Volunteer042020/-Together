@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 protocol ProfileCoordination {
     func showSignIn()
     func showProfileSetting()
@@ -15,8 +16,8 @@ protocol ProfileCoordination {
     func showCompletionEvent()
 }
 
+
 final class ProfileCoordinator: BaseCoordirator {
-    
     
     //MARK: - Private properties
     private let navController: UINavigationController
@@ -26,65 +27,49 @@ final class ProfileCoordinator: BaseCoordirator {
     init(navController: UINavigationController) {
         self.navController = navController
     }
+
     
-    
-    //MARK: - Open properties
+    //MARK: - Open metods
     override func start() {
-        
         let vc = ProfileViewController()
         let presenter = ProfilePresenter(view: vc, coordinator: self)
         vc.presenter = presenter
         
         navController.pushViewController(vc, animated: true)
     }
-    //MARK: - Private metods
+    
 }
 
+
+//MARK: - ProfileCoordination
 extension ProfileCoordinator: ProfileCoordination {
     
     func showActionEvent() {
-        let backButton = UIBarButtonItem()
-        backButton.title = ""
-        backButton.tintColor = UIColor.customGray
-        navController.navigationBar.topItem?.backBarButtonItem = backButton
-        
-        let actionEventCoordinator = ActionEventCoordinator(navController: navController)
-        self.setDependence(withChildCoordinator: actionEventCoordinator)
-        actionEventCoordinator.start()
-        self.didFinish(coordinator: self)
+        let coordinator = ActionEventCoordinator(navController: navController)
+        self.setDependence(withChildCoordinator: coordinator)
+        coordinator.start()
     }
     
     func showCompletionEvent() {
-        let backButton = UIBarButtonItem()
-        backButton.title = ""
-        backButton.tintColor = UIColor.customGray
-        navController.navigationBar.topItem?.backBarButtonItem = backButton
-        
-        let completionEventCoordinator = CompletionEventCoordinator(navController: navController)
-        self.setDependence(withChildCoordinator: completionEventCoordinator)
-        completionEventCoordinator.start()
-        self.didFinish(coordinator: self)
+        let coordinator = CompletionEventCoordinator(navController: navController)
+        self.setDependence(withChildCoordinator: coordinator)
+        coordinator.start()
     }
     
     func showProfileSetting() {
-        let backButton = UIBarButtonItem()
-        backButton.title = ""
-        backButton.tintColor = UIColor.customGray
-        navController.navigationBar.topItem?.backBarButtonItem = backButton
-        
-        let profileSettingCoordinator = ProfileSettingCoordinator(navController: navController)
-        self.setDependence(withChildCoordinator: profileSettingCoordinator)
-        profileSettingCoordinator.start()
-        self.didFinish(coordinator: self)
+        let coordinator = ProfileSettingCoordinator(navController: navController)
+        self.setDependence(withChildCoordinator: coordinator)
+        coordinator.start()
     }
     
     func showSignIn() {
-        let signCoordinator = SignInCoordinator(navController: navController)
-        self.setDependence(withChildCoordinator: signCoordinator)
-        signCoordinator.start()
-        self.didFinish(coordinator: self)
-        let mainView = MainCoordinator(navController: navController) as MainCoordinator
-        mainView.didFinish(coordinator: mainView)
+        let signInListener: SignInShowing? = findListener(parent: self.parentCoordinator)
+        signInListener?.showSignIn()
+        let coordinator = signInListener as? Coordinator
+        coordinator?.childCoordinators = []
+        
+        // завершаем сессию пользователя
+        UserDefaults.standard.set(false, forKey: "UID")
     }
 }
 

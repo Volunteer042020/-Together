@@ -39,6 +39,11 @@ final class ActionEventViewController: UIViewController {
     private func setNavigation() {
         navigationController?.navigationBar.isHidden = false
         navigationItem.title = "Активные мероприятия"
+        
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+        backButton.tintColor = UIColor.customGray
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
 }
 

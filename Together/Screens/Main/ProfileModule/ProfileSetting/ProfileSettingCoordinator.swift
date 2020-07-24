@@ -27,18 +27,18 @@ final class ProfileSettingCoordinator: BaseCoordirator {
     
     //MARK: - Open properties
     override func start() {
-        
         let vc = ProfileSettingViewController()
-        
         let presenter = ProfileSettingPresenter(view: vc, coordinator: self)
         vc.presenter = presenter
         
         navController.pushViewController(vc, animated: true)
     }
-    //MARK: - Private metods
+    
 }
 
-extension ProfileSettingCoordinator: ProfileSettingCoordination {
 
+//MARK: - ProfileSettingCoordination
+extension ProfileSettingCoordinator: ProfileSettingCoordination {
+    
 }
 
