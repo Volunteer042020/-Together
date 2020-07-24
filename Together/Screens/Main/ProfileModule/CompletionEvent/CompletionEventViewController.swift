@@ -39,6 +39,11 @@ final class CompletionEventViewController: UIViewController {
     private func setNavigation() {
         navigationController?.navigationBar.isHidden = false
         navigationItem.title = "Выполненые мероприятия"
+        
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+        backButton.tintColor = UIColor.customGray
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
 }
 

@@ -43,7 +43,7 @@ final class ProfileViewController: UIViewController {
     private func setNavigation() {
         navigationController?.navigationBar.isHidden = false
         navigationItem.title = "Профиль"
-        
+                
         let settingButton = UIBarButtonItem(image: UIImage(systemName: "square.and.pencil"), style: .plain, target: self, action: #selector(settingButtonAction))
         settingButton.tintColor = .customGray
         navigationItem.rightBarButtonItem = settingButton
@@ -58,8 +58,6 @@ extension ProfileViewController: ProfileViewControllerImpl {
         let settingsAction = UIAlertAction(title: "Да", style: .default) { (alert) in
             // вызываем фукнцию перехода
             self.presenter?.quitProfileAndShowSignIn()
-            // завершаем сессию пользователя
-            UserDefaults.standard.set(false, forKey: "UID")
             // убераем таб бар
             self.tabBarController?.tabBar.isHidden = true
             print("пользователь потвердил и я выхожу из профиля")

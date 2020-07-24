@@ -1,6 +1,7 @@
 
 import UIKit
 
+
 protocol SignInCoordination {
     
     func showMain()
@@ -28,42 +29,38 @@ final class SignInCoordinator: BaseCoordirator {
     
     //MARK: - Open properties
     override func start() {
-        
-        //let vc: SignInViewController = UIStoryboard.main.instantiate()
         let vc = SignInViewController()
         let presenter = SignInPresenter(view: vc, coordinator: self)
         vc.presenter = presenter
         
         navController.pushViewController(vc, animated: false)
     }
-    
-    //MARK: - Private metods
-    
 }
 
 
+//MARK: - SignInCoordination
 extension SignInCoordinator: SignInCoordination {
     
     func showMain() {
         UserDefaults.standard.set(true, forKey: "UID")
         let mainCoordinator = MainCoordinator(navController: navController)
-        self.setDependence(withChildCoordinator: mainCoordinator)
+        self.parentCoordinator?.setDependence(withChildCoordinator: mainCoordinator)
         mainCoordinator.start()
-        self.didFinish(coordinator: self)
+        self.parentCoordinator?.didFinish(coordinator: self)
     }
     
     func showRestorePassword() {
         let restorePasswordCoordinator = RestorePasswordCoordinator(navController: navController)
         self.setDependence(withChildCoordinator: restorePasswordCoordinator)
         restorePasswordCoordinator.start()
-        self.didFinish(coordinator: self)
+        //self.parentCoordinator?.didFinish(coordinator: self)
     }
     
     func showRegisterAccount() {
         let registerAccountCoordinator = RegisterAccountCoordinator(navController: navController)
         self.setDependence(withChildCoordinator: registerAccountCoordinator)
         registerAccountCoordinator.start()
-        self.didFinish(coordinator: self)
+        //self.parentCoordinator?.didFinish(coordinator: self)
     }
 
 }

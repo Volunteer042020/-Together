@@ -316,8 +316,8 @@
 			children = (
 				A9D6102824BE48B100C1C207 /* ProfileViewController.swift */,
 				A9D6102A24BE48C400C1C207 /* ProfileView.swift */,
-				A9D6102C24BE48DC00C1C207 /* ProfileCoordinator.swift */,
 				A9D6102E24BE48FA00C1C207 /* ProfilePresenter.swift */,
+				A9D6102C24BE48DC00C1C207 /* ProfileCoordinator.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";

@@ -23,14 +23,10 @@ final class MainCoordinator: BaseCoordirator {
     //MARK: - Init
     init(navController: UINavigationController) {
         self.navController = navController
-        
-        //TODO: ------------------------------------------ ДОБАВИТЬ ФОТО, подумать как оптимизировать код
+
         profileNavController = UINavigationController()
-        profileNavController.setTabBarTitleAndImage(tabBarImageName: "profile", tabBarTitle: "Профиль")
         mapNavController = UINavigationController()
-        mapNavController.setTabBarTitleAndImage(tabBarImageName: "map", tabBarTitle: "Карта")
         chatNavController = UINavigationController()
-        chatNavController.setTabBarTitleAndImage(tabBarImageName: "chat", tabBarTitle: "Чат")
     }
     
     
@@ -40,18 +36,11 @@ final class MainCoordinator: BaseCoordirator {
         navController.setViewControllers([mainVC], animated: false)
         mainVC.viewControllers = [profileNavController, mapNavController, chatNavController]
         
-        // отображать первую карту при входе в приложение
-        mainVC.selectedViewController = mainVC.viewControllers![1]
-        mainVC.tabBar.tintColor = UIColor.customGray
-        
         showProfile()
         showMap()
         showChat()
     }
     
-    func finished() {
-        self.didFinish(coordinator: self)
-    }
     
     //MARK: - Private metods
     private func showProfile() {
@@ -61,9 +50,9 @@ final class MainCoordinator: BaseCoordirator {
     }
     
     private func showMap() {
-        let mapCoordinator = MainMapCoordinator(navController: mapNavController)
-        self.setDependence(withChildCoordinator: mapCoordinator)
-        mapCoordinator.start()
+        let coordinator = MainMapCoordinator(navController: mapNavController)
+        self.setDependence(withChildCoordinator: coordinator)
+        coordinator.start()
     }
     
     private func showChat() {

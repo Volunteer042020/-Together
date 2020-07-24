@@ -48,6 +48,11 @@ final class ProfileSettingViewController: UIViewController {
         navigationController?.navigationBar.isHidden = false
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         navigationItem.title = "Редактирование профиля"
+        
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+        backButton.tintColor = UIColor.customGray
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
     
 }
