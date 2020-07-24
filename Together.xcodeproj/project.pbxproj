@@ -27,6 +27,7 @@
 		56D7E45524B3783E00933B04 /* BaseCoordirator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D7E45424B3783E00933B04 /* BaseCoordirator.swift */; };
 		56D7E45724B3792900933B04 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D7E45624B3792900933B04 /* AppCoordinator.swift */; };
 		56D7E45A24B37C2100933B04 /* SignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D7E45924B37C2100933B04 /* SignInCoordinator.swift */; };
+		56DCF7F824CAEAE80037B97B /* LocationServiceTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCF7F724CAEAE80037B97B /* LocationServiceTwo.swift */; };
 		A904DCD824B5B67F00ACB761 /* UIColor + customColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A904DCD724B5B67E00ACB761 /* UIColor + customColor.swift */; };
 		A904DCDB24B5C0FD00ACB761 /* RegisterAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A904DCDA24B5C0FD00ACB761 /* RegisterAccountViewController.swift */; };
 		A904DCDD24B5C59000ACB761 /* RegisterAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A904DCDC24B5C59000ACB761 /* RegisterAccountView.swift */; };
@@ -91,6 +92,7 @@
 		56D7E45424B3783E00933B04 /* BaseCoordirator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordirator.swift; sourceTree = "<group>"; };
 		56D7E45624B3792900933B04 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		56D7E45924B37C2100933B04 /* SignInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCoordinator.swift; sourceTree = "<group>"; };
+		56DCF7F724CAEAE80037B97B /* LocationServiceTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceTwo.swift; sourceTree = "<group>"; };
 		A904DCD724B5B67E00ACB761 /* UIColor + customColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + customColor.swift"; sourceTree = "<group>"; };
 		A904DCDA24B5C0FD00ACB761 /* RegisterAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAccountViewController.swift; sourceTree = "<group>"; };
 		A904DCDC24B5C59000ACB761 /* RegisterAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAccountView.swift; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				A946126E24BD795A00FD57CB /* LocationService.swift */,
+				56DCF7F724CAEAE80037B97B /* LocationServiceTwo.swift */,
 			);
 			path = LocationService;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				A995BE4A24C6C58900B2E63A /* CompletionEventView.swift in Sources */,
 				A91769E024BAEFED00EEE26A /* MainMapViewController.swift in Sources */,
 				569AF46A24B4542A00D9DC88 /* SignInView.swift in Sources */,
+				56DCF7F824CAEAE80037B97B /* LocationServiceTwo.swift in Sources */,
 				56D7E45524B3783E00933B04 /* BaseCoordirator.swift in Sources */,
 				A9D6102F24BE48FA00C1C207 /* ProfilePresenter.swift in Sources */,
 				A995BE5D24C6E37B00B2E63A /* exampleEvent.swift in Sources */,

@@ -15,7 +15,6 @@ final class MainMapViewController: UIViewController {
     
     // презентору сообщаем обо всех действиях и передаем данные, например: презентер, была нажата кнопка войти,
     var presenter: MainMapViewAction?
-    var locationService: LocationService?
     
     //MARK: - Private properties
     
@@ -32,10 +31,13 @@ final class MainMapViewController: UIViewController {
         
         if let view = mainMapView, let presenter = presenter {
             view.setPresenter(presenter)
-            locationService = LocationService(view: view, viewController: self)
-            view.getArtWork()
+            view.getArtWork()  //TODO: - временнно
         }
         setNavigation()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        presenter?.viewWillAppear()
     }
     
     //MARK: - Private metods
@@ -48,6 +50,11 @@ final class MainMapViewController: UIViewController {
 
 
 extension MainMapViewController: MainMapViewControllerImpl {
+    func showCurrentLocation(_ currentLocation: CLLocation) {
+        mainMapView?.presentLocationUser(currentLocation)
+        mainMapView?.showUserLocation(true)
+    }
+    
     
 }
 
