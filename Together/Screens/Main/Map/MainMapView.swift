@@ -30,6 +30,25 @@ final class MainMapView: UIView {
         return mapView
     }()
     
+    lazy var trackingUserButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.tintColor = UIColor.blueLocationButton
+        button.backgroundColor = UIColor.clear
+        button.setImage(UIImage(systemName: "location.fill"), for: .normal)
+        
+        button.layer.cornerRadius = 20
+        button.clipsToBounds = true
+        
+        button.layer.borderWidth = 3
+        button.layer.borderColor = UIColor.grayLocationButton.cgColor
+        button.layer.masksToBounds = false
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        button.addTarget(self, action: #selector(trackingUserLocationInMap), for: .touchDown)
+        return button
+    }()
+    
     //MARK: - Private properties
     private var presenter: MainMapViewAction?
     
@@ -55,12 +74,22 @@ final class MainMapView: UIView {
         mapView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
         mapView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         mapView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        
+        mapView.addSubview(trackingUserButton)
+        trackingUserButton.topAnchor.constraint(equalTo: mapView.topAnchor, constant: 100).isActive = true
+        trackingUserButton.leftAnchor.constraint(equalTo: mapView.leftAnchor, constant: 345).isActive = true
+        trackingUserButton.rightAnchor.constraint(equalTo: mapView.rightAnchor, constant: -30).isActive = true
+        trackingUserButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
-    
     
 }
 
 extension MainMapView: MainMapViewImpl {
+    
+    @objc func trackingUserLocationInMap(_ sender: UIButton) {
+        print("показываю пользователя")
+        mapView.userTrackingMode = .follow
+    }
     
     func setPresenter(_ presenter: MainMapViewAction) {
         self.presenter = presenter
