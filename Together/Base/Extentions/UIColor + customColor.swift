@@ -18,6 +18,10 @@ extension UIColor {
     static var redButton = UIColor(r: 180, g: 55, b: 87)
     static var customGray = UIColor(r: 1, g: 17, b: 40)
     
+    // так на пробу для Location User
+    static var blueLocationButton = UIColor(red: 1/255, green: 148/255, blue: 200/255, alpha: 0.5)
+    static var grayLocationButton = UIColor(red: 1/255, green: 17/255, blue: 40/255, alpha: 0.3)
+    
     convenience init(r: CGFloat, g: CGFloat, b: CGFloat) {
         self.init(red: r/255,green: g/255, blue: b/255, alpha: 1)
     }
