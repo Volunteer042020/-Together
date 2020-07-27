@@ -77,8 +77,8 @@ final class LocationService: NSObject, CLLocationManagerDelegate {
         if let lat = coord?.latitude, let lon = coord?.longitude {
             let initialLocation = CLLocation(latitude: lat, longitude: lon)
             if let view = mapView {
-                view.presentLocationUser(initialLocation)
-                view.showUserLocation(true)
+                view.showUserLocation(initialLocation)
+                //view.showUserLocation(true)
             }
         }
     }

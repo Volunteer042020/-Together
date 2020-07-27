@@ -15,7 +15,7 @@ protocol ActionEventViewImpl {
 
 final class ActionEventView: UIView {
     
-    var arrayEvent: [Event] = [Event(name: "Продукты", description: "Необходимо купить хлеб, молоко, масло, яйца и гречку", street: "ул.50 лет Профсоюзов 92A", nameNeedy: "Иван Петров", apartment: "25", progress: 1),Event(name: "Медикоменты", description: "Необходимо купить анальгин, флюконазол, ношпу, цикловир и бинт", street: "ул.Нефтезаводская 5", nameNeedy: "Егор Марсианов", apartment: "34", progress: 1)]
+    var arrayEvent: [Event] = [/*Event(title: "Продукты", description: "Необходимо купить хлеб, молоко, масло, яйца и гречку", address: "ул.50 лет Профсоюзов 92A", nameNeedy: "Иван Петров", progress: 1),Event(title: "Медикоменты", description: "Необходимо купить анальгин, флюконазол, ношпу, цикловир и бинт", address: "ул.Нефтезаводская 5", nameNeedy: "Егор Марсианов", progress: 1)*/]
     
     //MARK: - Private properties
     private var presenter: ActionEventViewAction?

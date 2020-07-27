@@ -12,31 +12,32 @@ import MapKit
 protocol MainMapViewImpl {
     //функции типа, покажи данные
     func setPresenter(_ presenter: MainMapViewAction)
-    func presentLocationUser(_ location: CLLocation)
-    func showUserLocation(_ value: Bool)
-    func getArtWork()
+    func showUserLocation(_ location: CLLocation)
+    func showEventPins(_ pins: [EventMapPin])
 }
+
 
 final class MainMapView: UIView {
     
-    lazy var mapView: MKMapView = {
+    //MARK: - Private properties
+    private lazy var mapView: MKMapView = {
         let mapView = MKMapView()
-        let zoomRage = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 20000)
+        let zoomRage = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 20000) //TODO - считаю нужно убрать, т.к. например у нас человек в одном городе, а помощь нужна в соседнем селе, и т.к. мы ограничиваем масштабирование карты, он не можен посмотреть точки за пределами
         mapView.setCameraZoomRange(zoomRage, animated: true)
-        mapView.userLocation.title = "Вы здесь"
+        mapView.userLocation.title = "Вы здесь" //TODO - Не вижу чтоб где-то отображалось
         
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.delegate = self
         return mapView
     }()
     
-    lazy var trackingUserButton: UIButton = {
+    private lazy var trackingUserButton: UIButton = {
         let button = UIButton(type: .system)
         button.tintColor = UIColor.blueLocationButton
         button.backgroundColor = UIColor.clear
         button.setImage(UIImage(systemName: "location.fill"), for: .normal)
         
-        button.layer.cornerRadius = 20
+        button.layer.cornerRadius = trackingUserBtnHeight / 2
         button.clipsToBounds = true
         
         button.layer.borderWidth = 3
@@ -45,11 +46,12 @@ final class MainMapView: UIView {
         
         button.translatesAutoresizingMaskIntoConstraints = false
         
-        button.addTarget(self, action: #selector(trackingUserLocationInMap), for: .touchDown)
+        button.addTarget(self, action: #selector(tracKUserLocationInMap), for: .touchUpInside)
         return button
     }()
     
-    //MARK: - Private properties
+    private let trackingUserBtnHeight: CGFloat = 40.0
+    
     private var presenter: MainMapViewAction?
     
     //MARK: - Init
@@ -63,8 +65,10 @@ final class MainMapView: UIView {
         setupUI()
     }
     
+    //MARK: - Private metods
     private func setupUI() {
         setupMapView()
+        setupTrackingUserButton()
     }
     
     private func setupMapView() {
@@ -74,71 +78,74 @@ final class MainMapView: UIView {
         mapView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
         mapView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         mapView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        
+    }
+    
+    private func setupTrackingUserButton() {
         mapView.addSubview(trackingUserButton)
-        trackingUserButton.topAnchor.constraint(equalTo: mapView.topAnchor, constant: 100).isActive = true
-        trackingUserButton.leftAnchor.constraint(equalTo: mapView.leftAnchor, constant: 345).isActive = true
-        trackingUserButton.rightAnchor.constraint(equalTo: mapView.rightAnchor, constant: -30).isActive = true
-        trackingUserButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        trackingUserButton.topAnchor.constraint(equalTo: mapView.topAnchor, constant: 50).isActive = true
+        trackingUserButton.rightAnchor.constraint(equalTo: mapView.safeAreaLayoutGuide.rightAnchor,
+                                                  constant: -10).isActive = true
+        trackingUserButton.heightAnchor.constraint(equalToConstant: trackingUserBtnHeight).isActive = true
+        trackingUserButton.widthAnchor.constraint(equalTo: trackingUserButton.heightAnchor, multiplier: 1).isActive = true
+    }
+    
+    @objc private func tracKUserLocationInMap(_ sender: UIButton) {
+        mapView.userTrackingMode = .follow
     }
     
 }
 
+
+//MARK: - MainMapViewImpl
 extension MainMapView: MainMapViewImpl {
-    
-    @objc func trackingUserLocationInMap(_ sender: UIButton) {
-        print("показываю пользователя")
-        mapView.userTrackingMode = .follow
-    }
     
     func setPresenter(_ presenter: MainMapViewAction) {
         self.presenter = presenter
     }
     
-    func presentLocationUser(_ location: CLLocation) {
+    func showUserLocation(_ location: CLLocation) {
         mapView.centerToLocation(location)
+        mapView.showsUserLocation = true
     }
     
-    func showUserLocation(_ value: Bool) {
-        mapView.showsUserLocation = value
+    func showEventPins(_ pins: [EventMapPin]) {
+        mapView.addAnnotations(pins)
     }
-  
-    // проверка для построения точек на карте, здесь координаты из омска, в другом городе не увидеть, но работает))
-    func getArtWork() {
-        let artWork = Artwork(title: "Скульптура Любочка",
-                              locationName: "Карла Либкнехта, 8А, Омск, Омская обл., 644099",
-                              discipline: "Скульптура",
-                              coordinate: CLLocationCoordinate2D(latitude: 54.9856985, longitude: 73.3747697))
-        mapView.addAnnotation(artWork)
-    }
+    
 }
 
+//MARK: - MKMapViewDelegate
 // для изменения вида отображение обьектов на карте, с более подробной информации
-
 extension MainMapView: MKMapViewDelegate {
-    // 1 вызывается для каждой аннотации, которую я буду добавлять на карту
+    
+    //настройка вью для аннотации
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        // 2 проверка аннотация являеться ли она исскуством, а не пользователем
-        guard let annotation = annotation as? Artwork else {
-            return nil
-        }
-        // 3 создаем обьект MKMarkerAnnotationView для отображения изображения вместе маркеров
-        let identifier = "artwork"
+        
+        guard annotation is EventMapPin
+            else { return nil }
+        
+        let identifier = "event"        
         var view: MKMarkerAnnotationView
-        // 4  используются виды аннотаций, которые больше не видны.
+        
         if let dequeuedView = mapView.dequeueReusableAnnotationView(
             withIdentifier: identifier) as? MKMarkerAnnotationView {
             dequeuedView.annotation = annotation
             view = dequeuedView
         } else {
-            // 5 Здесь я создаю новый MKMarkerAnnotationView объект, если представление аннотации не может быть удалено из очереди
             view = MKMarkerAnnotationView(
                 annotation: annotation,
                 reuseIdentifier: identifier)
             view.canShowCallout = true
-            view.calloutOffset = CGPoint(x: -5, y: 5)
-            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+            view.rightCalloutAccessoryView = UIButton(type: .custom)
         }
         return view
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        
+        guard let pin = view.annotation as? EventMapPin
+                   else { return }
+        
+        presenter?.eventPinDidTapped(pin: pin)
     }
 }
