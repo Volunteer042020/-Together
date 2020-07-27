@@ -29,9 +29,8 @@ final class MainMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let view = mainMapView, let presenter = presenter {
-            view.setPresenter(presenter)
-            view.getArtWork()  //TODO: - временнно
+        if let presenter = presenter {
+            mainMapView?.setPresenter(presenter)
         }
         setNavigation()
     }
@@ -50,11 +49,14 @@ final class MainMapViewController: UIViewController {
 
 
 extension MainMapViewController: MainMapViewControllerImpl {
+    
     func showCurrentLocation(_ currentLocation: CLLocation) {
-        mainMapView?.presentLocationUser(currentLocation)
-        mainMapView?.showUserLocation(true)
+        mainMapView?.showUserLocation(currentLocation)
     }
     
+    func showEventPins(_ pins: [EventMapPin]) {
+        mainMapView?.showEventPins(pins)
+    }
     
 }
 

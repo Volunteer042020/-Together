@@ -15,7 +15,7 @@ protocol CompletionEventViewImpl {
 
 final class CompletionEventView: UIView {
     
-    var arrayEvent: [Event] = [Event(name: "Продукты", description: "Необходимо купить хлеб, молоко, масло, яйца и гречку", street: "ул.50 лет Профсоюзов 92A", nameNeedy: "Иван Петров", apartment: "25", progress: 0),Event(name: "Медикоменты", description: "Необходимо купить анальгин, флюконазол, ношпу, цикловир и бинт", street: "ул.Нефтезаводская 5", nameNeedy: "Егор Марсианов", apartment: "34", progress: 2)]
+    var arrayEvent: [Event] = [/*Event(title: "Продукты", description: "Необходимо купить хлеб, молоко, масло, яйца и гречку", address: "ул.50 лет Профсоюзов 92A", nameNeedy: "Иван Петров", progress: 0),Event(title: "Медикоменты", description: "Необходимо купить анальгин, флюконазол, ношпу, цикловир и бинт", address: "ул.Нефтезаводская 5", nameNeedy: "Егор Марсианов", progress: 2)*/]
     
     //MARK: - Private properties
     private var presenter: CompletionEventViewAction?

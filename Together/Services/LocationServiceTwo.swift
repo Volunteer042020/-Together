@@ -15,8 +15,11 @@ protocol LocationServiceDelegate {
     func tracingLocationDidFailWithError(error: LocationServiceError)
 }
 
+//TODO - отобразить ошибки во вью
 enum LocationServiceError {
-    case turnOnLocationService //вернуться в настройки и поменять, нет прав
+    case locationServiceIsDisabled //у вас выключена служба локации
+    case accessRestricted //доступ к локации ограничен
+    case unknownError
 }
 
 
@@ -32,20 +35,14 @@ final class LocationServiceTwo: NSObject {
     //MARK: - Init
     override private init() {
         locationManager = CLLocationManager()
-        
-        if CLLocationManager.authorizationStatus() == .notDetermined {
-            // Тут 2 варианта, почитать про оба и определиться
-            // 1. requestAlwaysAuthorization
-            // 2. requestWhenInUseAuthorization
-            locationManager.requestWhenInUseAuthorization()
-        }
+        super.init()
         
         locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
         locationManager.distanceFilter = 10
         locationManager.allowsBackgroundLocationUpdates = true
-        
-        super.init()
         locationManager.delegate = self
+        
+        checkLocationServices()
     }
     
     //MARK: - Open metods
@@ -58,6 +55,30 @@ final class LocationServiceTwo: NSObject {
     }
     
     //MARK: - Private metods
+    private func checkLocationServices() {
+        
+           if CLLocationManager.locationServicesEnabled() {
+               checkLocationAuthorization()
+           } else {
+            updateLocationDidFailWithError(error: .locationServiceIsDisabled)
+           }
+       }
+    
+    private func checkLocationAuthorization() {
+        
+        switch CLLocationManager.authorizationStatus() {
+        case .notDetermined:
+          locationManager.requestWhenInUseAuthorization()
+        case .denied, .restricted: // Show an alert letting them know what’s up
+            updateLocationDidFailWithError(error: .accessRestricted)
+        case .authorizedAlways, .authorizedWhenInUse:
+            break
+        @unknown default:
+            updateLocationDidFailWithError(error: .unknownError)
+        }
+        
+    }
+    
     private func updateLocation(currentLocation: CLLocation){
         
         guard let delegate = self.delegate
@@ -80,6 +101,12 @@ final class LocationServiceTwo: NSObject {
 // MARK: - CLLocationManagerDelegate
 extension LocationServiceTwo: CLLocationManagerDelegate {
     
+    private func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            startUpdatingLocation()
+        }
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         guard let newLocation = locations.last
@@ -93,7 +120,7 @@ extension LocationServiceTwo: CLLocationManagerDelegate {
         if (error as NSError).domain == kCLErrorDomain && (error as NSError).code == CLError.Code.denied.rawValue {
             
             // Пользователь запретил вашему приложению доступ к информации о местоположении
-            updateLocationDidFailWithError(error: .turnOnLocationService)
+            updateLocationDidFailWithError(error: .accessRestricted)
         }
     }
 }

@@ -20,9 +20,9 @@ class ActionEventCell: UICollectionViewCell {
     @IBOutlet weak var cancelEventButton: RoundedButtonWithShadow!
     
     func renderCell(model: Event) { // В дальнейшем сюда передаем класс
-        helpNameLabel?.text = "Купить " + model.name
+        helpNameLabel?.text = "Купить " + model.title
         helpDescriptionLabel?.text = model.description
-        streetNameLabel?.text = model.street + " кв. " + model.apartment
+        //streetNameLabel?.text = model.address + " кв. "
         needyNameLabel?.text = model.nameNeedy
         completionEventButton.backgroundColor = UIColor.marineButton
         cancelEventButton.backgroundColor = UIColor.redButton
