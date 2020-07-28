@@ -22,8 +22,6 @@ final class MainMapView: UIView {
     //MARK: - Private properties
     private lazy var mapView: MKMapView = {
         let mapView = MKMapView()
-        let zoomRage = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 20000) //TODO - считаю нужно убрать, т.к. например у нас человек в одном городе, а помощь нужна в соседнем селе, и т.к. мы ограничиваем масштабирование карты, он не можен посмотреть точки за пределами
-        mapView.setCameraZoomRange(zoomRage, animated: true)
         mapView.userLocation.title = "Вы здесь" //TODO - Не вижу чтоб где-то отображалось
         
         mapView.translatesAutoresizingMaskIntoConstraints = false
@@ -37,7 +35,7 @@ final class MainMapView: UIView {
         button.backgroundColor = UIColor.clear
         button.setImage(UIImage(systemName: "location.fill"), for: .normal)
         
-        button.layer.cornerRadius = trackingUserBtnHeight / 2
+        button.layer.cornerRadius = buttonHeight / 2
         button.clipsToBounds = true
         
         button.layer.borderWidth = 3
@@ -50,7 +48,45 @@ final class MainMapView: UIView {
         return button
     }()
     
-    private let trackingUserBtnHeight: CGFloat = 40.0
+    private lazy var plusAreaButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.tintColor = UIColor.blueLocationButton
+        button.backgroundColor = UIColor.clear
+        button.setImage(UIImage(systemName: "plus"), for: .normal)
+        
+        button.layer.cornerRadius = buttonHeight / 2
+        button.clipsToBounds = true
+        
+        button.layer.borderWidth = 3
+        button.layer.borderColor = UIColor.grayLocationButton.cgColor
+        button.layer.masksToBounds = false
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        button.addTarget(self, action: #selector(plusAreaLocationInMap), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var minusAreaButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.tintColor = UIColor.blueLocationButton
+        button.backgroundColor = UIColor.clear
+        button.setImage(UIImage(systemName: "minus"), for: .normal)
+        
+        button.layer.cornerRadius = buttonHeight / 2
+        button.clipsToBounds = true
+        
+        button.layer.borderWidth = 3
+        button.layer.borderColor = UIColor.grayLocationButton.cgColor
+        button.layer.masksToBounds = false
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        button.addTarget(self, action: #selector(minusAreaLocationInMap), for: .touchUpInside)
+        return button
+    }()
+    
+    private let buttonHeight: CGFloat = 40.0
     
     private var presenter: MainMapViewAction?
     
@@ -69,6 +105,8 @@ final class MainMapView: UIView {
     private func setupUI() {
         setupMapView()
         setupTrackingUserButton()
+        setupPlusAreaButton()
+        setupMinusAreaButton()
     }
     
     private func setupMapView() {
@@ -85,14 +123,39 @@ final class MainMapView: UIView {
         trackingUserButton.topAnchor.constraint(equalTo: mapView.topAnchor, constant: 50).isActive = true
         trackingUserButton.rightAnchor.constraint(equalTo: mapView.safeAreaLayoutGuide.rightAnchor,
                                                   constant: -10).isActive = true
-        trackingUserButton.heightAnchor.constraint(equalToConstant: trackingUserBtnHeight).isActive = true
+        trackingUserButton.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
         trackingUserButton.widthAnchor.constraint(equalTo: trackingUserButton.heightAnchor, multiplier: 1).isActive = true
+    }
+    
+    private func setupPlusAreaButton() {
+        mapView.addSubview(plusAreaButton)
+        plusAreaButton.topAnchor.constraint(equalTo: trackingUserButton.bottomAnchor, constant: 30).isActive = true
+        plusAreaButton.rightAnchor.constraint(equalTo: mapView.safeAreaLayoutGuide.rightAnchor, constant: -10).isActive = true
+        plusAreaButton.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
+        plusAreaButton.widthAnchor.constraint(equalTo: plusAreaButton.heightAnchor, multiplier: 1).isActive = true
+    }
+    
+    private func setupMinusAreaButton() {
+        mapView.addSubview(minusAreaButton)
+        minusAreaButton.topAnchor.constraint(equalTo: plusAreaButton.bottomAnchor, constant: 5).isActive = true
+        minusAreaButton.rightAnchor.constraint(equalTo: mapView.safeAreaLayoutGuide.rightAnchor, constant: -10).isActive = true
+        minusAreaButton.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
+        minusAreaButton.widthAnchor.constraint(equalTo: minusAreaButton.heightAnchor, multiplier: 1).isActive = true
     }
     
     @objc private func tracKUserLocationInMap(_ sender: UIButton) {
         mapView.userTrackingMode = .follow
     }
     
+    @objc private func plusAreaLocationInMap(_ sender: UIButton) {
+//        print("Увеличиваю область")
+        mapView.zoomMap(byFactor: 1)
+    }
+    
+    @objc private func minusAreaLocationInMap(_ sender: UIButton) {
+//        print("Уменьшаю область")
+        mapView.zoomMap(byFactor: -1)
+    }
 }
 
 

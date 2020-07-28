@@ -66,6 +66,7 @@
 		A9C2FC4E24C5887000756DE6 /* ProfileSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2FC4D24C5887000756DE6 /* ProfileSettingView.swift */; };
 		A9C2FC5024C5888700756DE6 /* ProfileSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2FC4F24C5888700756DE6 /* ProfileSettingCoordinator.swift */; };
 		A9C2FC5224C588AF00756DE6 /* ProfileSettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2FC5124C588AF00756DE6 /* ProfileSettingPresenter.swift */; };
+		A9C8DA9324D043E4006F63FC /* UIMapView + zoomMap().swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8DA9224D043E4006F63FC /* UIMapView + zoomMap().swift */; };
 		A9D6102924BE48B100C1C207 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D6102824BE48B100C1C207 /* ProfileViewController.swift */; };
 		A9D6102B24BE48C400C1C207 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D6102A24BE48C400C1C207 /* ProfileView.swift */; };
 		A9D6102D24BE48DC00C1C207 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D6102C24BE48DC00C1C207 /* ProfileCoordinator.swift */; };
@@ -134,6 +135,7 @@
 		A9C2FC4D24C5887000756DE6 /* ProfileSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingView.swift; sourceTree = "<group>"; };
 		A9C2FC4F24C5888700756DE6 /* ProfileSettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingCoordinator.swift; sourceTree = "<group>"; };
 		A9C2FC5124C588AF00756DE6 /* ProfileSettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingPresenter.swift; sourceTree = "<group>"; };
+		A9C8DA9224D043E4006F63FC /* UIMapView + zoomMap().swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIMapView + zoomMap().swift"; sourceTree = "<group>"; };
 		A9D6102824BE48B100C1C207 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Together/Screens/Main/ProfileModule/Profile/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
 		A9D6102A24BE48C400C1C207 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = Together/Screens/Main/ProfileModule/Profile/ProfileView.swift; sourceTree = SOURCE_ROOT; };
 		A9D6102C24BE48DC00C1C207 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileCoordinator.swift; path = Together/Screens/Main/ProfileModule/Profile/ProfileCoordinator.swift; sourceTree = SOURCE_ROOT; };
@@ -187,6 +189,7 @@
 				A981FB2924B761A700A3D205 /* UIViewController + indicator + basicAlert.swift */,
 				566DB78E24BCEB5C007409BE /* UINavigationController+setTabBarTitleAndImage.swift */,
 				A946127024BD7AF900FD57CB /* UIMapView + centerLocation().swift */,
+				A9C8DA9224D043E4006F63FC /* UIMapView + zoomMap().swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				A981FB2224B7451800A3D205 /* RestorePasswordViewController.swift in Sources */,
 				56D7E45724B3792900933B04 /* AppCoordinator.swift in Sources */,
 				A995BE4C24C6C5A000B2E63A /* CompletionEventCoordinator.swift in Sources */,
+				A9C8DA9324D043E4006F63FC /* UIMapView + zoomMap().swift in Sources */,
 				A9D6102B24BE48C400C1C207 /* ProfileView.swift in Sources */,
 				56DCF7FC24CEDAF80037B97B /* GeocodingService.swift in Sources */,
 				56DCF7FE24CEE92E0037B97B /* Address.swift in Sources */,
