@@ -19,6 +19,10 @@
 		569AF47F24B498CA00D9DC88 /* GrayLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569AF47E24B498CA00D9DC88 /* GrayLineView.swift */; };
 		569AF48424B4A65800D9DC88 /* GrayTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569AF48324B4A65800D9DC88 /* GrayTextField.swift */; };
 		569AF48624B4AAB800D9DC88 /* RoundedButtonWithShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569AF48524B4AAB800D9DC88 /* RoundedButtonWithShadow.swift */; };
+		56A824DD24D4480300019B37 /* RoundMapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A824DC24D4480300019B37 /* RoundMapButton.swift */; };
+		56A824DF24D461F200019B37 /* CustomMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A824DE24D461F200019B37 /* CustomMapView.swift */; };
+		56A824E224D46D5800019B37 /* ViewAstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A824E124D46D5800019B37 /* ViewAstions.swift */; };
+		56A824E424D46E4D00019B37 /* PresenterHaving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A824E324D46E4D00019B37 /* PresenterHaving.swift */; };
 		56D7E43C24B3601800933B04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D7E43B24B3601800933B04 /* AppDelegate.swift */; };
 		56D7E43E24B3601800933B04 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D7E43D24B3601800933B04 /* SceneDelegate.swift */; };
 		56D7E44024B3601800933B04 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D7E43F24B3601800933B04 /* SignInViewController.swift */; };
@@ -38,7 +42,7 @@
 		A904DCDF24B5C63700ACB761 /* RegisterAccountCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A904DCDE24B5C63700ACB761 /* RegisterAccountCoordinator.swift */; };
 		A904DCE124B5C66200ACB761 /* RegisterAccountPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A904DCE024B5C66200ACB761 /* RegisterAccountPresenter.swift */; };
 		A91769E024BAEFED00EEE26A /* MainMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91769DF24BAEFED00EEE26A /* MainMapViewController.swift */; };
-		A91769E224BAF01100EEE26A /* MainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91769E124BAF01100EEE26A /* MainMapView.swift */; };
+		A91769E224BAF01100EEE26A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91769E124BAF01100EEE26A /* MainView.swift */; };
 		A91769E424BAF02400EEE26A /* MainMapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91769E324BAF02400EEE26A /* MainMapCoordinator.swift */; };
 		A91769E624BAF03400EEE26A /* MainMapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91769E524BAF03400EEE26A /* MainMapPresenter.swift */; };
 		A946126F24BD795A00FD57CB /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A946126E24BD795A00FD57CB /* LocationService.swift */; };
@@ -86,6 +90,10 @@
 		569AF47E24B498CA00D9DC88 /* GrayLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayLineView.swift; sourceTree = "<group>"; };
 		569AF48324B4A65800D9DC88 /* GrayTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayTextField.swift; sourceTree = "<group>"; };
 		569AF48524B4AAB800D9DC88 /* RoundedButtonWithShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonWithShadow.swift; sourceTree = "<group>"; };
+		56A824DC24D4480300019B37 /* RoundMapButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundMapButton.swift; sourceTree = "<group>"; };
+		56A824DE24D461F200019B37 /* CustomMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMapView.swift; sourceTree = "<group>"; };
+		56A824E124D46D5800019B37 /* ViewAstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAstions.swift; sourceTree = "<group>"; };
+		56A824E324D46E4D00019B37 /* PresenterHaving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterHaving.swift; sourceTree = "<group>"; };
 		56D7E43824B3601800933B04 /* Together.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Together.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56D7E43B24B3601800933B04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56D7E43D24B3601800933B04 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,7 +115,7 @@
 		A904DCDE24B5C63700ACB761 /* RegisterAccountCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAccountCoordinator.swift; sourceTree = "<group>"; };
 		A904DCE024B5C66200ACB761 /* RegisterAccountPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAccountPresenter.swift; sourceTree = "<group>"; };
 		A91769DF24BAEFED00EEE26A /* MainMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapViewController.swift; sourceTree = "<group>"; };
-		A91769E124BAF01100EEE26A /* MainMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapView.swift; sourceTree = "<group>"; };
+		A91769E124BAF01100EEE26A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		A91769E324BAF02400EEE26A /* MainMapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapCoordinator.swift; sourceTree = "<group>"; };
 		A91769E524BAF03400EEE26A /* MainMapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapPresenter.swift; sourceTree = "<group>"; };
 		A946126E24BD795A00FD57CB /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
@@ -165,7 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				A91769DF24BAEFED00EEE26A /* MainMapViewController.swift */,
-				A91769E124BAF01100EEE26A /* MainMapView.swift */,
+				A91769E124BAF01100EEE26A /* MainView.swift */,
+				56A824DE24D461F200019B37 /* CustomMapView.swift */,
 				A91769E524BAF03400EEE26A /* MainMapPresenter.swift */,
 				A91769E324BAF02400EEE26A /* MainMapCoordinator.swift */,
 			);
@@ -206,6 +215,7 @@
 		569AF48724B4AB6000D9DC88 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				56A824DC24D4480300019B37 /* RoundMapButton.swift */,
 				569AF48524B4AAB800D9DC88 /* RoundedButtonWithShadow.swift */,
 			);
 			path = Buttons;
@@ -217,6 +227,15 @@
 				569AF48324B4A65800D9DC88 /* GrayTextField.swift */,
 			);
 			path = TextFields;
+			sourceTree = "<group>";
+		};
+		56A824E024D46D2200019B37 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				56A824E124D46D5800019B37 /* ViewAstions.swift */,
+				56A824E324D46E4D00019B37 /* PresenterHaving.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		56D7E42F24B3601800933B04 = {
@@ -289,6 +308,7 @@
 				569AF48924B4AB7700D9DC88 /* TextFields */,
 				569AF48024B4A1F200D9DC88 /* Views */,
 				569AF46D24B45E1300D9DC88 /* Extentions */,
+				56A824E024D46D2200019B37 /* Protocols */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -518,6 +538,7 @@
 				56D7E43C24B3601800933B04 /* AppDelegate.swift in Sources */,
 				569AF46F24B45E6800D9DC88 /* UIStoryboard+instantiate().swift in Sources */,
 				A995BE4824C6C57400B2E63A /* CompletionEventViewController.swift in Sources */,
+				56A824E424D46E4D00019B37 /* PresenterHaving.swift in Sources */,
 				A981FB2224B7451800A3D205 /* RestorePasswordViewController.swift in Sources */,
 				56D7E45724B3792900933B04 /* AppCoordinator.swift in Sources */,
 				A995BE4C24C6C5A000B2E63A /* CompletionEventCoordinator.swift in Sources */,
@@ -527,6 +548,7 @@
 				56DCF7FE24CEE92E0037B97B /* Address.swift in Sources */,
 				A995BE5424C6C5F300B2E63A /* ActionEventCoordinator.swift in Sources */,
 				A9D6102924BE48B100C1C207 /* ProfileViewController.swift in Sources */,
+				56A824DF24D461F200019B37 /* CustomMapView.swift in Sources */,
 				56D7E43E24B3601800933B04 /* SceneDelegate.swift in Sources */,
 				A9C2FC4E24C5887000756DE6 /* ProfileSettingView.swift in Sources */,
 				A995BE5624C6C61800B2E63A /* ActionEventPresenter.swift in Sources */,
@@ -539,6 +561,7 @@
 				569AF48424B4A65800D9DC88 /* GrayTextField.swift in Sources */,
 				A904DCDB24B5C0FD00ACB761 /* RegisterAccountViewController.swift in Sources */,
 				A91769E424BAF02400EEE26A /* MainMapCoordinator.swift in Sources */,
+				56A824E224D46D5800019B37 /* ViewAstions.swift in Sources */,
 				A91769E624BAF03400EEE26A /* MainMapPresenter.swift in Sources */,
 				A9C2FC4C24C5886100756DE6 /* ProfileSettingViewController.swift in Sources */,
 				A904DCDF24B5C63700ACB761 /* RegisterAccountCoordinator.swift in Sources */,
@@ -559,8 +582,9 @@
 				566DB78D24BCDF4A007409BE /* MainViewController.swift in Sources */,
 				A946127124BD7AF900FD57CB /* UIMapView + centerLocation().swift in Sources */,
 				566DB78824B4F6D3007409BE /* VerticalStack.swift in Sources */,
+				56A824DD24D4480300019B37 /* RoundMapButton.swift in Sources */,
 				A981FB2424B7452A00A3D205 /* RestorePasswordView.swift in Sources */,
-				A91769E224BAF01100EEE26A /* MainMapView.swift in Sources */,
+				A91769E224BAF01100EEE26A /* MainView.swift in Sources */,
 				A981FB2624B7454100A3D205 /* RestorePasswordCoordinator.swift in Sources */,
 				A995BE6024C6EA2F00B2E63A /* ActionEventCell.swift in Sources */,
 				A995BE5824C6C98000B2E63A /* CompletionEventCell.swift in Sources */,

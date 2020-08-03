@@ -35,10 +35,6 @@ class RoundMapButton: UIButton {
         self.setImage(UIImage(systemName: systemName), for: .normal)
     }
     
-    func addTouchUpTarget(selector: Selector) {
-        self.addTarget(self, action: selector, for: .touchUpInside)
-    }
-    
     //MARK: - Private metods
     private func setupUI() {
         self.layer.borderWidth = 3
@@ -47,7 +43,5 @@ class RoundMapButton: UIButton {
         
         self.tintColor = UIColor.blueLocationButton
         self.backgroundColor = UIColor.clear
-        
     }
-    
 }

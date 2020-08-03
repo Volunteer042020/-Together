@@ -17,12 +17,10 @@ final class MainMapCoordinator: BaseCoordirator {
     //MARK: - Private properties
     private let navController: UINavigationController
     
-    
     //MARK: - Init
     init(navController: UINavigationController) {
         self.navController = navController
     }
-    
     
     //MARK: - Open properties
     override func start() {
@@ -37,6 +35,7 @@ final class MainMapCoordinator: BaseCoordirator {
 }
 
 
+  //MARK: - MainMapCoordination
 extension MainMapCoordinator: MainMapCoordination {
     
 }

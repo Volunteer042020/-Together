@@ -12,25 +12,23 @@ import CoreLocation
 final class MainMapViewController: UIViewController {
     
     //MARK: - Open properties
-    
     // презентору сообщаем обо всех действиях и передаем данные, например: презентер, была нажата кнопка войти,
-    var presenter: MainMapViewAction?
+    var presenter: MainMapViewActions?
     
     //MARK: - Private properties
-    
     //вью просим отобразить контент
-    private lazy var mainMapView = view as? MainMapViewImpl
+    private lazy var mainView = view as? (MainMapViewImpl & PresenterHaving)
     
     //MARK: - Life cycle
     override func loadView() {
-        view = MainMapView(frame: UIScreen.main.bounds)
+        view = MainView(frame: UIScreen.main.bounds)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let presenter = presenter {
-            mainMapView?.setPresenter(presenter)
+            mainView?.setPresenter(presenter)
         }
         setNavigation()
     }
@@ -48,14 +46,15 @@ final class MainMapViewController: UIViewController {
 }
 
 
+//MARK: - MainMapViewControllerImpl
 extension MainMapViewController: MainMapViewControllerImpl {
     
     func showCurrentLocation(_ currentLocation: CLLocation) {
-        mainMapView?.showUserLocation(currentLocation)
+        mainView?.showUserLocation(currentLocation)
     }
     
     func showEventPins(_ pins: [EventMapPin]) {
-        mainMapView?.showEventPins(pins)
+        mainView?.showEventPins(pins)
     }
     
 }
