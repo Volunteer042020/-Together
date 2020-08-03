@@ -8,14 +8,19 @@
 import Foundation
 import CoreLocation
 
-protocol MainMapViewAction: class {
+protocol MainMapViewActions: class, ViewAstions {
     func viewWillAppear()
+}
+
+protocol MainViewActions: class, ViewAstions {
+    
+}
+
+protocol MapViewActions: class, ViewAstions {
     func eventPinDidTapped(pin: EventMapPin)
-    //фунции типа кнопка войти, забыли пароль, и тп. была нажата
 }
 
 protocol MainMapViewControllerImpl: class {
-    //функции типа показать загрузку, установить делегатов
     func showCurrentLocation(_ currentLocation: CLLocation)
     func showEventPins(_ pins: [EventMapPin])
 }
@@ -41,7 +46,7 @@ final class MainMapPresenter {
 
 
 //MARK: - MainMapViewAction
-extension MainMapPresenter: MainMapViewAction {
+extension MainMapPresenter: MainMapViewActions {
     
     func viewWillAppear() {
         LocationServiceTwo.sharedInstance.delegate = self
@@ -61,12 +66,21 @@ extension MainMapPresenter: MainMapViewAction {
         }
          view?.showEventPins(pins)
     }
+}
+
+
+//MARK: - MainViewActions
+extension MainMapPresenter: MainViewActions {
+    
+}
+
+
+//MARK: - MapViewActions
+extension MainMapPresenter: MapViewActions {
     
     func eventPinDidTapped(pin: EventMapPin) {
-        
+        print("eventPinDidTapped")
     }
-    
-    
 }
 
 
