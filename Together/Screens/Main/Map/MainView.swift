@@ -9,6 +9,8 @@
 import UIKit
 import MapKit
 
+//TODO: - Вынести кнопку компаса на карту, сделать кластеры при уменьшении карты
+
 protocol MainMapViewImpl {
     func showUserLocation(_ location: CLLocation)
     func showEventPins(_ pins: [EventMapPin])

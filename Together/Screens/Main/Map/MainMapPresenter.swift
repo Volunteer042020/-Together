@@ -55,9 +55,8 @@ extension MainMapPresenter: MainMapViewActions {
         //TODO: получаем от репо эвенты, пока мокнутый репозиторий
         let events = MockEventsRepo.sharedData.events
         
-        //TODO нужны будут id для последующего соотношения пинов и евентов
         let pins = events.map { (event) -> EventMapPin in
-            let pin = EventMapPin(id: 0,
+            let pin = EventMapPin(id: event.id,
                                   title: event.title,
                                   subtitle: event.address.addressDescription,
                                   coordinate: event.coordinate)

@@ -39,25 +39,31 @@ extension CustomMapView: MKMapViewDelegate {
     //настройка вью для аннотации
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
-        guard annotation is EventMapPin
-            else { return nil }
-        
-        let identifier = "event"
-        var view: MKMarkerAnnotationView
-        
-        if let dequeuedView = mapView.dequeueReusableAnnotationView(
-            withIdentifier: identifier) as? MKMarkerAnnotationView {
-            dequeuedView.annotation = annotation
-            view = dequeuedView
-        } else {
-            view = MKMarkerAnnotationView(
-                annotation: annotation,
-                reuseIdentifier: identifier)
-            view.canShowCallout = true
-            view.rightCalloutAccessoryView = UIButton(type: .custom)
-        }
-        return view
+                guard annotation is EventMapPin
+                    else { return nil }
+
+                let identifier = "event"
+                var view: MKMarkerAnnotationView
+
+                if let dequeuedView = mapView.dequeueReusableAnnotationView(
+                    withIdentifier: identifier) as? MKMarkerAnnotationView {
+                    dequeuedView.annotation = annotation
+                    view = dequeuedView
+                } else {
+                    view = MKMarkerAnnotationView(
+                        annotation: annotation,
+                        reuseIdentifier: identifier)
+                    view.canShowCallout = true
+                    //TODO: - displayPriority временно, пока нет кластеров
+                    view.displayPriority = .required
+                    view.rightCalloutAccessoryView = UIButton(type: .custom)
+                }
+                return view
     }
+    
+//    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+//        mapView.setNeedsDisplay()
+//    }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         
