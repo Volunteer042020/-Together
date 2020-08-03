@@ -113,6 +113,7 @@ final class ProfileSettingView: UIView {
     }
     
     private func setupUI() {
+        self.backgroundColor = .white
         setupScrollView()
         setupProfileStack()
         setupSettingUserButton()
