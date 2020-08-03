@@ -64,6 +64,7 @@ final class RestorePasswordView: UIView {
     }
     
     private func setupUI() {
+        self.backgroundColor = .white
         setupRestoreStack()
         setupRestorePasswordButton()
     }

@@ -1,13 +1,10 @@
-//
-//  MainMapViewController.swift
-//  Together
-//
-//  Created by Евгений Шварцкопф on 12.07.2020.
-//  Copyright © 2020 GermanyHome. All rights reserved.
-//
 
 import UIKit
 import CoreLocation
+
+/*
+  TO DO... Сделать по категорям модели поисковика, отражать слайд меню категории
+*/
 
 final class MainMapViewController: UIViewController {
     
@@ -18,6 +15,10 @@ final class MainMapViewController: UIViewController {
     //MARK: - Private properties
     //вью просим отобразить контент
     private lazy var mainView = view as? (MainMapViewImpl & PresenterHaving)
+    private var slideMenuViewController: SlideMenuViewController?
+    private var visualEffectView: UIVisualEffectView?
+    
+    private let slideMenuViewControllerHeight: CGFloat = 135
     
     //MARK: - Life cycle
     override func loadView() {
@@ -31,6 +32,7 @@ final class MainMapViewController: UIViewController {
             mainView?.setPresenter(presenter)
         }
         setNavigation()
+        setupSlideMenuUp()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +41,24 @@ final class MainMapViewController: UIViewController {
     
     //MARK: - Private metods
     //Устанавливаем навигацию, заголовок навигейшен контроллера, кнопки на навиг контроллере
+    private func setupSlideMenuUp() {
+        // to do ..
+//        visualEffectView = UIVisualEffectView()
+//        visualEffectView?.frame = self.view.frame
+//        guard let visualView = visualEffectView else { return }
+
+//        self.view.addSubview(visualView)
+        slideMenuViewController = SlideMenuViewController()
+        guard var slideViewController = slideMenuViewController else { return }
+        slideViewController.view.frame = CGRect(x: 0,
+                                                y: self.view.frame.height - slideMenuViewControllerHeight ,
+                                                width: self.view.frame.width,
+                                                height: slideMenuViewControllerHeight)
+        
+        self.addChild(slideViewController)
+        self.view.addSubview(slideViewController.view)
+    }
+    
     private func setNavigation() {
         navigationController?.navigationBar.isHidden = false
         navigationItem.title = "Главная"
