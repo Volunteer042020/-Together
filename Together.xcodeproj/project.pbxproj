@@ -51,8 +51,8 @@
 		A946127124BD7AF900FD57CB /* UIMapView + centerLocation().swift in Sources */ = {isa = PBXBuildFile; fileRef = A946127024BD7AF900FD57CB /* UIMapView + centerLocation().swift */; };
 		A94B8DE324D84DC90025656B /* SlideMenuViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = A94B8DE224D84DC90025656B /* SlideMenuViewController .swift */; };
 		A94B8DE524D84DD40025656B /* SlideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94B8DE424D84DD40025656B /* SlideMenuView.swift */; };
-		A94B8DE724D84DE30025656B /* SlideMenuViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94B8DE624D84DE30025656B /* SlideMenuViewCoordinator.swift */; };
-		A94B8DE924D84DF70025656B /* SlideMenuViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94B8DE824D84DF70025656B /* SlideMenuViewPresenter.swift */; };
+		A94B8DE724D84DE30025656B /* SlideMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94B8DE624D84DE30025656B /* SlideMenuCoordinator.swift */; };
+		A94B8DE924D84DF70025656B /* SlideMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94B8DE824D84DF70025656B /* SlideMenuPresenter.swift */; };
 		A981FB1F24B73E8300A3D205 /* UIView + getToolBar().swift in Sources */ = {isa = PBXBuildFile; fileRef = A981FB1E24B73E8300A3D205 /* UIView + getToolBar().swift */; };
 		A981FB2224B7451800A3D205 /* RestorePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A981FB2124B7451800A3D205 /* RestorePasswordViewController.swift */; };
 		A981FB2424B7452A00A3D205 /* RestorePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A981FB2324B7452A00A3D205 /* RestorePasswordView.swift */; };
@@ -130,8 +130,8 @@
 		A946127024BD7AF900FD57CB /* UIMapView + centerLocation().swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIMapView + centerLocation().swift"; sourceTree = "<group>"; };
 		A94B8DE224D84DC90025656B /* SlideMenuViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SlideMenuViewController .swift"; sourceTree = "<group>"; };
 		A94B8DE424D84DD40025656B /* SlideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuView.swift; sourceTree = "<group>"; };
-		A94B8DE624D84DE30025656B /* SlideMenuViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuViewCoordinator.swift; sourceTree = "<group>"; };
-		A94B8DE824D84DF70025656B /* SlideMenuViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuViewPresenter.swift; sourceTree = "<group>"; };
+		A94B8DE624D84DE30025656B /* SlideMenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuCoordinator.swift; sourceTree = "<group>"; };
+		A94B8DE824D84DF70025656B /* SlideMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuPresenter.swift; sourceTree = "<group>"; };
 		A981FB1E24B73E8300A3D205 /* UIView + getToolBar().swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + getToolBar().swift"; sourceTree = "<group>"; };
 		A981FB2124B7451800A3D205 /* RestorePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePasswordViewController.swift; sourceTree = "<group>"; };
 		A981FB2324B7452A00A3D205 /* RestorePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePasswordView.swift; sourceTree = "<group>"; };
@@ -425,8 +425,8 @@
 			children = (
 				A94B8DE224D84DC90025656B /* SlideMenuViewController .swift */,
 				A94B8DE424D84DD40025656B /* SlideMenuView.swift */,
-				A94B8DE624D84DE30025656B /* SlideMenuViewCoordinator.swift */,
-				A94B8DE824D84DF70025656B /* SlideMenuViewPresenter.swift */,
+				A94B8DE624D84DE30025656B /* SlideMenuCoordinator.swift */,
+				A94B8DE824D84DF70025656B /* SlideMenuPresenter.swift */,
 			);
 			path = SlideMenuView;
 			sourceTree = "<group>";
@@ -577,7 +577,7 @@
 				56D7E45724B3792900933B04 /* AppCoordinator.swift in Sources */,
 				A995BE4C24C6C5A000B2E63A /* CompletionEventCoordinator.swift in Sources */,
 				A9C8DA9324D043E4006F63FC /* UIMapView + zoomMap().swift in Sources */,
-				A94B8DE724D84DE30025656B /* SlideMenuViewCoordinator.swift in Sources */,
+				A94B8DE724D84DE30025656B /* SlideMenuCoordinator.swift in Sources */,
 				A9D6102B24BE48C400C1C207 /* ProfileView.swift in Sources */,
 				56DCF7FC24CEDAF80037B97B /* GeocodingService.swift in Sources */,
 				56DCF7FE24CEE92E0037B97B /* Address.swift in Sources */,
@@ -620,7 +620,7 @@
 				566DB78824B4F6D3007409BE /* VerticalStack.swift in Sources */,
 				56A824DD24D4480300019B37 /* RoundMapButton.swift in Sources */,
 				A981FB2424B7452A00A3D205 /* RestorePasswordView.swift in Sources */,
-				A94B8DE924D84DF70025656B /* SlideMenuViewPresenter.swift in Sources */,
+				A94B8DE924D84DF70025656B /* SlideMenuPresenter.swift in Sources */,
 				A91769E224BAF01100EEE26A /* MainView.swift in Sources */,
 				A981FB2624B7454100A3D205 /* RestorePasswordCoordinator.swift in Sources */,
 				A94B8DE524D84DD40025656B /* SlideMenuView.swift in Sources */,

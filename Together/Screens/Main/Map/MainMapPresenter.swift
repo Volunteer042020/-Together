@@ -9,7 +9,12 @@ import Foundation
 import CoreLocation
 
 protocol MainMapViewActions: class, ViewAstions {
+<<<<<<< HEAD
     func viewDidLoad()
+=======
+    func setupSlideMenu()
+    func viewWillAppear()
+>>>>>>> b159e9a... Add a child SlideMenuМiewСontroller through the coordinator
 }
 
 protocol MainViewActions: class, ViewAstions {
@@ -48,7 +53,16 @@ final class MainMapPresenter {
 //MARK: - MainMapViewAction
 extension MainMapPresenter: MainMapViewActions {
     
+<<<<<<< HEAD
     func viewDidLoad() {
+=======
+    func setupSlideMenu() {
+        coordinator.setChildSlideMenuVC()
+    }
+    
+    
+    func viewWillAppear() {
+>>>>>>> b159e9a... Add a child SlideMenuМiewСontroller through the coordinator
         LocationServiceTwo.sharedInstance.delegate = self
         LocationServiceTwo.sharedInstance.startUpdatingLocation()
         

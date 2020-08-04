@@ -8,19 +8,21 @@
 
 import UIKit
 
-protocol SlideMenuCoordination {
+protocol SlideMenuCoordination: class {
     
 }
 
-final class SlideMenuViewCoordinator: BaseCoordirator {
+final class SlideMenuCoordinator: BaseCoordirator {
     
     //MARK: - Private properties
     private let navController: UINavigationController
+    private let parentVC: MainMapViewController
     
     
     //MARK: - Init
-    init(navController: UINavigationController) {
+    init(navController: UINavigationController, parentVC: MainMapViewController) {
         self.navController = navController
+        self.parentVC = parentVC
     }
     
     //MARK: - Open properties
@@ -29,13 +31,14 @@ final class SlideMenuViewCoordinator: BaseCoordirator {
         let presenter = SlideMenuPresenter(view: vc, coordinator: self)
         vc.presenter = presenter
         
-        navController.pushViewController(vc, animated: true)
+        parentVC.addChild(vc)
+        parentVC.slideMenuViewController = vc
     }
     
     //MARK: - Private metods
     
 }
 
-extension SlideMenuViewCoordinator: SlideMenuCoordination {
+extension SlideMenuCoordinator: SlideMenuCoordination {
     
 }

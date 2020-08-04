@@ -13,13 +13,16 @@ final class SlideMenuViewController: UIViewController {
     var presenter: SlideMenuViewAction?
     
     //MARK: - Private properties
-    
-    //вью просим отобразить контент
     private lazy var slideMenuView = view as? SlideMenuViewImpl
+    
+     //MARK: - Life cycle
+    override func loadView() {
+        view = SlideMenuView(frame: UIScreen.main.bounds)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         if let view = slideMenuView, let presenter = presenter {
             view.setPresenter(presenter)
         }
