@@ -9,6 +9,7 @@ import Foundation
 import CoreLocation
 
 protocol MainMapViewActions: class, ViewAstions {
+    func setupSlideMenu()
     func viewWillAppear()
 }
 
@@ -47,6 +48,11 @@ final class MainMapPresenter {
 
 //MARK: - MainMapViewAction
 extension MainMapPresenter: MainMapViewActions {
+    
+    func setupSlideMenu() {
+        coordinator.setChildSlideMenuVC()
+    }
+    
     
     func viewWillAppear() {
         LocationServiceTwo.sharedInstance.delegate = self

@@ -57,24 +57,24 @@ final class SlideMenuView: UIView {
     
     //MARK: - Private metods
     fileprivate func setupUI() {
-        self.backgroundColor = UIColor.black
+        self.backgroundColor = UIColor.white
         setupLineView()
         setupSearchTextField()
     }
     
     private func setupLineView() {
-        lineView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        lineView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        lineView.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        lineView.heightAnchor.constraint(equalToConstant: 5).isActive = true
+//        lineView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+//        lineView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+//        lineView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+//        lineView.heightAnchor.constraint(equalToConstant: 5).isActive = true
     }
     
     private func setupSearchTextField() {
-        searchTextField.topAnchor.constraint(equalTo: lineView.bottomAnchor, constant: 5).isActive = true
-        searchTextField.leftAnchor.constraint(equalTo: self.leftAnchor, constant: sideArchoreConctant).isActive = true
-        searchTextField.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -sideArchoreConctant).isActive = true
-        searchTextField.bottomAnchor.constraint(equalToSystemSpacingBelow: self.bottomAnchor, multiplier: 0).isActive = true
-        searchTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
+//        searchTextField.topAnchor.constraint(equalTo: lineView.bottomAnchor, constant: 5).isActive = true
+//        searchTextField.leftAnchor.constraint(equalTo: self.leftAnchor, constant: sideArchoreConctant).isActive = true
+//        searchTextField.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -sideArchoreConctant).isActive = true
+//        searchTextField.bottomAnchor.constraint(equalToSystemSpacingBelow: self.bottomAnchor, multiplier: 0).isActive = true
+//        searchTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
 }
 

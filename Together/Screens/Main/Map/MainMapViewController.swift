@@ -9,14 +9,14 @@ import CoreLocation
 final class MainMapViewController: UIViewController {
     
     //MARK: - Open properties
-    // презентору сообщаем обо всех действиях и передаем данные, например: презентер, была нажата кнопка войти,
+    // презентору сообщаем обо всех действиях и передаем данные, например: презентер, была нажата кнопка войти
     var presenter: MainMapViewActions?
+    var slideMenuViewController: SlideMenuViewController?
     
     //MARK: - Private properties
     //вью просим отобразить контент
     private lazy var mainView = view as? (MainMapViewImpl & PresenterHaving)
-    private var slideMenuViewController: SlideMenuViewController?
-    private var visualEffectView: UIVisualEffectView?
+    //private var visualEffectView: UIVisualEffectView?
     
     private let slideMenuViewControllerHeight: CGFloat = 135
     
@@ -32,7 +32,8 @@ final class MainMapViewController: UIViewController {
             mainView?.setPresenter(presenter)
         }
         setNavigation()
-        setupSlideMenuUp()
+        presenter?.setupSlideMenu()
+        showSlideMenu()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,21 +42,20 @@ final class MainMapViewController: UIViewController {
     
     //MARK: - Private metods
     //Устанавливаем навигацию, заголовок навигейшен контроллера, кнопки на навиг контроллере
-    private func setupSlideMenuUp() {
+    private func showSlideMenu() {
         // to do ..
 //        visualEffectView = UIVisualEffectView()
 //        visualEffectView?.frame = self.view.frame
 //        guard let visualView = visualEffectView else { return }
 
 //        self.view.addSubview(visualView)
-        slideMenuViewController = SlideMenuViewController()
-        guard var slideViewController = slideMenuViewController else { return }
+        guard let slideViewController = slideMenuViewController else { return }
         slideViewController.view.frame = CGRect(x: 0,
                                                 y: self.view.frame.height - slideMenuViewControllerHeight ,
                                                 width: self.view.frame.width,
                                                 height: slideMenuViewControllerHeight)
         
-        self.addChild(slideViewController)
+        //self.addChild(slideViewController)
         self.view.addSubview(slideViewController.view)
     }
     
