@@ -12,6 +12,7 @@ final class Event {
     
     //TODO Скорее всего сделать модель User с полями имя, телефон, чтоб вместо nameNeedy сразу вбивать контакты нуждающегося
     
+    let id: Int
     var title: String
     var description: String?
     var address: Address
@@ -19,7 +20,8 @@ final class Event {
     var nameNeedy: String?
     var progress: Int
     
-    init(title: String, description: String?, address: Address, coordinate: CLLocationCoordinate2D, nameNeedy: String, progress: Int = 0) {
+    init(id: Int, title: String, description: String?, address: Address, coordinate: CLLocationCoordinate2D, nameNeedy: String, progress: Int = 0) {
+        self.id = id
         self.title = title
         self.description = description
         self.address = address

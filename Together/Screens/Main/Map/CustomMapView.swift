@@ -28,6 +28,13 @@ class CustomMapView: MKMapView {
     private func setupUI() {
         self.userLocation.title = "Вы здесь"
         self.delegate = self
+        
+        registerAnnotationViewClasses()
+    }
+    
+    private func registerAnnotationViewClasses() {
+        self.register(EventAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
+        self.register(ClusterAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultClusterAnnotationViewReuseIdentifier)
     }
 }
 
@@ -36,26 +43,12 @@ class CustomMapView: MKMapView {
 // для изменения вида отображение обьектов на карте, с более подробной информации
 extension CustomMapView: MKMapViewDelegate {
     
-    //настройка вью для аннотации
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
-        guard annotation is EventMapPin
-            else { return nil }
+                guard annotation is EventMapPin
+                    else { return nil }
         
-        let identifier = "event"
-        var view: MKMarkerAnnotationView
-        
-        if let dequeuedView = mapView.dequeueReusableAnnotationView(
-            withIdentifier: identifier) as? MKMarkerAnnotationView {
-            dequeuedView.annotation = annotation
-            view = dequeuedView
-        } else {
-            view = MKMarkerAnnotationView(
-                annotation: annotation,
-                reuseIdentifier: identifier)
-            view.canShowCallout = true
-            view.rightCalloutAccessoryView = UIButton(type: .custom)
-        }
+        let view = EventAnnotationView(annotation: annotation, reuseIdentifier: EventAnnotationView.reuseID)
         return view
     }
     

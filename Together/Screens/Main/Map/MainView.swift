@@ -9,6 +9,8 @@
 import UIKit
 import MapKit
 
+//TODO: - Вынести кнопку компаса на карту, сделать кластеры при уменьшении карты
+
 protocol MainMapViewImpl {
     func showUserLocation(_ location: CLLocation)
     func showEventPins(_ pins: [EventMapPin])
@@ -140,10 +142,10 @@ final class MainView: UIView {
 //MARK: - MainMapViewImpl
 extension MainView: MainMapViewImpl {
     
-//    func setPresenter(_ presenter: MainMapViewActions) {
-//        self.presenter = presenter
-//        //mapView.setPresenter(presenter)
-//    }
+    //    func setPresenter(_ presenter: MainMapViewActions) {
+    //        self.presenter = presenter
+    //        //mapView.setPresenter(presenter)
+    //    }
     
     func showUserLocation(_ location: CLLocation) {
         mapView.centerToLocation(location)
@@ -170,7 +172,6 @@ extension MainView: PresenterHaving {
 
 //MARK: - Size properties
 extension MainView {
-    
     private var roundMapButtonHeight: CGFloat { return 40.0 }
     private var rightPaddingOfButton: CGFloat { return 10.0 }
 }
