@@ -23,6 +23,8 @@
 		56A824DF24D461F200019B37 /* CustomMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A824DE24D461F200019B37 /* CustomMapView.swift */; };
 		56A824E224D46D5800019B37 /* ViewAstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A824E124D46D5800019B37 /* ViewAstions.swift */; };
 		56A824E424D46E4D00019B37 /* PresenterHaving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A824E324D46E4D00019B37 /* PresenterHaving.swift */; };
+		56A824E624D96DF000019B37 /* EventAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A824E524D96DF000019B37 /* EventAnnotationView.swift */; };
+		56A824E824D96FFA00019B37 /* ClusterAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A824E724D96FFA00019B37 /* ClusterAnnotationView.swift */; };
 		56D7E43C24B3601800933B04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D7E43B24B3601800933B04 /* AppDelegate.swift */; };
 		56D7E43E24B3601800933B04 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D7E43D24B3601800933B04 /* SceneDelegate.swift */; };
 		56D7E44024B3601800933B04 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D7E43F24B3601800933B04 /* SignInViewController.swift */; };
@@ -94,6 +96,8 @@
 		56A824DE24D461F200019B37 /* CustomMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMapView.swift; sourceTree = "<group>"; };
 		56A824E124D46D5800019B37 /* ViewAstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAstions.swift; sourceTree = "<group>"; };
 		56A824E324D46E4D00019B37 /* PresenterHaving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterHaving.swift; sourceTree = "<group>"; };
+		56A824E524D96DF000019B37 /* EventAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAnnotationView.swift; sourceTree = "<group>"; };
+		56A824E724D96FFA00019B37 /* ClusterAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterAnnotationView.swift; sourceTree = "<group>"; };
 		56D7E43824B3601800933B04 /* Together.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Together.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56D7E43B24B3601800933B04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56D7E43D24B3601800933B04 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 				56A824DE24D461F200019B37 /* CustomMapView.swift */,
 				A91769E524BAF03400EEE26A /* MainMapPresenter.swift */,
 				A91769E324BAF02400EEE26A /* MainMapCoordinator.swift */,
+				56A824EB24D995E300019B37 /* Views */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -236,6 +241,15 @@
 				56A824E324D46E4D00019B37 /* PresenterHaving.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		56A824EB24D995E300019B37 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				56A824E524D96DF000019B37 /* EventAnnotationView.swift */,
+				56A824E724D96FFA00019B37 /* ClusterAnnotationView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		56D7E42F24B3601800933B04 = {
@@ -553,6 +567,7 @@
 				A9C2FC4E24C5887000756DE6 /* ProfileSettingView.swift in Sources */,
 				A995BE5624C6C61800B2E63A /* ActionEventPresenter.swift in Sources */,
 				569AF47F24B498CA00D9DC88 /* GrayLineView.swift in Sources */,
+				56A824E624D96DF000019B37 /* EventAnnotationView.swift in Sources */,
 				A9D6102D24BE48DC00C1C207 /* ProfileCoordinator.swift in Sources */,
 				A981FB2A24B761A700A3D205 /* UIViewController + indicator + basicAlert.swift in Sources */,
 				A995BE5224C6C5DB00B2E63A /* ActionEventView.swift in Sources */,
@@ -590,6 +605,7 @@
 				A995BE5824C6C98000B2E63A /* CompletionEventCell.swift in Sources */,
 				566DB78524B4EFE8007409BE /* LogoView.swift in Sources */,
 				A9C2FC5224C588AF00756DE6 /* ProfileSettingPresenter.swift in Sources */,
+				56A824E824D96FFA00019B37 /* ClusterAnnotationView.swift in Sources */,
 				A995BE4A24C6C58900B2E63A /* CompletionEventView.swift in Sources */,
 				A91769E024BAEFED00EEE26A /* MainMapViewController.swift in Sources */,
 				569AF46A24B4542A00D9DC88 /* SignInView.swift in Sources */,
