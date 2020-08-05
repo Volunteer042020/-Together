@@ -9,7 +9,7 @@ import Foundation
 import CoreLocation
 
 protocol MainMapViewActions: class, ViewAstions {
-    func viewWillAppear()
+    func viewDidLoad()
 }
 
 protocol MainViewActions: class, ViewAstions {
@@ -48,7 +48,7 @@ final class MainMapPresenter {
 //MARK: - MainMapViewAction
 extension MainMapPresenter: MainMapViewActions {
     
-    func viewWillAppear() {
+    func viewDidLoad() {
         LocationServiceTwo.sharedInstance.delegate = self
         LocationServiceTwo.sharedInstance.startUpdatingLocation()
         

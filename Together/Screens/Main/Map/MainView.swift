@@ -86,7 +86,7 @@ final class MainView: UIView {
         
         trackingUserButton.translatesAutoresizingMaskIntoConstraints = false
         trackingUserButton.topAnchor
-            .constraint(equalTo: mapView.topAnchor, constant: 50).isActive = true
+            .constraint(equalTo: mapView.topAnchor, constant: 60).isActive = true
         trackingUserButton.rightAnchor
             .constraint(equalTo: mapView.safeAreaLayoutGuide.rightAnchor,
                         constant: -rightPaddingOfButton).isActive = true
@@ -126,7 +126,7 @@ final class MainView: UIView {
     }
     
     @objc private func trackingUserButtonTapped() {
-        mapView.userTrackingMode = .follow
+        mapView.setUserTrackingMode(.follow, animated: true)
     }
     
     @objc private func plusAreaButtonTapped() {
@@ -141,11 +141,6 @@ final class MainView: UIView {
 
 //MARK: - MainMapViewImpl
 extension MainView: MainMapViewImpl {
-    
-    //    func setPresenter(_ presenter: MainMapViewActions) {
-    //        self.presenter = presenter
-    //        //mapView.setPresenter(presenter)
-    //    }
     
     func showUserLocation(_ location: CLLocation) {
         mapView.centerToLocation(location)

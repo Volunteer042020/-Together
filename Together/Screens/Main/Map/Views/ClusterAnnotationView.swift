@@ -28,7 +28,6 @@ class ClusterAnnotationView: MKAnnotationView {
         
         if let cluster = annotation as? MKClusterAnnotation {
             let totalEvents = cluster.memberAnnotations.count
-            
             cluster.subtitle = "+ еще \(totalEvents - 1)"
             image = drawEventCount(count: totalEvents)
             displayPriority = .defaultLow

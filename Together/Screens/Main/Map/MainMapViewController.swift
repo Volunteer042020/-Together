@@ -31,10 +31,7 @@ final class MainMapViewController: UIViewController {
             mainView?.setPresenter(presenter)
         }
         setNavigation()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        presenter?.viewWillAppear()
+        presenter?.viewDidLoad()
     }
     
     //MARK: - Private metods

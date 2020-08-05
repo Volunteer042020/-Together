@@ -12,6 +12,7 @@ import MapKit
 
 class CustomMapView: MKMapView {
     
+    //MARK: - Private properties
     private var presenter: MapViewActions?
     
     //MARK: - Init
@@ -24,7 +25,17 @@ class CustomMapView: MKMapView {
         super.init(coder: coder)
         setupUI()
     }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        //TODO: - оформить красиво
+        if let compassView = self.subviews.filter({ $0.isKind(of: NSClassFromString("MKCompassView")!) }).first {
+            compassView.frame = CGRect(x: self.frame.width - 50, y: 15, width: 40, height: 40)
+        }
+    }
     
+    
+    //MARK: - Private metods
     private func setupUI() {
         self.userLocation.title = "Вы здесь"
         self.delegate = self
@@ -45,8 +56,8 @@ extension CustomMapView: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
-                guard annotation is EventMapPin
-                    else { return nil }
+        guard annotation is EventMapPin
+            else { return nil }
         
         let view = EventAnnotationView(annotation: annotation, reuseIdentifier: EventAnnotationView.reuseID)
         return view
