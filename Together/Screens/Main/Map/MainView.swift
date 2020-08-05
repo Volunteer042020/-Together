@@ -25,27 +25,6 @@ final class MainView: UIView {
         return mapView
     }()
     
-    private lazy var trackingUserButton: UIButton = {
-        let button = RoundMapButton(type: .system)
-        button.setImage(systemName: "location.fill")
-        button.addTarget(self, action: #selector(trackingUserButtonTapped), for: .touchUpInside)
-        return button
-    }()
-    
-    private lazy var plusAreaButton: UIButton = {
-        let button = RoundMapButton(type: .system)
-        button.setImage(systemName: "plus")
-        button.addTarget(self, action: #selector(plusAreaButtonTapped), for: .touchUpInside)
-        return button
-    }()
-    
-    private lazy var minusAreaButton: UIButton = {
-        let button = RoundMapButton(type: .system)
-        button.setImage(systemName: "minus")
-        button.addTarget(self, action: #selector(minusAreaButtonTapped), for: .touchUpInside)
-        return button
-    }()
-    
     private var presenter: MainViewActions?
     
     //MARK: - Init
@@ -62,9 +41,6 @@ final class MainView: UIView {
     //MARK: - Private metods
     private func setupUI() {
         setupMapView()
-        setupTrackingUserButton()
-        setupPlusAreaButton()
-        setupMinusAreaButton()
     }
     
     private func setupMapView() {
@@ -80,62 +56,7 @@ final class MainView: UIView {
         mapView.bottomAnchor
             .constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
-    
-    private func setupTrackingUserButton() {
-        mapView.addSubview(trackingUserButton)
-        
-        trackingUserButton.translatesAutoresizingMaskIntoConstraints = false
-        trackingUserButton.topAnchor
-            .constraint(equalTo: mapView.topAnchor, constant: 60).isActive = true
-        trackingUserButton.rightAnchor
-            .constraint(equalTo: mapView.safeAreaLayoutGuide.rightAnchor,
-                        constant: -rightPaddingOfButton).isActive = true
-        trackingUserButton.heightAnchor
-            .constraint(equalToConstant: roundMapButtonHeight).isActive = true
-        trackingUserButton.widthAnchor
-            .constraint(equalTo: trackingUserButton.heightAnchor, multiplier: 1).isActive = true
-    }
-    
-    private func setupPlusAreaButton() {
-        mapView.addSubview(plusAreaButton)
-        
-        plusAreaButton.translatesAutoresizingMaskIntoConstraints = false
-        plusAreaButton.bottomAnchor
-            .constraint(equalTo: self.centerYAnchor).isActive = true
-        plusAreaButton.rightAnchor
-            .constraint(equalTo: mapView.safeAreaLayoutGuide.rightAnchor, constant: -rightPaddingOfButton).isActive = true
-        plusAreaButton.heightAnchor
-            .constraint(equalToConstant: roundMapButtonHeight).isActive = true
-        plusAreaButton.widthAnchor
-            .constraint(equalTo: plusAreaButton.heightAnchor, multiplier: 1).isActive = true
-    }
-    
-    private func setupMinusAreaButton() {
-        mapView.addSubview(minusAreaButton)
-        
-        minusAreaButton.translatesAutoresizingMaskIntoConstraints = false
-        minusAreaButton.topAnchor
-            .constraint(equalTo: plusAreaButton.bottomAnchor, constant: 5).isActive = true
-        minusAreaButton.rightAnchor
-            .constraint(equalTo: mapView.safeAreaLayoutGuide.rightAnchor,
-                        constant: -rightPaddingOfButton).isActive = true
-        minusAreaButton.heightAnchor
-            .constraint(equalToConstant: roundMapButtonHeight).isActive = true
-        minusAreaButton.widthAnchor
-            .constraint(equalTo: minusAreaButton.heightAnchor, multiplier: 1).isActive = true
-    }
-    
-    @objc private func trackingUserButtonTapped() {
-        mapView.setUserTrackingMode(.follow, animated: true)
-    }
-    
-    @objc private func plusAreaButtonTapped() {
-        mapView.zoomMap(byFactor: 1)
-    }
-    
-    @objc private func minusAreaButtonTapped() {
-        mapView.zoomMap(byFactor: -1)
-    }
+
 }
 
 
@@ -164,9 +85,3 @@ extension MainView: PresenterHaving {
     }
 }
 
-
-//MARK: - Size properties
-extension MainView {
-    private var roundMapButtonHeight: CGFloat { return 40.0 }
-    private var rightPaddingOfButton: CGFloat { return 10.0 }
-}
