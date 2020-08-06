@@ -13,7 +13,7 @@ final class SlideMenuViewController: UIViewController {
     var presenter: SlideMenuViewAction?
     
     //MARK: - Private properties
-    private lazy var slideMenuView = view as? SlideMenuViewImpl
+    private lazy var slideMenuView = view as? (SlideMenuViewImpl & PresenterHaving)
     
      //MARK: - Life cycle
     override func loadView() {
@@ -24,7 +24,7 @@ final class SlideMenuViewController: UIViewController {
         super.viewDidLoad()
                 
         if let view = slideMenuView, let presenter = presenter {
-            view.setPresenter(presenter)
+            view.setPresenter(presenter as! ViewAstions)
         }
     }
 }
