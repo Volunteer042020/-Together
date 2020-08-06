@@ -12,11 +12,16 @@ import CoreLocation
 final class MainMapViewController: UIViewController {
     
     //MARK: - Open properties
+<<<<<<< HEAD
     // презентору сообщаем обо всех действиях и передаем данные, например: презентер, была нажата кнопка войти
+=======
+    
+>>>>>>> 5f41fe2... Modification SlideMenuView
     var presenter: MainMapViewActions?
     var slideMenuViewController: SlideMenuViewController?
     
     //MARK: - Private properties
+<<<<<<< HEAD
     //вью просим отобразить контент
     private lazy var mainView = view as? (MainMapViewImpl & PresenterHaving)
 <<<<<<< HEAD
@@ -25,6 +30,9 @@ final class MainMapViewController: UIViewController {
     
     private let slideMenuViewControllerHeight: CGFloat = 135
 >>>>>>> b159e9a... Add a child SlideMenuМiewСontroller through the coordinator
+=======
+    private lazy var mainView = view as? (MainMapViewImpl & PresenterHaving)
+>>>>>>> 5f41fe2... Modification SlideMenuView
     
     //MARK: - Life cycle
     override func loadView() {
@@ -51,6 +59,7 @@ final class MainMapViewController: UIViewController {
     }
     
     //MARK: - Private metods
+<<<<<<< HEAD
     //Устанавливаем навигацию, заголовок навигейшен контроллера, кнопки на навиг контроллере
 <<<<<<< HEAD
 =======
@@ -68,6 +77,13 @@ final class MainMapViewController: UIViewController {
                                                 height: slideMenuViewControllerHeight)
         
         //self.addChild(slideViewController)
+=======
+    private func showSlideMenu() {
+
+        guard let slideViewController = slideMenuViewController
+            else { return }
+        
+>>>>>>> 5f41fe2... Modification SlideMenuView
         self.view.addSubview(slideViewController.view)
     }
     
