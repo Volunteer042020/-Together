@@ -15,138 +15,125 @@ protocol SlideMenuViewImpl {
 
 final class SlideMenuView: UIView {
     
+    enum SlideUpViewState {
+        case expanded
+        case halfScreen
+        case collapsed
+    }
+    
     var presenter: SlideMenuViewAction?
     
     //MARK: - Private properties
+    private var viewState: SlideUpViewState = .collapsed
     
-    private let slideViewHeight: CGFloat = 300
-    private let slideHandleAreaHeight: CGFloat = 150
-    private var slideVisible = false
-    
-    private var rightAnchorConstraint: NSLayoutConstraint?
+    private let expandedViewHeight: CGFloat = UIScreen.main.bounds.height - 80
+    private let halfScreenViewHeight: CGFloat = UIScreen.main.bounds.height / 2
+    private let collapsedViewHeight: CGFloat = 120
     
     private lazy var lineView: UIView = {
         let view = UIView()
-
-        view.backgroundColor = .darkGray
-        view.translatesAutoresizingMaskIntoConstraints = false
-        
+        view.backgroundColor = .gray
         view.layer.cornerRadius = 3
         view.clipsToBounds = true
         return view
     }()
     
-    private lazy var searchTextField: UITextField = {
-        let textField = SearchMapTextField()
-        return textField
-    }()
-    
-    private lazy var closedButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.tintColor = UIColor.blueButton
-        button.setTitle("Отменить", for: .normal)
-        
-        button.translatesAutoresizingMaskIntoConstraints = false
-        
-        button.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(closedSlideMenuView)))
-        return button
+    private lazy var searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.placeholder = "Поиск"
+        searchBar.searchBarStyle = .minimal
+        searchBar.delegate = self
+        return searchBar
     }()
     
     //MARK: - Init
-     override init(frame: CGRect) {
-         super.init(frame: frame)
-         setupUI()
-     }
-     
-     required init?(coder: NSCoder) {
-         super.init(coder: coder)
-         setupUI()
-     }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupUI()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupUI()
+    }
     
     //MARK: - Private metods
     fileprivate func setupUI() {
-        setupSelfView()
-        setupLineView()
-        setupSearchTextField()
-    }
-    
-    private func setupSelfView() {
+        
+        self.frame = CGRect(x: 0, y: UIScreen.main.bounds.height - collapsedViewHeight, width: UIScreen.main.bounds.width, height: collapsedViewHeight)
         self.backgroundColor = UIColor.white
-        self.alpha = 0.9
         self.layer.cornerRadius = 10
+        self.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         self.clipsToBounds = true
         
         self.layer.shadowOffset = CGSize(width: 0, height: 2)
-        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowColor = UIColor.gray.cgColor
         self.layer.shadowOpacity = 2
         self.layer.shadowRadius = 4
         self.layer.masksToBounds = false
+        
+        let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(panGesture))
+        self.addGestureRecognizer(gesture)
+        
+        setupLineView()
+        setupSearchBar()
     }
+    
+    
+    @objc func panGesture() {
+        
+    }
+    
     
     private func setupLineView() {
         self.addSubview(lineView)
         
+        lineView.translatesAutoresizingMaskIntoConstraints = false
         lineView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5).isActive = true
         lineView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         lineView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         lineView.heightAnchor.constraint(equalToConstant: 5).isActive = true
     }
     
-    private func setupSearchTextField() {
-        self.addSubview(searchTextField)
+    private func setupSearchBar() {
+        self.addSubview(searchBar)
         
-        searchTextField.topAnchor.constraint(equalTo: lineView.bottomAnchor, constant: 3).isActive = true
-        searchTextField.leftAnchor.constraint(equalTo: self.leftAnchor, constant: sideArchoreConctant).isActive = true
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        searchBar.topAnchor.constraint(equalTo: self.topAnchor, constant: 8).isActive = true
+        searchBar.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16).isActive = true
+        searchBar.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16).isActive = true
         
-        rightAnchorConstraint = searchTextField.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -sideArchoreConctant)
-        rightAnchorConstraint?.isActive = true
-        
-        searchTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        searchTextField.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openSlideMenuView)))
     }
     
-    @objc private func openSlideMenuView(){
+    private func animateView(toState state: SlideUpViewState) {
+        switch state {
+        case .collapsed:
             UIView.animate(withDuration: 0.9,
                            delay: 0,
-                           usingSpringWithDamping: 1,
-                           initialSpringVelocity: 1,
-                           options: .curveEaseOut,
+                           usingSpringWithDamping: 1.0,
+                           initialSpringVelocity: 1.0,
                            animations: {
-
-                            self.frame.origin.y = self.frame.height - self.slideViewHeight
-                            self.slideVisible = true
-                            self.closedButton.isHidden = false
-                            
-                            self.rightAnchorConstraint?.isActive = false
-                            self.rightAnchorConstraint = self.searchTextField.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -100)
-                            self.rightAnchorConstraint?.isActive = true
-                            
-                            self.addSubview(self.closedButton)
-                            self.closedButton.leftAnchor.constraint(equalTo: self.searchTextField.rightAnchor, constant: 5).isActive = true
-                            self.closedButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -5).isActive = true
-                            self.closedButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 15).isActive = true
-                            
-            }, completion: nil)
-    }
-    
-    @objc private func closedSlideMenuView() {
+                            self.frame = CGRect(x: 0, y: UIScreen.main.bounds.height - self.collapsedViewHeight, width: UIScreen.main.bounds.width, height: self.collapsedViewHeight)
+            },
+                           completion: { _ in
+                            self.viewState = .collapsed
+            })
+        case .expanded:
             UIView.animate(withDuration: 0.9,
                            delay: 0,
-                           usingSpringWithDamping: 1,
-                           initialSpringVelocity: 1,
-                           options: .curveEaseOut,
+                           usingSpringWithDamping: 1.0,
+                           initialSpringVelocity: 1.0,
                            animations: {
-                            
-                            self.frame.origin.y = self.frame.height + self.slideHandleAreaHeight
-                            self.slideVisible = true
-                            self.closedButton.isHidden = true
-                            self.rightAnchorConstraint?.isActive = false
-                            self.rightAnchorConstraint = self.searchTextField.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -self.sideArchoreConctant)
-                            self.rightAnchorConstraint?.isActive = true
-            }, completion: nil)
+                            self.frame = CGRect(x: 0, y: UIScreen.main.bounds.height - self.expandedViewHeight, width: UIScreen.main.bounds.width, height: self.expandedViewHeight)
+            },
+                           completion: { _ in
+                            self.viewState = .expanded
+                           })
+        case .halfScreen:
+            break
         }
     }
-    
+}
 
 
 extension SlideMenuView: PresenterHaving {
@@ -155,6 +142,31 @@ extension SlideMenuView: PresenterHaving {
         if let presenter = presenter as? SlideMenuViewAction {
             self.presenter = presenter
         }
+    }
+}
+
+
+extension SlideMenuView: UISearchBarDelegate {
+    
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        
+        searchBar.showsCancelButton = true
+        
+        if viewState == .collapsed || viewState == .halfScreen {
+            animateView(toState: .expanded)
+        }
+        
+        return true
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        
+        if viewState == .expanded {
+            animateView(toState: .collapsed)
+        }
+        
+        searchBar.showsCancelButton = false
+        searchBar.endEditing(true)
     }
 }
 
