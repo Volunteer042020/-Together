@@ -26,9 +26,9 @@ final class SlideMenuView: UIView {
     //MARK: - Private properties
     private var viewState: SlideUpViewState = .collapsed
     
-    private let expandedViewHeight: CGFloat = UIScreen.main.bounds.height - 80
+    private let expandedViewHeight: CGFloat = UIScreen.main.bounds.height - 200
     private let halfScreenViewHeight: CGFloat = UIScreen.main.bounds.height / 2
-    private let collapsedViewHeight: CGFloat = 120
+    private let collapsedViewHeight: CGFloat = 150
     
     private lazy var lineView: UIView = {
         let view = UIView()
@@ -79,9 +79,31 @@ final class SlideMenuView: UIView {
         setupSearchBar()
     }
     
+    private func moveView(state: SlideUpViewState) {
+        let yPosition = state == .collapsed ? collapsedViewHeight : expandedViewHeight
+        self.frame = CGRect(x: 0, y: UIScreen.main.bounds.height - yPosition, width: self.frame.width, height: self.frame.height)
+    }
     
-    @objc func panGesture() {
+    private func moveView(panGestureRecognizer recognizer: UIPanGestureRecognizer) {
+        let transtion = recognizer.translation(in: self)
+        let minY = self.frame.minY
         
+        if(minY + transtion.y >= collapsedViewHeight) && (minY + transtion.y <= expandedViewHeight) {
+            let height = UIScreen.main.bounds.height - self.collapsedViewHeight
+            self.frame = CGRect(x: 0, y: minY + transtion.y, width: self.frame.width, height: height)
+            recognizer.setTranslation(CGPoint.zero, in: self)
+        }
+    }
+    
+    @objc func panGesture(_ recognizer: UIPanGestureRecognizer) {
+        moveView(panGestureRecognizer: recognizer)
+        
+        if recognizer.state == .ended {
+            UIView.animate(withDuration: 1, delay: 0.0, options: [.allowUserInteraction], animations: {
+                let state: SlideUpViewState = recognizer.velocity(in: self).y >= 0 ? .collapsed : .expanded
+                self.moveView(state: state)
+            }, completion: nil)
+        }
     }
     
     
