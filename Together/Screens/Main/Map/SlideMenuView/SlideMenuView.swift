@@ -99,7 +99,7 @@ final class SlideMenuView: UIView {
         moveView(panGestureRecognizer: recognizer)
         
         if recognizer.state == .ended {
-            UIView.animate(withDuration: 1, delay: 0.0, options: [.allowUserInteraction], animations: {
+            UIView.animate(withDuration: 0.6, delay: 0.0, options: [.allowUserInteraction], animations: {
                 let state: SlideUpViewState = recognizer.velocity(in: self).y >= 0 ? .collapsed : .expanded
                 self.moveView(state: state)
             }, completion: nil)
