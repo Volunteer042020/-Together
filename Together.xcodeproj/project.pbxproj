@@ -47,6 +47,10 @@
 		A91769E624BAF03400EEE26A /* MainMapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91769E524BAF03400EEE26A /* MainMapPresenter.swift */; };
 		A946126F24BD795A00FD57CB /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A946126E24BD795A00FD57CB /* LocationService.swift */; };
 		A946127124BD7AF900FD57CB /* UIMapView + centerLocation().swift in Sources */ = {isa = PBXBuildFile; fileRef = A946127024BD7AF900FD57CB /* UIMapView + centerLocation().swift */; };
+		A94B8DE324D84DC90025656B /* SlideMenuViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = A94B8DE224D84DC90025656B /* SlideMenuViewController .swift */; };
+		A94B8DE524D84DD40025656B /* SlideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94B8DE424D84DD40025656B /* SlideMenuView.swift */; };
+		A94B8DE724D84DE30025656B /* SlideMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94B8DE624D84DE30025656B /* SlideMenuCoordinator.swift */; };
+		A94B8DE924D84DF70025656B /* SlideMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94B8DE824D84DF70025656B /* SlideMenuPresenter.swift */; };
 		A981FB1F24B73E8300A3D205 /* UIView + getToolBar().swift in Sources */ = {isa = PBXBuildFile; fileRef = A981FB1E24B73E8300A3D205 /* UIView + getToolBar().swift */; };
 		A981FB2224B7451800A3D205 /* RestorePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A981FB2124B7451800A3D205 /* RestorePasswordViewController.swift */; };
 		A981FB2424B7452A00A3D205 /* RestorePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A981FB2324B7452A00A3D205 /* RestorePasswordView.swift */; };
@@ -75,6 +79,7 @@
 		A9D6102B24BE48C400C1C207 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D6102A24BE48C400C1C207 /* ProfileView.swift */; };
 		A9D6102D24BE48DC00C1C207 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D6102C24BE48DC00C1C207 /* ProfileCoordinator.swift */; };
 		A9D6102F24BE48FA00C1C207 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D6102E24BE48FA00C1C207 /* ProfilePresenter.swift */; };
+		A9F0142424DB35C700BFBF16 /* SearchMapTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F0142324DB35C700BFBF16 /* SearchMapTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +125,10 @@
 		A91769E524BAF03400EEE26A /* MainMapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapPresenter.swift; sourceTree = "<group>"; };
 		A946126E24BD795A00FD57CB /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		A946127024BD7AF900FD57CB /* UIMapView + centerLocation().swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIMapView + centerLocation().swift"; sourceTree = "<group>"; };
+		A94B8DE224D84DC90025656B /* SlideMenuViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SlideMenuViewController .swift"; sourceTree = "<group>"; };
+		A94B8DE424D84DD40025656B /* SlideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuView.swift; sourceTree = "<group>"; };
+		A94B8DE624D84DE30025656B /* SlideMenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuCoordinator.swift; sourceTree = "<group>"; };
+		A94B8DE824D84DF70025656B /* SlideMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuPresenter.swift; sourceTree = "<group>"; };
 		A981FB1E24B73E8300A3D205 /* UIView + getToolBar().swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + getToolBar().swift"; sourceTree = "<group>"; };
 		A981FB2124B7451800A3D205 /* RestorePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePasswordViewController.swift; sourceTree = "<group>"; };
 		A981FB2324B7452A00A3D205 /* RestorePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePasswordView.swift; sourceTree = "<group>"; };
@@ -148,6 +157,7 @@
 		A9D6102A24BE48C400C1C207 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = Together/Screens/Main/ProfileModule/Profile/ProfileView.swift; sourceTree = SOURCE_ROOT; };
 		A9D6102C24BE48DC00C1C207 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileCoordinator.swift; path = Together/Screens/Main/ProfileModule/Profile/ProfileCoordinator.swift; sourceTree = SOURCE_ROOT; };
 		A9D6102E24BE48FA00C1C207 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfilePresenter.swift; path = Together/Screens/Main/ProfileModule/Profile/ProfilePresenter.swift; sourceTree = SOURCE_ROOT; };
+		A9F0142324DB35C700BFBF16 /* SearchMapTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMapTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +182,7 @@
 		566DB78924BCDE78007409BE /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				A94B8DE124D84D850025656B /* SlideMenuView */,
 				A91769DF24BAEFED00EEE26A /* MainMapViewController.swift */,
 				A91769E124BAF01100EEE26A /* MainView.swift */,
 				56A824DE24D461F200019B37 /* CustomMapView.swift */,
@@ -225,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				569AF48324B4A65800D9DC88 /* GrayTextField.swift */,
+				A9F0142324DB35C700BFBF16 /* SearchMapTextField.swift */,
 			);
 			path = TextFields;
 			sourceTree = "<group>";
@@ -397,6 +409,17 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		A94B8DE124D84D850025656B /* SlideMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				A94B8DE224D84DC90025656B /* SlideMenuViewController .swift */,
+				A94B8DE424D84DD40025656B /* SlideMenuView.swift */,
+				A94B8DE624D84DE30025656B /* SlideMenuCoordinator.swift */,
+				A94B8DE824D84DF70025656B /* SlideMenuPresenter.swift */,
+			);
+			path = SlideMenuView;
+			sourceTree = "<group>";
+		};
 		A981FB2024B744EA00A3D205 /* RestorePassword */ = {
 			isa = PBXGroup;
 			children = (
@@ -543,6 +566,7 @@
 				56D7E45724B3792900933B04 /* AppCoordinator.swift in Sources */,
 				A995BE4C24C6C5A000B2E63A /* CompletionEventCoordinator.swift in Sources */,
 				A9C8DA9324D043E4006F63FC /* UIMapView + zoomMap().swift in Sources */,
+				A94B8DE724D84DE30025656B /* SlideMenuCoordinator.swift in Sources */,
 				A9D6102B24BE48C400C1C207 /* ProfileView.swift in Sources */,
 				56DCF7FC24CEDAF80037B97B /* GeocodingService.swift in Sources */,
 				56DCF7FE24CEE92E0037B97B /* Address.swift in Sources */,
@@ -584,9 +608,13 @@
 				566DB78824B4F6D3007409BE /* VerticalStack.swift in Sources */,
 				56A824DD24D4480300019B37 /* RoundMapButton.swift in Sources */,
 				A981FB2424B7452A00A3D205 /* RestorePasswordView.swift in Sources */,
+				A94B8DE924D84DF70025656B /* SlideMenuPresenter.swift in Sources */,
+				A9F0142424DB35C700BFBF16 /* SearchMapTextField.swift in Sources */,
 				A91769E224BAF01100EEE26A /* MainView.swift in Sources */,
 				A981FB2624B7454100A3D205 /* RestorePasswordCoordinator.swift in Sources */,
+				A94B8DE524D84DD40025656B /* SlideMenuView.swift in Sources */,
 				A995BE6024C6EA2F00B2E63A /* ActionEventCell.swift in Sources */,
+				A94B8DE324D84DC90025656B /* SlideMenuViewController .swift in Sources */,
 				A995BE5824C6C98000B2E63A /* CompletionEventCell.swift in Sources */,
 				566DB78524B4EFE8007409BE /* LogoView.swift in Sources */,
 				A9C2FC5224C588AF00756DE6 /* ProfileSettingPresenter.swift in Sources */,

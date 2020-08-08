@@ -18,11 +18,13 @@ final class MainViewController: UITabBarController {
     
     override func viewWillAppear(_ animated: Bool) {
         view.backgroundColor = .white
-        setNavigation()
+        setNavigationAndTabBar()
     }
     
     //MARK: - Private metods
-    private func setNavigation() {
+    private func setNavigationAndTabBar() {
+        self.tabBar.isTranslucent = false
+        
         navigationController?.navigationBar.isHidden = true
         self.tabBar.tintColor = UIColor.customGray
         //TODO: ------------------------------------------ ДОБАВИТЬ ФОТО, подумать как оптимизировать код

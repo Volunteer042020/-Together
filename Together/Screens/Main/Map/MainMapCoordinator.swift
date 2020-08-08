@@ -9,13 +9,14 @@
 import UIKit
 
 protocol MainMapCoordination {
-    
+    func setChildSlideMenuVC()
 }
 
 final class MainMapCoordinator: BaseCoordirator {
     
     //MARK: - Private properties
     private let navController: UINavigationController
+    private var mainMapVC: MainMapViewController?
     
     //MARK: - Init
     init(navController: UINavigationController) {
@@ -25,6 +26,7 @@ final class MainMapCoordinator: BaseCoordirator {
     //MARK: - Open properties
     override func start() {
         let vc = MainMapViewController()
+        mainMapVC = vc
         let presenter = MainMapPresenter(view: vc, coordinator: self)
         vc.presenter = presenter
         
@@ -37,5 +39,13 @@ final class MainMapCoordinator: BaseCoordirator {
 
   //MARK: - MainMapCoordination
 extension MainMapCoordinator: MainMapCoordination {
+    
+    func setChildSlideMenuVC() {
+        guard let parentVC = mainMapVC else { return }
+        let coordinator = SlideMenuCoordinator(navController: navController, parentVC: parentVC)
+        coordinator.setDependence(withChildCoordinator: self)
+        coordinator.start()
+    }
+    
     
 }
