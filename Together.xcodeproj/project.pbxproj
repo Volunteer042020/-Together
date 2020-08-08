@@ -75,6 +75,12 @@
 		A9C2FC5024C5888700756DE6 /* ProfileSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2FC4F24C5888700756DE6 /* ProfileSettingCoordinator.swift */; };
 		A9C2FC5224C588AF00756DE6 /* ProfileSettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2FC5124C588AF00756DE6 /* ProfileSettingPresenter.swift */; };
 		A9C8DA9324D043E4006F63FC /* UIMapView + zoomMap().swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8DA9224D043E4006F63FC /* UIMapView + zoomMap().swift */; };
+		A9CCF39824DF320500361894 /* ProfileMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CCF39724DF320500361894 /* ProfileMainTableViewCell.swift */; };
+		A9CCF39A24DF321700361894 /* ProfileMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CCF39924DF321700361894 /* ProfileMainTableViewCell.xib */; };
+		A9CCF39C24DF37C400361894 /* ProfileEventTapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CCF39B24DF37C400361894 /* ProfileEventTapTableViewCell.swift */; };
+		A9CCF39E24DF37DC00361894 /* ProfileEventTapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CCF39D24DF37DC00361894 /* ProfileEventTapTableViewCell.xib */; };
+		A9CCF3A024DF3CE400361894 /* ProfileBetweenLineSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CCF39F24DF3CE400361894 /* ProfileBetweenLineSectionTableViewCell.swift */; };
+		A9CCF3A224DF3D1200361894 /* ProfileBetweenLineSectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CCF3A124DF3D1200361894 /* ProfileBetweenLineSectionTableViewCell.xib */; };
 		A9D6102924BE48B100C1C207 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D6102824BE48B100C1C207 /* ProfileViewController.swift */; };
 		A9D6102B24BE48C400C1C207 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D6102A24BE48C400C1C207 /* ProfileView.swift */; };
 		A9D6102D24BE48DC00C1C207 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D6102C24BE48DC00C1C207 /* ProfileCoordinator.swift */; };
@@ -153,6 +159,12 @@
 		A9C2FC4F24C5888700756DE6 /* ProfileSettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingCoordinator.swift; sourceTree = "<group>"; };
 		A9C2FC5124C588AF00756DE6 /* ProfileSettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingPresenter.swift; sourceTree = "<group>"; };
 		A9C8DA9224D043E4006F63FC /* UIMapView + zoomMap().swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIMapView + zoomMap().swift"; sourceTree = "<group>"; };
+		A9CCF39724DF320500361894 /* ProfileMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMainTableViewCell.swift; sourceTree = "<group>"; };
+		A9CCF39924DF321700361894 /* ProfileMainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileMainTableViewCell.xib; sourceTree = "<group>"; };
+		A9CCF39B24DF37C400361894 /* ProfileEventTapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEventTapTableViewCell.swift; sourceTree = "<group>"; };
+		A9CCF39D24DF37DC00361894 /* ProfileEventTapTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileEventTapTableViewCell.xib; sourceTree = "<group>"; };
+		A9CCF39F24DF3CE400361894 /* ProfileBetweenLineSectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBetweenLineSectionTableViewCell.swift; sourceTree = "<group>"; };
+		A9CCF3A124DF3D1200361894 /* ProfileBetweenLineSectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileBetweenLineSectionTableViewCell.xib; sourceTree = "<group>"; };
 		A9D6102824BE48B100C1C207 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Together/Screens/Main/ProfileModule/Profile/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
 		A9D6102A24BE48C400C1C207 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = Together/Screens/Main/ProfileModule/Profile/ProfileView.swift; sourceTree = SOURCE_ROOT; };
 		A9D6102C24BE48DC00C1C207 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileCoordinator.swift; path = Together/Screens/Main/ProfileModule/Profile/ProfileCoordinator.swift; sourceTree = SOURCE_ROOT; };
@@ -358,6 +370,7 @@
 		56DCF7F624C9B5000037B97B /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				A9CCF39624DF31E300361894 /* ProfileTableViewCell */,
 				A9D6102824BE48B100C1C207 /* ProfileViewController.swift */,
 				A9D6102A24BE48C400C1C207 /* ProfileView.swift */,
 				A9D6102E24BE48FA00C1C207 /* ProfilePresenter.swift */,
@@ -484,6 +497,19 @@
 			path = ProfileSetting;
 			sourceTree = "<group>";
 		};
+		A9CCF39624DF31E300361894 /* ProfileTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A9CCF39724DF320500361894 /* ProfileMainTableViewCell.swift */,
+				A9CCF39924DF321700361894 /* ProfileMainTableViewCell.xib */,
+				A9CCF39B24DF37C400361894 /* ProfileEventTapTableViewCell.swift */,
+				A9CCF39D24DF37DC00361894 /* ProfileEventTapTableViewCell.xib */,
+				A9CCF39F24DF3CE400361894 /* ProfileBetweenLineSectionTableViewCell.swift */,
+				A9CCF3A124DF3D1200361894 /* ProfileBetweenLineSectionTableViewCell.xib */,
+			);
+			path = ProfileTableViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -542,9 +568,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9CCF39E24DF37DC00361894 /* ProfileEventTapTableViewCell.xib in Resources */,
 				A995BE5B24C6CAE500B2E63A /* CompletionEventCell.xib in Resources */,
+				A9CCF39A24DF321700361894 /* ProfileMainTableViewCell.xib in Resources */,
 				56D7E44824B3601D00933B04 /* LaunchScreen.storyboard in Resources */,
 				56D7E44524B3601D00933B04 /* Assets.xcassets in Resources */,
+				A9CCF3A224DF3D1200361894 /* ProfileBetweenLineSectionTableViewCell.xib in Resources */,
 				A995BE6224C6EA4000B2E63A /* ActionEventCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -586,6 +615,7 @@
 				A904DCDB24B5C0FD00ACB761 /* RegisterAccountViewController.swift in Sources */,
 				A91769E424BAF02400EEE26A /* MainMapCoordinator.swift in Sources */,
 				56A824E224D46D5800019B37 /* ViewAstions.swift in Sources */,
+				A9CCF39C24DF37C400361894 /* ProfileEventTapTableViewCell.swift in Sources */,
 				A91769E624BAF03400EEE26A /* MainMapPresenter.swift in Sources */,
 				A9C2FC4C24C5886100756DE6 /* ProfileSettingViewController.swift in Sources */,
 				A904DCDF24B5C63700ACB761 /* RegisterAccountCoordinator.swift in Sources */,
@@ -597,9 +627,11 @@
 				A904DCD824B5B67F00ACB761 /* UIColor + customColor.swift in Sources */,
 				A995BE5024C6C5CA00B2E63A /* ActionEventViewController.swift in Sources */,
 				A995BE4E24C6C5B900B2E63A /* CompletionEventPresenter.swift in Sources */,
+				A9CCF3A024DF3CE400361894 /* ProfileBetweenLineSectionTableViewCell.swift in Sources */,
 				569AF46C24B45B8D00D9DC88 /* IdHaving+id.swift in Sources */,
 				56D7E45A24B37C2100933B04 /* SignInCoordinator.swift in Sources */,
 				56DCF80024CF1E8C0037B97B /* EventMapPin.swift in Sources */,
+				A9CCF39824DF320500361894 /* ProfileMainTableViewCell.swift in Sources */,
 				566DB78B24BCDE98007409BE /* MainCoordinator.swift in Sources */,
 				569AF48624B4AAB800D9DC88 /* RoundedButtonWithShadow.swift in Sources */,
 				A981FB2824B7456700A3D205 /* RestorePasswordPresenter.swift in Sources */,
