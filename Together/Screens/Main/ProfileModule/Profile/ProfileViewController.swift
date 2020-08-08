@@ -41,7 +41,6 @@ final class ProfileViewController: UIViewController {
     
     //Устанавливаем навигацию, заголовок навигейшен контроллера, кнопки на навиг контроллере
     private func setNavigation() {
-        navigationController?.navigationBar.isHidden = false
         navigationItem.title = "Профиль"
                 
         let settingButton = UIBarButtonItem(image: UIImage(systemName: "square.and.pencil"), style: .plain, target: self, action: #selector(settingButtonAction))
@@ -76,3 +75,5 @@ extension ProfileViewController: ProfileViewControllerImpl {
         self.presenter?.getProfileSettingView()
     }
 }
+
+
