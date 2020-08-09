@@ -16,5 +16,6 @@ class ProfileEventTapTableViewCell: UITableViewCell {
     }
     
     @IBOutlet weak var nameEvent: UILabel!
+    @IBOutlet weak var liveView: UIView!
     
 }

@@ -10,16 +10,6 @@ import UIKit
 
 protocol ProfileViewImpl {
     //функции типа, покажи данные
-    func setPresenter(_ presenter: ProfileViewAction)
-}
-
-
-enum SectionCell {
-    case main
-    case firstLine
-    case event(item: String)
-    case secondLine
-    case myEvent
 }
 
 final class ProfileView: UIView {
@@ -27,18 +17,14 @@ final class ProfileView: UIView {
     //MARK: - Private properties
     private var presenter: ProfileViewAction?
     
-    private var eventTap: [SectionCell] = []
-    private var modelArray: [[SectionCell]] = []
-    
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = .white
+        tableView.backgroundColor = UIColor.systemGray5
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.separatorStyle = .singleLine
-        tableView.separatorColor = UIColor.systemGray5
-        tableView.bounces = false
+        tableView.separatorStyle = .none
+        tableView.alwaysBounceVertical = false
         
         tableView.register(ProfileMainTableViewCell.nib,
                            forCellReuseIdentifier: ProfileMainTableViewCell.reuseId)
@@ -64,9 +50,7 @@ final class ProfileView: UIView {
     
     private func setupUI() {
         self.backgroundColor = UIColor.systemGray5
-        addUITableCell()
         setupTableView()
-
     }
     
     private func setupTableView() {
@@ -76,24 +60,7 @@ final class ProfileView: UIView {
         tableView.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor).isActive = true
         
         tableView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height / 2).isActive = true
-        settingFooter()
-    }
-    
-    private func settingFooter() {
-        let footerView = UIView()
-        footerView.frame = CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 1)
-        footerView.backgroundColor = UIColor.clear
-        tableView.tableFooterView = footerView
-    }
-    
-    private func addUITableCell() {
-        modelArray.append([.main])
-        modelArray.append([.firstLine])
-        eventTap.append(.event(item: "Активные просьбы"))
-        eventTap.append(.event(item: "Выполненые просьбы"))
-        modelArray.append(eventTap)
-        modelArray.append([.secondLine])
-        modelArray.append([.myEvent])
+        tableView.settingFooter()
     }
     
 //    private let scrollView: UIScrollView = {
@@ -288,11 +255,16 @@ final class ProfileView: UIView {
 //    }
 }
 
-extension ProfileView: ProfileViewImpl {
+extension ProfileView: PresenterHaving {
     
-    func setPresenter(_ presenter: ProfileViewAction) {
-        self.presenter = presenter
+    func setPresenter(_ presenter: ViewAstions) {
+        if let presenter = presenter as? ProfileViewAction {
+            self.presenter = presenter
+        }
     }
+}
+
+extension ProfileView: ProfileViewImpl {
     
     @objc func actionEventPresent(_ sender: UIButton) {
         self.presenter?.showActionEvent()
@@ -304,15 +276,29 @@ extension ProfileView: ProfileViewImpl {
         print("Показываю выполненые мероприятия данного пользователя")
     }
     
-    @objc func quitProfileAction(_ sender: UIButton) {
-        self.presenter?.showAlert()
-        print("Показываю алерт для потверждения выхода")
-    }
+//    @objc func quitProfileAction(_ sender: UIButton) {
+//        self.presenter?.showAlert()
+//        print("Показываю алерт для потверждения выхода")
+//    }
     
+    @objc func showProfileSetting(_ sender: UIButton) {
+        self.presenter?.getProfileSettingView()
+    }
 }
 
 // MARK: - Delegate
 extension ProfileView: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 2 {
+            self.presenter?.showActionEvent()
+        } else if indexPath.row == 3 {
+            self.presenter?.showCompletionEvent()
+        } else if indexPath.row == 5 {
+            // TO DO ... self.presenter?.showMyEvent()
+            print("show My Event")
+        }
+    }
     
 }
 
@@ -324,53 +310,71 @@ extension ProfileView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let row = modelArray[indexPath.section][indexPath.row]
-        
-        switch row {
-        case .main:
-            return 250
-        case .firstLine:
+        // выставляем высоту для каждой ячейки
+        if indexPath.row == 0 {
+            return 200
+        } else if indexPath.row == 1 {
             return 20
-        case .event(item: _):
+        } else if indexPath.row == 2 || indexPath.row == 3 {
             return 50
-        case .secondLine:
+        } else if indexPath.row == 4 {
             return 20
-        case .myEvent:
+        } else if indexPath.row == 5 {
             return 50
+        } else {
+            return 0
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        modelArray[section].count
+        6
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        modelArray.count
+        1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let row = modelArray[indexPath.section][indexPath.row]
-        
-        switch row {
-        case .main:
+        // прописываем каждую ячейку, чтоб все находилось на своих местах
+        if indexPath.row == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileMainTableViewCell.reuseId, for: indexPath) as? ProfileMainTableViewCell else { return UITableViewCell() }
             cell.modal()
+            // насчет реализации кнопки в сомнениях, но пока только такой вариант пришел в голову
+            cell.settingProfileButton.addTarget(self, action: #selector(showProfileSetting), for: .touchDown)
+            // TO DO ... надо подумать, как вынести это свойство, чтоб не повторять его
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none
             return cell
-        case .firstLine:
+            
+        } else if indexPath.row == 1 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileBetweenLineSectionTableViewCell.reuseId, for: indexPath) as? ProfileBetweenLineSectionTableViewCell else { return UITableViewCell() }
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none
             return cell
-        case let .event(item: nameEvent):
+            
+        } else if indexPath.row == 2 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileEventTapTableViewCell.reuseId, for: indexPath) as? ProfileEventTapTableViewCell else { return UITableViewCell() }
-            cell.nameEvent.text = nameEvent
+            cell.nameEvent.text = "Активные просьбы"
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none
             return cell
-        case .secondLine:
+            
+        } else if indexPath.row == 3 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileEventTapTableViewCell.reuseId, for: indexPath) as? ProfileEventTapTableViewCell else { return UITableViewCell() }
+            cell.nameEvent.text = "Выполненые просьбы"
+            cell.liveView.isHidden = true
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none
+            return cell
+            
+        } else if indexPath.row == 4 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileBetweenLineSectionTableViewCell.reuseId, for: indexPath) as? ProfileBetweenLineSectionTableViewCell else { return UITableViewCell() }
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none
             return cell
-        case .myEvent:
+            
+        } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileEventTapTableViewCell.reuseId, for: indexPath) as? ProfileEventTapTableViewCell else { return UITableViewCell() }
             cell.nameEvent.text = "Мои просьбы"
+            cell.liveView.isHidden = true
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none
             return cell
         }
     }
-    
 }
+

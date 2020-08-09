@@ -19,6 +19,7 @@ class ProfileMainTableViewCell: UITableViewCell {
     @IBOutlet weak var numberPhoneLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var aboutMeLabel: UILabel!
+    @IBOutlet weak var settingProfileButton: UIButton!
     
     func modal() {
         nameLabel.text = "Виктория"
