@@ -19,7 +19,7 @@ final class ProfileSettingViewController: UIViewController {
     //MARK: - Private properties
     
     //вью просим отобразить контент
-    private lazy var profileSettingView = view as? ProfileSettingViewImpl
+    private lazy var profileSettingView = view as? (ProfileSettingViewImpl & PresenterHaving)
     
     
     //MARK: - Life cycle
@@ -59,6 +59,25 @@ final class ProfileSettingViewController: UIViewController {
 
 
 extension ProfileSettingViewController: ProfileSettingViewControllerImpl {
+    
+    func showAlertUserQuit() {
+           let alert = UIAlertController(title: "Подтвердите выход", message: "Вы действительно хотите выйти?", preferredStyle: .alert)
+           let settingsAction = UIAlertAction(title: "Да", style: .default) { (alert) in
+               // вызываем фукнцию перехода
+               self.presenter?.quitProfileAndShowSignIn()
+               // убераем таб бар
+               self.tabBarController?.tabBar.isHidden = true
+               print("пользователь потвердил и я выхожу из профиля")
+           }
+           let cancelAction = UIAlertAction(title: "Отмена", style: .cancel) { (alert) in
+               self.dismiss(animated: true, completion: nil)
+               print("сообственно отклонил продолжаю работу в этом профиле")
+           }
+           
+           alert.addAction(settingsAction)
+           alert.addAction(cancelAction)
+           present(alert, animated: true, completion: nil)
+       }
     
     func showAlertEditProfile() {
         showBasicAlertCheck("Подтвердите изменения",
