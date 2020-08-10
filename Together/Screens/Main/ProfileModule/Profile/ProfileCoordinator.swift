@@ -14,6 +14,7 @@ protocol ProfileCoordination {
     func showProfileSetting()
     func showActionEvent()
     func showCompletionEvent()
+    func showMyEvent()
 }
 
 
@@ -52,6 +53,12 @@ extension ProfileCoordinator: ProfileCoordination {
     
     func showCompletionEvent() {
         let coordinator = CompletionEventCoordinator(navController: navController)
+        self.setDependence(withChildCoordinator: coordinator)
+        coordinator.start()
+    }
+    
+    func showMyEvent() {
+        let coordinator = MyEventCoordinator(navController: navController)
         self.setDependence(withChildCoordinator: coordinator)
         coordinator.start()
     }

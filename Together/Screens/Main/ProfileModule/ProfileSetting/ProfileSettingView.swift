@@ -351,7 +351,7 @@ extension ProfileSettingView: UITableViewDataSource {
 extension ProfileSettingView {
     
     private var roundButtonHeight: CGFloat { return 40.0 }
-    private var roundButtonTopAnchor: CGFloat { return 250.0 }
+    private var roundButtonTopAnchor: CGFloat { return 280.0 }
     private var roundButtonBetweenOfButton: CGFloat { return 10.0 }
     
 }
