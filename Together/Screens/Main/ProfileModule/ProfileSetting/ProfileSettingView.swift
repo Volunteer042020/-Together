@@ -84,27 +84,29 @@ final class ProfileSettingView: UIView {
         tableView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor).isActive = true
         tableView.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor).isActive = true
-        
-        tableView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height / 2).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        tableView.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor).isActive = true
         tableView.settingFooter()
     }
     
     private func setupNewSettingButton() {
-        self.addSubview(newSettingButton)
+        tableView.addSubview(newSettingButton)
         
-        newSettingButton.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        newSettingButton.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: roundButtonTopAnchor).isActive = true
-        newSettingButton.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: sideArchoreConctant).isActive = true
-        newSettingButton.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: -sideArchoreConctant).isActive = true
+        newSettingButton.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        newSettingButton.centerYAnchor.constraint(equalTo: tableView.centerYAnchor, constant: roundButtonTopAnchor).isActive = true
+        newSettingButton.leftAnchor.constraint(equalTo: tableView.leftAnchor, constant: sideArchoreConctant).isActive = true
+        newSettingButton.rightAnchor.constraint(equalTo: tableView.rightAnchor, constant: -sideArchoreConctant).isActive = true
         newSettingButton.heightAnchor.constraint(equalToConstant: roundButtonHeight).isActive = true
     }
     
     private func setupQuitProfileButton() {
-        self.addSubview(quitProfileButton)
+        tableView.addSubview(quitProfileButton)
         
         quitProfileButton.topAnchor.constraint(equalTo: newSettingButton.bottomAnchor, constant: roundButtonBetweenOfButton).isActive = true
-        quitProfileButton.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: sideArchoreConctant).isActive = true
-        quitProfileButton.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: -sideArchoreConctant).isActive = true
+        quitProfileButton.leftAnchor.constraint(equalTo: tableView.leftAnchor, constant: sideArchoreConctant).isActive = true
+        quitProfileButton.rightAnchor.constraint(equalTo: tableView.rightAnchor, constant: -sideArchoreConctant).isActive = true
+        quitProfileButton.bottomAnchor.constraint(equalToSystemSpacingBelow: tableView.bottomAnchor, multiplier: 0).isActive = true
+        
         quitProfileButton.heightAnchor.constraint(equalToConstant: roundButtonHeight).isActive = true
     }
     
@@ -321,6 +323,7 @@ extension ProfileSettingView: UITableViewDataSource {
         if indexPath.row == 0 || indexPath.row == 1 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileSettingMainTableViewCell.reuseId, for: indexPath) as? ProfileSettingMainTableViewCell else { return UITableViewCell() }
             cell.modal(indexPath: indexPath)
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none
             return cell
             
         } else if indexPath.row == 2 {
@@ -342,14 +345,13 @@ extension ProfileSettingView: UITableViewDataSource {
             
         }
     }
-    
 }
 
 //MARK: - Size properties
 extension ProfileSettingView {
     
     private var roundButtonHeight: CGFloat { return 40.0 }
-    private var roundButtonTopAnchor: CGFloat { return 150.0 }
+    private var roundButtonTopAnchor: CGFloat { return 250.0 }
     private var roundButtonBetweenOfButton: CGFloat { return 10.0 }
     
 }

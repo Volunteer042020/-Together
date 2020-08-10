@@ -58,8 +58,8 @@ final class ProfileView: UIView {
         tableView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor).isActive = true
         tableView.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
-        tableView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height / 2).isActive = true
         tableView.settingFooter()
     }
     
