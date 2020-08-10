@@ -53,6 +53,10 @@
 		A94B8DE524D84DD40025656B /* SlideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94B8DE424D84DD40025656B /* SlideMenuView.swift */; };
 		A94B8DE724D84DE30025656B /* SlideMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94B8DE624D84DE30025656B /* SlideMenuCoordinator.swift */; };
 		A94B8DE924D84DF70025656B /* SlideMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94B8DE824D84DF70025656B /* SlideMenuPresenter.swift */; };
+		A963CCF124E148CC0016EAF7 /* MyEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963CCF024E148CC0016EAF7 /* MyEventViewController.swift */; };
+		A963CCF324E148DA0016EAF7 /* MyEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963CCF224E148DA0016EAF7 /* MyEventView.swift */; };
+		A963CCF524E148FE0016EAF7 /* MyEventCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963CCF424E148FE0016EAF7 /* MyEventCoordinator.swift */; };
+		A963CCF724E1491A0016EAF7 /* MyEventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963CCF624E1491A0016EAF7 /* MyEventPresenter.swift */; };
 		A981FB1F24B73E8300A3D205 /* UIView + getToolBar().swift in Sources */ = {isa = PBXBuildFile; fileRef = A981FB1E24B73E8300A3D205 /* UIView + getToolBar().swift */; };
 		A981FB2224B7451800A3D205 /* RestorePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A981FB2124B7451800A3D205 /* RestorePasswordViewController.swift */; };
 		A981FB2424B7452A00A3D205 /* RestorePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A981FB2324B7452A00A3D205 /* RestorePasswordView.swift */; };
@@ -144,6 +148,10 @@
 		A94B8DE424D84DD40025656B /* SlideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuView.swift; sourceTree = "<group>"; };
 		A94B8DE624D84DE30025656B /* SlideMenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuCoordinator.swift; sourceTree = "<group>"; };
 		A94B8DE824D84DF70025656B /* SlideMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuPresenter.swift; sourceTree = "<group>"; };
+		A963CCF024E148CC0016EAF7 /* MyEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventViewController.swift; sourceTree = "<group>"; };
+		A963CCF224E148DA0016EAF7 /* MyEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventView.swift; sourceTree = "<group>"; };
+		A963CCF424E148FE0016EAF7 /* MyEventCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventCoordinator.swift; sourceTree = "<group>"; };
+		A963CCF624E1491A0016EAF7 /* MyEventPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventPresenter.swift; sourceTree = "<group>"; };
 		A981FB1E24B73E8300A3D205 /* UIView + getToolBar().swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + getToolBar().swift"; sourceTree = "<group>"; };
 		A981FB2124B7451800A3D205 /* RestorePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePasswordViewController.swift; sourceTree = "<group>"; };
 		A981FB2324B7452A00A3D205 /* RestorePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePasswordView.swift; sourceTree = "<group>"; };
@@ -385,6 +393,7 @@
 		56DCF7F524C9B4EB0037B97B /* ProfileModule */ = {
 			isa = PBXGroup;
 			children = (
+				A963CCEF24E148AF0016EAF7 /* MyEvent */,
 				56DCF7F624C9B5000037B97B /* Profile */,
 				A9C2FC4A24C5864C00756DE6 /* ProfileSetting */,
 				A995BE4524C6C3D100B2E63A /* ActionEvent */,
@@ -457,6 +466,17 @@
 				A94B8DE824D84DF70025656B /* SlideMenuPresenter.swift */,
 			);
 			path = SlideMenuView;
+			sourceTree = "<group>";
+		};
+		A963CCEF24E148AF0016EAF7 /* MyEvent */ = {
+			isa = PBXGroup;
+			children = (
+				A963CCF024E148CC0016EAF7 /* MyEventViewController.swift */,
+				A963CCF224E148DA0016EAF7 /* MyEventView.swift */,
+				A963CCF424E148FE0016EAF7 /* MyEventCoordinator.swift */,
+				A963CCF624E1491A0016EAF7 /* MyEventPresenter.swift */,
+			);
+			path = MyEvent;
 			sourceTree = "<group>";
 		};
 		A981FB2024B744EA00A3D205 /* RestorePassword */ = {
@@ -651,6 +671,7 @@
 				56A824DF24D461F200019B37 /* CustomMapView.swift in Sources */,
 				56D7E43E24B3601800933B04 /* SceneDelegate.swift in Sources */,
 				A9C2FC4E24C5887000756DE6 /* ProfileSettingView.swift in Sources */,
+				A963CCF524E148FE0016EAF7 /* MyEventCoordinator.swift in Sources */,
 				A995BE5624C6C61800B2E63A /* ActionEventPresenter.swift in Sources */,
 				569AF47F24B498CA00D9DC88 /* GrayLineView.swift in Sources */,
 				56A824E624D96DF000019B37 /* EventAnnotationView.swift in Sources */,
@@ -666,6 +687,7 @@
 				56A824E224D46D5800019B37 /* ViewAstions.swift in Sources */,
 				A9CCF39C24DF37C400361894 /* ProfileEventTapTableViewCell.swift in Sources */,
 				A91769E624BAF03400EEE26A /* MainMapPresenter.swift in Sources */,
+				A963CCF124E148CC0016EAF7 /* MyEventViewController.swift in Sources */,
 				A9C2FC4C24C5886100756DE6 /* ProfileSettingViewController.swift in Sources */,
 				A904DCDF24B5C63700ACB761 /* RegisterAccountCoordinator.swift in Sources */,
 				A9CCF3AC24DFF00700361894 /* ProfileSettingMainTableViewCell.swift in Sources */,
@@ -681,6 +703,7 @@
 				A9CCF3A024DF3CE400361894 /* ProfileBetweenLineSectionTableViewCell.swift in Sources */,
 				569AF46C24B45B8D00D9DC88 /* IdHaving+id.swift in Sources */,
 				56D7E45A24B37C2100933B04 /* SignInCoordinator.swift in Sources */,
+				A963CCF324E148DA0016EAF7 /* MyEventView.swift in Sources */,
 				A9CCF3B224DFFFCB00361894 /* ProfileSettingEmailAndPhoneTableViewCell.swift in Sources */,
 				56DCF80024CF1E8C0037B97B /* EventMapPin.swift in Sources */,
 				A9CCF39824DF320500361894 /* ProfileMainTableViewCell.swift in Sources */,
@@ -707,6 +730,7 @@
 				569AF46A24B4542A00D9DC88 /* SignInView.swift in Sources */,
 				56DCF7F824CAEAE80037B97B /* LocationServiceTwo.swift in Sources */,
 				56D7E45524B3783E00933B04 /* BaseCoordirator.swift in Sources */,
+				A963CCF724E1491A0016EAF7 /* MyEventPresenter.swift in Sources */,
 				A9D6102F24BE48FA00C1C207 /* ProfilePresenter.swift in Sources */,
 				A995BE5D24C6E37B00B2E63A /* Event.swift in Sources */,
 			);

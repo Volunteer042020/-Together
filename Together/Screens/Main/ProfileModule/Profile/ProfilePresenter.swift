@@ -16,6 +16,7 @@ protocol ProfileViewAction: class, ViewAstions {
     func getProfileSettingView()
     func showActionEvent()
     func showCompletionEvent()
+    func showMyEvent()
 }
 
 protocol ProfileViewControllerImpl: class {
@@ -51,6 +52,10 @@ extension ProfilePresenter: ProfileViewAction {
     
     func getProfileSettingView() {
         coordinator.showProfileSetting()
+    }
+    
+    func showMyEvent() {
+        coordinator.showMyEvent()
     }
     
 //    func showAlert() {

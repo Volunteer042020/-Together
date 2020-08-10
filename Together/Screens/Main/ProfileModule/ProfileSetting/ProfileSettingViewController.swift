@@ -45,16 +45,14 @@ final class ProfileSettingViewController: UIViewController {
     
     //Устанавливаем навигацию, заголовок навигейшен контроллера, кнопки на навиг контроллере
     private func setNavigation() {
-        navigationController?.navigationBar.isHidden = false
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         navigationItem.title = "Редактирование профиля"
         
         let backButton = UIBarButtonItem()
-        backButton.title = ""
+        backButton.title = "Профиль"
         backButton.tintColor = UIColor.customGray
         navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
-    
 }
 
 

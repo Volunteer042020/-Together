@@ -37,11 +37,10 @@ final class ActionEventViewController: UIViewController {
     //MARK: - Private metods
     //Устанавливаем навигацию, заголовок навигейшен контроллера, кнопки на навиг контроллере
     private func setNavigation() {
-        navigationController?.navigationBar.isHidden = false
         navigationItem.title = "Активные мероприятия"
         
         let backButton = UIBarButtonItem()
-        backButton.title = ""
+        backButton.title = "Профиль"
         backButton.tintColor = UIColor.customGray
         navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }

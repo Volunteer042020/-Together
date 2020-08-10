@@ -266,15 +266,15 @@ extension ProfileView: PresenterHaving {
 
 extension ProfileView: ProfileViewImpl {
     
-    @objc func actionEventPresent(_ sender: UIButton) {
-        self.presenter?.showActionEvent()
-        print("Показываю мероприятия на которые пользователь подписался")
-    }
-    
-    @objc func completionEventPresent(_ sender: UIButton) {
-        self.presenter?.showCompletionEvent()
-        print("Показываю выполненые мероприятия данного пользователя")
-    }
+//    @objc func actionEventPresent(_ sender: UIButton) {
+//        self.presenter?.showActionEvent()
+//        print("Показываю мероприятия на которые пользователь подписался")
+//    }
+//
+//    @objc func completionEventPresent(_ sender: UIButton) {
+//        self.presenter?.showCompletionEvent()
+//        print("Показываю выполненые мероприятия данного пользователя")
+//    }
     
 //    @objc func quitProfileAction(_ sender: UIButton) {
 //        self.presenter?.showAlert()
@@ -295,7 +295,7 @@ extension ProfileView: UITableViewDelegate {
         } else if indexPath.row == 3 {
             self.presenter?.showCompletionEvent()
         } else if indexPath.row == 5 {
-            // TO DO ... self.presenter?.showMyEvent()
+            self.presenter?.showMyEvent()
             print("show My Event")
         }
     }
