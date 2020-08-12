@@ -6,8 +6,17 @@
 //  Copyright © 2020 GermanyHome. All rights reserved.
 //
 
+<<<<<<< HEAD
 protocol SlideMenuViewAction: class {
     //фунции типа кнопка войти, забыли пароль, и тп. была нажата
+=======
+//protocol SlideMenuViewAction: class {
+//    //фунции типа кнопка войти, забыли пароль, и тп. была нажата
+//}
+
+protocol SlideMenuViewAction: class, ViewAstions {
+     //фунции типа кнопка войти, забыли пароль, и тп. была нажата
+>>>>>>> newProfileView
 }
 
 protocol SlideMenuViewControllerImpl: class {

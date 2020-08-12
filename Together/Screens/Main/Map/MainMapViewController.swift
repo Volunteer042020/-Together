@@ -1,23 +1,23 @@
-//
-//  MainMapViewController.swift
-//  Together
-//
-//  Created by Евгений Шварцкопф on 12.07.2020.
-//  Copyright © 2020 GermanyHome. All rights reserved.
-//
 
 import UIKit
 import CoreLocation
 
+/*
+  TO DO... Сделать по категорям модели поисковика, отражать слайд меню категории
+*/
+
 final class MainMapViewController: UIViewController {
     
     //MARK: - Open properties
+<<<<<<< HEAD
     //    Modification SlideMenuView
+=======
+    
+>>>>>>> newProfileView
     var presenter: MainMapViewActions?
     var slideMenuViewController: SlideMenuViewController?
     
     //MARK: - Private properties
-    //вью просим отобразить контент
     private lazy var mainView = view as? (MainMapViewImpl & PresenterHaving)
     
     private let slideMenuViewControllerHeight: CGFloat = 135
@@ -34,8 +34,11 @@ final class MainMapViewController: UIViewController {
             mainView?.setPresenter(presenter)
         }
         setNavigation()
+<<<<<<< HEAD
         presenter?.viewDidLoad()
 
+=======
+>>>>>>> newProfileView
         presenter?.setupSlideMenu()
         showSlideMenu()
     }
@@ -45,18 +48,24 @@ final class MainMapViewController: UIViewController {
     }
     
     //MARK: - Private metods
+<<<<<<< HEAD
     //Устанавливаем навигацию, заголовок навигейшен контроллера, кнопки на навиг контроллере
 
+=======
+>>>>>>> newProfileView
     private func showSlideMenu() {
 
         guard let slideViewController = slideMenuViewController
             else { return }
+<<<<<<< HEAD
     
+=======
+        
+>>>>>>> newProfileView
         self.view.addSubview(slideViewController.view)
     }
     
     private func setNavigation() {
-        navigationController?.navigationBar.isHidden = false
         navigationItem.title = "Главная"
     }
 }

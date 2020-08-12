@@ -19,7 +19,7 @@ final class ProfileViewController: UIViewController {
     //MARK: - Private properties
     
     //вью просим отобразить контент
-    private lazy var profileView = view as? ProfileViewImpl
+    private lazy var profileView = view as? (ProfileViewImpl & PresenterHaving)
     
     
     //MARK: - Life cycle
@@ -41,38 +41,39 @@ final class ProfileViewController: UIViewController {
     
     //Устанавливаем навигацию, заголовок навигейшен контроллера, кнопки на навиг контроллере
     private func setNavigation() {
-        navigationController?.navigationBar.isHidden = false
         navigationItem.title = "Профиль"
                 
-        let settingButton = UIBarButtonItem(image: UIImage(systemName: "square.and.pencil"), style: .plain, target: self, action: #selector(settingButtonAction))
-        settingButton.tintColor = .customGray
-        navigationItem.rightBarButtonItem = settingButton
+//        let settingButton = UIBarButtonItem(image: UIImage(systemName: "square.and.pencil"), style: .plain, target: self, action: #selector(settingButtonAction))
+//        settingButton.tintColor = .customGray
+//        navigationItem.rightBarButtonItem = settingButton
     }
 }
 
 
 extension ProfileViewController: ProfileViewControllerImpl {
-    
-    func showAlertUserQuit() {
-        let alert = UIAlertController(title: "Подтвердите выход", message: "Вы действительно хотите выйти?", preferredStyle: .alert)
-        let settingsAction = UIAlertAction(title: "Да", style: .default) { (alert) in
-            // вызываем фукнцию перехода
-            self.presenter?.quitProfileAndShowSignIn()
-            // убераем таб бар
-            self.tabBarController?.tabBar.isHidden = true
-            print("пользователь потвердил и я выхожу из профиля")
-        }
-        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel) { (alert) in
-            self.dismiss(animated: true, completion: nil)
-            print("сообственно отклонил продолжаю работу в этом профиле")
-        }
         
-        alert.addAction(settingsAction)
-        alert.addAction(cancelAction)
-        present(alert, animated: true, completion: nil)
-    }
+//    func showAlertUserQuit() {
+//        let alert = UIAlertController(title: "Подтвердите выход", message: "Вы действительно хотите выйти?", preferredStyle: .alert)
+//        let settingsAction = UIAlertAction(title: "Да", style: .default) { (alert) in
+//            // вызываем фукнцию перехода
+//            self.presenter?.quitProfileAndShowSignIn()
+//            // убераем таб бар
+//            self.tabBarController?.tabBar.isHidden = true
+//            print("пользователь потвердил и я выхожу из профиля")
+//        }
+//        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel) { (alert) in
+//            self.dismiss(animated: true, completion: nil)
+//            print("сообственно отклонил продолжаю работу в этом профиле")
+//        }
+//        
+//        alert.addAction(settingsAction)
+//        alert.addAction(cancelAction)
+//        present(alert, animated: true, completion: nil)
+//    }
     
-    @objc func settingButtonAction(_ sender: UIButton) {
-        self.presenter?.getProfileSettingView()
-    }
+//    @objc func settingButtonAction(_ sender: UIButton) {
+//        self.presenter?.getProfileSettingView()
+//    }
 }
+
+

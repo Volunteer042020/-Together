@@ -9,7 +9,10 @@ import Foundation
 import CoreLocation
 
 protocol MainMapViewActions: class, ViewAstions {
+<<<<<<< HEAD
     func viewDidLoad()
+=======
+>>>>>>> newProfileView
     func setupSlideMenu()
     func viewWillAppear()
 }
@@ -51,9 +54,16 @@ final class MainMapPresenter {
 extension MainMapPresenter: MainMapViewActions {
     
     func setupSlideMenu() {
+<<<<<<< HEAD
         print("to do")
     }
     
+=======
+        coordinator.setChildSlideMenuVC()
+    }
+    
+    
+>>>>>>> newProfileView
     func viewWillAppear() {
         print("to do")
     }

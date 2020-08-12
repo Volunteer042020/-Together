@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ProfileSettingCoordination {
-    
+    func showSignIn()
 }
 
 final class ProfileSettingCoordinator: BaseCoordirator {
@@ -39,6 +39,16 @@ final class ProfileSettingCoordinator: BaseCoordirator {
 
 //MARK: - ProfileSettingCoordination
 extension ProfileSettingCoordinator: ProfileSettingCoordination {
+    
+    func showSignIn() {
+        let signInListener: SignInShowing? = findListener(parent: self.parentCoordinator)
+        signInListener?.showSignIn()
+        let coordinator = signInListener as? Coordinator
+        coordinator?.childCoordinators = []
+        
+        // завершаем сессию пользователя
+        UserDefaults.standard.set(false, forKey: "UID")
+    }
     
 }
 

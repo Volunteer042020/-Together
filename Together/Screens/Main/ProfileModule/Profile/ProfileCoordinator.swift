@@ -10,10 +10,11 @@ import UIKit
 
 
 protocol ProfileCoordination {
-    func showSignIn()
+//    func showSignIn()
     func showProfileSetting()
     func showActionEvent()
     func showCompletionEvent()
+    func showMyEvent()
 }
 
 
@@ -56,20 +57,26 @@ extension ProfileCoordinator: ProfileCoordination {
         coordinator.start()
     }
     
+    func showMyEvent() {
+        let coordinator = MyEventCoordinator(navController: navController)
+        self.setDependence(withChildCoordinator: coordinator)
+        coordinator.start()
+    }
+    
     func showProfileSetting() {
         let coordinator = ProfileSettingCoordinator(navController: navController)
         self.setDependence(withChildCoordinator: coordinator)
         coordinator.start()
     }
     
-    func showSignIn() {
-        let signInListener: SignInShowing? = findListener(parent: self.parentCoordinator)
-        signInListener?.showSignIn()
-        let coordinator = signInListener as? Coordinator
-        coordinator?.childCoordinators = []
-        
-        // завершаем сессию пользователя
-        UserDefaults.standard.set(false, forKey: "UID")
-    }
+//    func showSignIn() {
+//        let signInListener: SignInShowing? = findListener(parent: self.parentCoordinator)
+//        signInListener?.showSignIn()
+//        let coordinator = signInListener as? Coordinator
+//        coordinator?.childCoordinators = []
+//        
+//        // завершаем сессию пользователя
+//        UserDefaults.standard.set(false, forKey: "UID")
+//    }
 }
 
