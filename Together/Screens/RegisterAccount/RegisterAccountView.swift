@@ -112,7 +112,7 @@ final class RegisterAccountView: UIView {
     private lazy var registerButton: UIButton = {
         let button = RoundedButtonWithShadow(type: .system)
         button.backgroundColor = .greenButton
-        button.setTitle("Зарегистрироваться", for: .normal)
+        button.setTitle("ЗАРЕГИСТРИРОВАТЬСЯ", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont(name: "", size: 20)
         

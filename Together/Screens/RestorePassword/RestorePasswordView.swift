@@ -44,7 +44,7 @@ final class RestorePasswordView: UIView {
     private lazy var restorePasswordButton: UIButton = {
         let button = RoundedButtonWithShadow(type: .system)
         button.backgroundColor = .greenButton
-        button.setTitle("Восстановить пароль", for: .normal)
+        button.setTitle("ВОССТАНОВИТЬ ПАРОЛЬ", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont(name: "", size: 20)
         

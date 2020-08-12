@@ -8,20 +8,19 @@
 
 import UIKit
 
-protocol ProfileViewAction: class, ViewAstions {
+protocol ProfileViewAction: class {
     //фунции типа кнопка войти, забыли пароль, и тп. была нажата
-//    func quitProfileAndShowSignIn()
-//    func showAlert()
+    func quitProfileAndShowSignIn()
+    func showAlert()
     // потом исправим, когда появиться база данных
     func getProfileSettingView()
     func showActionEvent()
     func showCompletionEvent()
-    func showMyEvent()
 }
 
 protocol ProfileViewControllerImpl: class {
     //функции типа показать загрузку, установить делегатов
-//    func showAlertUserQuit()
+    func showAlertUserQuit()
 }
 
 
@@ -54,17 +53,13 @@ extension ProfilePresenter: ProfileViewAction {
         coordinator.showProfileSetting()
     }
     
-    func showMyEvent() {
-        coordinator.showMyEvent()
+    func showAlert() {
+        view?.showAlertUserQuit()
     }
     
-//    func showAlert() {
-//        view?.showAlertUserQuit()
-//    }
-    
-//    func quitProfileAndShowSignIn() {
-//        coordinator.showSignIn()
-//        print("Начинаю осуществлять переход на другой экран")
-//    }
+    func quitProfileAndShowSignIn() {
+        coordinator.showSignIn()
+        print("Начинаю осуществлять переход на другой экран")
+    }
     
 }

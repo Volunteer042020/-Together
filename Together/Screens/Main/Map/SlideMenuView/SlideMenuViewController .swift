@@ -24,7 +24,7 @@ final class SlideMenuViewController: UIViewController {
         super.viewDidLoad()
                 
         if let view = slideMenuView, let presenter = presenter {
-            view.setPresenter(presenter)
+            view.setPresenter(presenter as! ViewAstions)
         }
     }
 }

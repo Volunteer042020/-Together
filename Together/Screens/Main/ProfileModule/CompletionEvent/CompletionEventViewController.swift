@@ -37,10 +37,11 @@ final class CompletionEventViewController: UIViewController {
     //MARK: - Private metods
     //Устанавливаем навигацию, заголовок навигейшен контроллера, кнопки на навиг контроллере
     private func setNavigation() {
+        navigationController?.navigationBar.isHidden = false
         navigationItem.title = "Выполненые мероприятия"
         
         let backButton = UIBarButtonItem()
-        backButton.title = "Профиль"
+        backButton.title = ""
         backButton.tintColor = UIColor.customGray
         navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
