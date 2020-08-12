@@ -24,11 +24,7 @@ final class SlideMenuViewController: UIViewController {
         super.viewDidLoad()
                 
         if let view = slideMenuView, let presenter = presenter {
-<<<<<<< HEAD
-            view.setPresenter(presenter as! ViewAstions)
-=======
             view.setPresenter(presenter)
->>>>>>> newProfileView
         }
     }
 }

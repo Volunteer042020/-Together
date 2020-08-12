@@ -9,10 +9,7 @@ import Foundation
 import CoreLocation
 
 protocol MainMapViewActions: class, ViewAstions {
-<<<<<<< HEAD
     func viewDidLoad()
-=======
->>>>>>> newProfileView
     func setupSlideMenu()
     func viewWillAppear()
 }
@@ -51,48 +48,35 @@ final class MainMapPresenter {
 
 
 //MARK: - MainMapViewAction
+
 extension MainMapPresenter: MainMapViewActions {
     
-    func setupSlideMenu() {
-<<<<<<< HEAD
-        print("to do")
+    func viewDidLoad() {
+        setupSlideMenu()
+        viewWillAppear()
     }
     
-=======
+    func setupSlideMenu() {
         coordinator.setChildSlideMenuVC()
     }
     
-    
->>>>>>> newProfileView
     func viewWillAppear() {
-        print("to do")
-    }
-    
-    
-    func viewDidLoad() {
-        func setupSlideMenu() {
-            coordinator.setChildSlideMenuVC()
-        }
         
+        LocationServiceTwo.sharedInstance.delegate = self
+        LocationServiceTwo.sharedInstance.startUpdatingLocation()
         
-        func viewWillAppear() {
+        //TODO: получаем от репо эвенты, пока мокнутый репозиторий
+        let events = MockEventsRepo.sharedData.events
+        
+        let pins = events.map { (event) -> EventMapPin in
+            let pin = EventMapPin(id: event.id,
+                                  title: event.title,
+                                  subtitle: event.address.addressDescription,
+                                  coordinate: event.coordinate)
             
-            LocationServiceTwo.sharedInstance.delegate = self
-            LocationServiceTwo.sharedInstance.startUpdatingLocation()
-            
-            //TODO: получаем от репо эвенты, пока мокнутый репозиторий
-            let events = MockEventsRepo.sharedData.events
-            
-            let pins = events.map { (event) -> EventMapPin in
-                let pin = EventMapPin(id: event.id,
-                                      title: event.title,
-                                      subtitle: event.address.addressDescription,
-                                      coordinate: event.coordinate)
-                
-                return pin
-            }
-            view?.showEventPins(pins)
+            return pin
         }
+        view?.showEventPins(pins)
     }
 }
 
@@ -123,4 +107,3 @@ extension MainMapPresenter: LocationServiceDelegate {
         //TODO - добавить обработку ошибок, алерты
     }
 }
-

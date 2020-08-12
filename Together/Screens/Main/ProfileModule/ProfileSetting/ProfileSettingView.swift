@@ -72,17 +72,10 @@ final class ProfileSettingView: UIView {
     }
     
     private func setupUI() {
-<<<<<<< HEAD
-        self.backgroundColor = .white
-        setupScrollView()
-        setupProfileStack()
-        setupSettingUserButton()
-=======
         self.backgroundColor = UIColor.systemGray5
         setupTableView()
         setupNewSettingButton()
         setupQuitProfileButton()
->>>>>>> newProfileView
     }
     
     private func setupTableView() {

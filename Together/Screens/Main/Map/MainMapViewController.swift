@@ -9,11 +9,7 @@ import CoreLocation
 final class MainMapViewController: UIViewController {
     
     //MARK: - Open properties
-<<<<<<< HEAD
-    //    Modification SlideMenuView
-=======
-    
->>>>>>> newProfileView
+
     var presenter: MainMapViewActions?
     var slideMenuViewController: SlideMenuViewController?
     
@@ -34,11 +30,7 @@ final class MainMapViewController: UIViewController {
             mainView?.setPresenter(presenter)
         }
         setNavigation()
-<<<<<<< HEAD
         presenter?.viewDidLoad()
-
-=======
->>>>>>> newProfileView
         presenter?.setupSlideMenu()
         showSlideMenu()
     }
@@ -48,20 +40,12 @@ final class MainMapViewController: UIViewController {
     }
     
     //MARK: - Private metods
-<<<<<<< HEAD
     //Устанавливаем навигацию, заголовок навигейшен контроллера, кнопки на навиг контроллере
 
-=======
->>>>>>> newProfileView
     private func showSlideMenu() {
 
         guard let slideViewController = slideMenuViewController
             else { return }
-<<<<<<< HEAD
-    
-=======
-        
->>>>>>> newProfileView
         self.view.addSubview(slideViewController.view)
     }
     
