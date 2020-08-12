@@ -81,7 +81,6 @@
 		A9D6102B24BE48C400C1C207 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D6102A24BE48C400C1C207 /* ProfileView.swift */; };
 		A9D6102D24BE48DC00C1C207 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D6102C24BE48DC00C1C207 /* ProfileCoordinator.swift */; };
 		A9D6102F24BE48FA00C1C207 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D6102E24BE48FA00C1C207 /* ProfilePresenter.swift */; };
-		A9F0142424DB35C700BFBF16 /* SearchMapTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F0142324DB35C700BFBF16 /* SearchMapTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -161,7 +160,6 @@
 		A9D6102A24BE48C400C1C207 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = Together/Screens/Main/ProfileModule/Profile/ProfileView.swift; sourceTree = SOURCE_ROOT; };
 		A9D6102C24BE48DC00C1C207 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileCoordinator.swift; path = Together/Screens/Main/ProfileModule/Profile/ProfileCoordinator.swift; sourceTree = SOURCE_ROOT; };
 		A9D6102E24BE48FA00C1C207 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfilePresenter.swift; path = Together/Screens/Main/ProfileModule/Profile/ProfilePresenter.swift; sourceTree = SOURCE_ROOT; };
-		A9F0142324DB35C700BFBF16 /* SearchMapTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMapTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,7 +239,6 @@
 			isa = PBXGroup;
 			children = (
 				569AF48324B4A65800D9DC88 /* GrayTextField.swift */,
-				A9F0142324DB35C700BFBF16 /* SearchMapTextField.swift */,
 			);
 			path = TextFields;
 			sourceTree = "<group>";
@@ -624,7 +621,6 @@
 				56A824DD24D4480300019B37 /* RoundMapButton.swift in Sources */,
 				A981FB2424B7452A00A3D205 /* RestorePasswordView.swift in Sources */,
 				A94B8DE924D84DF70025656B /* SlideMenuPresenter.swift in Sources */,
-				A9F0142424DB35C700BFBF16 /* SearchMapTextField.swift in Sources */,
 				A91769E224BAF01100EEE26A /* MainView.swift in Sources */,
 				A981FB2624B7454100A3D205 /* RestorePasswordCoordinator.swift in Sources */,
 				A94B8DE524D84DD40025656B /* SlideMenuView.swift in Sources */,
