@@ -80,6 +80,9 @@
 		A9C2FC4E24C5887000756DE6 /* ProfileSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2FC4D24C5887000756DE6 /* ProfileSettingView.swift */; };
 		A9C2FC5024C5888700756DE6 /* ProfileSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2FC4F24C5888700756DE6 /* ProfileSettingCoordinator.swift */; };
 		A9C2FC5224C588AF00756DE6 /* ProfileSettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2FC5124C588AF00756DE6 /* ProfileSettingPresenter.swift */; };
+		A9C351C524E46F1F00F3D0B4 /* SlideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C351C424E46F1F00F3D0B4 /* SlideMenuTableViewCell.swift */; };
+		A9C351C724E46F3500F3D0B4 /* SlideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9C351C624E46F3500F3D0B4 /* SlideMenuTableViewCell.xib */; };
+		A9C351C924E4763800F3D0B4 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C351C824E4763800F3D0B4 /* Categories.swift */; };
 		A9C8DA9324D043E4006F63FC /* UIMapView + zoomMap().swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8DA9224D043E4006F63FC /* UIMapView + zoomMap().swift */; };
 		A9CCF39824DF320500361894 /* ProfileMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CCF39724DF320500361894 /* ProfileMainTableViewCell.swift */; };
 		A9CCF39A24DF321700361894 /* ProfileMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CCF39924DF321700361894 /* ProfileMainTableViewCell.xib */; };
@@ -175,6 +178,9 @@
 		A9C2FC4D24C5887000756DE6 /* ProfileSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingView.swift; sourceTree = "<group>"; };
 		A9C2FC4F24C5888700756DE6 /* ProfileSettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingCoordinator.swift; sourceTree = "<group>"; };
 		A9C2FC5124C588AF00756DE6 /* ProfileSettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingPresenter.swift; sourceTree = "<group>"; };
+		A9C351C424E46F1F00F3D0B4 /* SlideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		A9C351C624E46F3500F3D0B4 /* SlideMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideMenuTableViewCell.xib; sourceTree = "<group>"; };
+		A9C351C824E4763800F3D0B4 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		A9C8DA9224D043E4006F63FC /* UIMapView + zoomMap().swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIMapView + zoomMap().swift"; sourceTree = "<group>"; };
 		A9CCF39724DF320500361894 /* ProfileMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMainTableViewCell.swift; sourceTree = "<group>"; };
 		A9CCF39924DF321700361894 /* ProfileMainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileMainTableViewCell.xib; sourceTree = "<group>"; };
@@ -431,6 +437,7 @@
 				A995BE5C24C6E37B00B2E63A /* Event.swift */,
 				56DCF7FD24CEE92E0037B97B /* Address.swift */,
 				56DCF7FF24CF1E8C0037B97B /* EventMapPin.swift */,
+				A9C351C824E4763800F3D0B4 /* Categories.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -460,6 +467,7 @@
 		A94B8DE124D84D850025656B /* SlideMenuView */ = {
 			isa = PBXGroup;
 			children = (
+				A9C351C324E46EFE00F3D0B4 /* SlideMenuTableViewCell */,
 				A94B8DE224D84DC90025656B /* SlideMenuViewController .swift */,
 				A94B8DE424D84DD40025656B /* SlideMenuView.swift */,
 				A94B8DE624D84DE30025656B /* SlideMenuCoordinator.swift */,
@@ -542,6 +550,15 @@
 				A9C2FC5124C588AF00756DE6 /* ProfileSettingPresenter.swift */,
 			);
 			path = ProfileSetting;
+			sourceTree = "<group>";
+		};
+		A9C351C324E46EFE00F3D0B4 /* SlideMenuTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A9C351C424E46F1F00F3D0B4 /* SlideMenuTableViewCell.swift */,
+				A9C351C624E46F3500F3D0B4 /* SlideMenuTableViewCell.xib */,
+			);
+			path = SlideMenuTableViewCell;
 			sourceTree = "<group>";
 		};
 		A9CCF39624DF31E300361894 /* ProfileTableViewCell */ = {
@@ -633,6 +650,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9C351C724E46F3500F3D0B4 /* SlideMenuTableViewCell.xib in Resources */,
 				A9CCF39E24DF37DC00361894 /* ProfileEventTapTableViewCell.xib in Resources */,
 				A995BE5B24C6CAE500B2E63A /* CompletionEventCell.xib in Resources */,
 				A9CCF3B624E0018700361894 /* ProfileSettingEmailAndPhoneTableViewCell.xib in Resources */,
@@ -672,6 +690,7 @@
 				56D7E43E24B3601800933B04 /* SceneDelegate.swift in Sources */,
 				A9C2FC4E24C5887000756DE6 /* ProfileSettingView.swift in Sources */,
 				A963CCF524E148FE0016EAF7 /* MyEventCoordinator.swift in Sources */,
+				A9C351C524E46F1F00F3D0B4 /* SlideMenuTableViewCell.swift in Sources */,
 				A995BE5624C6C61800B2E63A /* ActionEventPresenter.swift in Sources */,
 				569AF47F24B498CA00D9DC88 /* GrayLineView.swift in Sources */,
 				56A824E624D96DF000019B37 /* EventAnnotationView.swift in Sources */,
@@ -706,6 +725,7 @@
 				A963CCF324E148DA0016EAF7 /* MyEventView.swift in Sources */,
 				A9CCF3B224DFFFCB00361894 /* ProfileSettingEmailAndPhoneTableViewCell.swift in Sources */,
 				56DCF80024CF1E8C0037B97B /* EventMapPin.swift in Sources */,
+				A9C351C924E4763800F3D0B4 /* Categories.swift in Sources */,
 				A9CCF39824DF320500361894 /* ProfileMainTableViewCell.swift in Sources */,
 				566DB78B24BCDE98007409BE /* MainCoordinator.swift in Sources */,
 				569AF48624B4AAB800D9DC88 /* RoundedButtonWithShadow.swift in Sources */,

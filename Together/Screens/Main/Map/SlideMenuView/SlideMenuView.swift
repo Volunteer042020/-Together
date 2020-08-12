@@ -24,6 +24,8 @@ final class SlideMenuView: UIView {
     var presenter: SlideMenuViewAction?
     
     //MARK: - Private properties
+    private var listCategories: [Categories] = []
+    
     private var viewState: SlideUpViewState = .collapsed
     
     private let expandedViewHeight: CGFloat = UIScreen.main.bounds.height - 200
@@ -35,6 +37,15 @@ final class SlideMenuView: UIView {
         view.backgroundColor = .gray
         view.layer.cornerRadius = 3
         view.clipsToBounds = true
+        
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var lineNavView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemGray5
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -43,7 +54,25 @@ final class SlideMenuView: UIView {
         searchBar.placeholder = "Поиск"
         searchBar.searchBarStyle = .minimal
         searchBar.delegate = self
+        
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
         return searchBar
+    }()
+    
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.settingFooter()
+        
+        tableView.register(SlideMenuTableViewCell.nib,
+                           forCellReuseIdentifier: SlideMenuTableViewCell.reuseId)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.separatorStyle = .none
+        tableView.alwaysBounceVertical = false
+        
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
     }()
     
     //MARK: - Init
@@ -75,8 +104,12 @@ final class SlideMenuView: UIView {
         let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(panGesture))
         self.addGestureRecognizer(gesture)
         
+        listCategories = Categories.getCategories()
+        
         setupLineView()
         setupSearchBar()
+        setupLineViewNav()
+        setupTableView()
     }
     
     private func moveView(state: SlideUpViewState) {
@@ -110,7 +143,6 @@ final class SlideMenuView: UIView {
     private func setupLineView() {
         self.addSubview(lineView)
         
-        lineView.translatesAutoresizingMaskIntoConstraints = false
         lineView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5).isActive = true
         lineView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         lineView.widthAnchor.constraint(equalToConstant: 50).isActive = true
@@ -120,11 +152,28 @@ final class SlideMenuView: UIView {
     private func setupSearchBar() {
         self.addSubview(searchBar)
         
-        searchBar.translatesAutoresizingMaskIntoConstraints = false
         searchBar.topAnchor.constraint(equalTo: self.topAnchor, constant: 8).isActive = true
         searchBar.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16).isActive = true
         searchBar.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16).isActive = true
         
+    }
+    
+    private func setupLineViewNav() {
+        self.addSubview(lineNavView)
+        
+        lineNavView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 8).isActive = true
+        lineNavView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        lineNavView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        lineNavView.heightAnchor.constraint(equalToConstant: 1).isActive = true
+    }
+    
+    private func setupTableView() {
+        self.addSubview(tableView)
+        
+        tableView.topAnchor.constraint(equalTo: lineNavView.bottomAnchor).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
     
     private func animateView(toState state: SlideUpViewState) {
@@ -192,3 +241,23 @@ extension SlideMenuView: UISearchBarDelegate {
     }
 }
 
+extension SlideMenuView: UITableViewDelegate {
+    
+}
+
+extension SlideMenuView: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return listCategories.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SlideMenuTableViewCell.reuseId, for: indexPath) as? SlideMenuTableViewCell else { return UITableViewCell() }
+        cell.showCategories(categories: listCategories, indexPath: indexPath)
+        return cell
+    }
+}
