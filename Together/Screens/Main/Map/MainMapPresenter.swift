@@ -25,6 +25,9 @@ protocol MapViewActions: class, ViewAstions {
 protocol MainMapViewControllerImpl: class {
     func showCurrentLocation(_ currentLocation: CLLocation)
     func showEventPins(_ pins: [EventMapPin])
+    func showAlertIsDisabled()
+    func showAlertAccessRestricted()
+    func showAlertUnkownError()
 }
 
 
@@ -53,7 +56,6 @@ extension MainMapPresenter: MainMapViewActions {
     
     func viewDidLoad() {
         setupSlideMenu()
-        viewWillAppear()
     }
     
     func setupSlideMenu() {
@@ -93,6 +95,7 @@ extension MainMapPresenter: MapViewActions {
     func eventPinDidTapped(pin: EventMapPin) {
         print("eventPinDidTapped")
     }
+    
 }
 
 
@@ -105,5 +108,13 @@ extension MainMapPresenter: LocationServiceDelegate {
     
     func tracingLocationDidFailWithError(error: LocationServiceError) {
         //TODO - добавить обработку ошибок, алерты
+        switch error {
+        case .accessRestricted:
+            view?.showAlertAccessRestricted()
+        case .locationServiceIsDisabled:
+            view?.showAlertIsDisabled()
+        case .unknownError:
+            view?.showAlertUnkownError()
+        }
     }
 }

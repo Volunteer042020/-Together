@@ -66,5 +66,15 @@ extension MainMapViewController: MainMapViewControllerImpl {
         mainView?.showEventPins(pins)
     }
     
+    func showAlertIsDisabled() {
+      showBasicAlertMap("У вас выключена служба локации.", "Хотите включить, чтоб мы могли определить где вы находитесь?", URL(string: "App-Prefs:root=LOCATION-SERVICES"))
+    }
+    
+    func showAlertAccessRestricted() {
+        showBasicAlertMap("Вы запретили использования вашего местоположения.", "Возможность определения вашего местоположения позволит показать вам ближайшие активные просьбы помощи?", URL(string: UIApplication.openSettingsURLString))
+    }
+    
+    func showAlertUnkownError() {
+        showBasicAlertCheck("Не обработанная ошибка", "Скоро исправим")
+    }
 }
-

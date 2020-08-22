@@ -7,7 +7,7 @@
 //
 
 import CoreLocation
-
+import UIKit
 //TODO: - инфо лист изменить - запрашивать местоположение только requestWhenInUseAuthorization, заменить текст сообщения "Возможность определения вашего местоположения позволит показать вам ближайшие активные просьбы помощи" ВОПРОС, покажет ли другим местоположение?
 
 protocol LocationServiceDelegate {
@@ -57,22 +57,27 @@ final class LocationServiceTwo: NSObject {
     //MARK: - Private metods
     private func checkLocationServices() {
         
-           if CLLocationManager.locationServicesEnabled() {
-               checkLocationAuthorization()
-           } else {
+        if !CLLocationManager.locationServicesEnabled() {
             updateLocationDidFailWithError(error: .locationServiceIsDisabled)
-           }
-       }
+        } else {
+            checkLocationAuthorization()
+        }
+    }
     
     private func checkLocationAuthorization() {
         
         switch CLLocationManager.authorizationStatus() {
         case .notDetermined:
-          locationManager.requestWhenInUseAuthorization()
+            locationManager.requestWhenInUseAuthorization()
+            startUpdatingLocation()
         case .denied, .restricted: // Show an alert letting them know what’s up
             updateLocationDidFailWithError(error: .accessRestricted)
-        case .authorizedAlways, .authorizedWhenInUse:
-            break
+        case .authorizedAlways:
+//            locationManager.requestAlwaysAuthorization()
+            startUpdatingLocation()
+        case .authorizedWhenInUse:
+//            locationManager.requestWhenInUseAuthorization()
+            startUpdatingLocation()
         @unknown default:
             updateLocationDidFailWithError(error: .unknownError)
         }
@@ -104,6 +109,8 @@ extension LocationServiceTwo: CLLocationManagerDelegate {
     private func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {
             startUpdatingLocation()
+        } else {
+            checkLocationServices()
         }
     }
     
@@ -117,10 +124,18 @@ extension LocationServiceTwo: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         
-        if (error as NSError).domain == kCLErrorDomain && (error as NSError).code == CLError.Code.denied.rawValue {
-            
-            // Пользователь запретил вашему приложению доступ к информации о местоположении
-            updateLocationDidFailWithError(error: .accessRestricted)
+        //        if (error as NSError).domain == kCLErrorDomain && (error as NSError).code == CLError.Code.denied.rawValue {
+        //
+        //            // Пользователь запретил вашему приложению доступ к информации о местоположении
+        //            updateLocationDidFailWithError(error: .locationServiceIsDisabled)
+        //        }
+        guard let locationError = error as? CLError else {
+            //Иначе выведем как есть
+            print(error)
+            return
         }
+        //Если получилось, то можно получить локализованное описание ошибки
+        NSLog(locationError.localizedDescription)
+        checkLocationServices()
     }
 }

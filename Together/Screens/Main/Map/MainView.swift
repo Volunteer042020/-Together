@@ -14,6 +14,7 @@ import MapKit
 protocol MainMapViewImpl {
     func showUserLocation(_ location: CLLocation)
     func showEventPins(_ pins: [EventMapPin])
+    
 }
 
 
@@ -69,9 +70,10 @@ extension MainView: MainMapViewImpl {
     }
     
     func showEventPins(_ pins: [EventMapPin]) {
+        let allAnnotations = self.mapView.annotations
+        self.mapView.removeAnnotations(allAnnotations)
         mapView.addAnnotations(pins)
     }
-    
 }
 
 

@@ -6,6 +6,8 @@
 //  Copyright © 2020 GermanyHome. All rights reserved.
 //
 
+// На удаление, так как не нужен 
+
 import CoreLocation
 import UIKit
 
