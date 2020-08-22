@@ -21,9 +21,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Постоянное исполььзование геолокации позволит приложению паказать ваше местоположение человеку которому вы помогаете.</string>
+	<string>Возможность определения вашего местоположения позволит показать вам ближайшие активные просьбы помощи, покажет ли другим местоположение?</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Позвольте получить доступ к вашему текущему местоположению, чтобы определить город в котором вы будете помогать.</string>
+	<string>Позвольте получить доступ к вашему текущему местоположению, чтобы определить где вы находитесь?</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
