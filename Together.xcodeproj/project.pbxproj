@@ -84,6 +84,10 @@
 		A9C351C724E46F3500F3D0B4 /* SlideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9C351C624E46F3500F3D0B4 /* SlideMenuTableViewCell.xib */; };
 		A9C351C924E4763800F3D0B4 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C351C824E4763800F3D0B4 /* Categories.swift */; };
 		A9C8DA9324D043E4006F63FC /* UIMapView + zoomMap().swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8DA9224D043E4006F63FC /* UIMapView + zoomMap().swift */; };
+		A9C9284124F29A940000B1CC /* MyEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C9284024F29A940000B1CC /* MyEventTableViewCell.swift */; };
+		A9C9284324F29AA10000B1CC /* MyEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9C9284224F29AA10000B1CC /* MyEventTableViewCell.xib */; };
+		A9C9284524F29AB30000B1CC /* AddEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C9284424F29AB30000B1CC /* AddEventTableViewCell.swift */; };
+		A9C9284724F29ABE0000B1CC /* AddEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9C9284624F29ABE0000B1CC /* AddEventTableViewCell.xib */; };
 		A9CCF39824DF320500361894 /* ProfileMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CCF39724DF320500361894 /* ProfileMainTableViewCell.swift */; };
 		A9CCF39A24DF321700361894 /* ProfileMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CCF39924DF321700361894 /* ProfileMainTableViewCell.xib */; };
 		A9CCF39C24DF37C400361894 /* ProfileEventTapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CCF39B24DF37C400361894 /* ProfileEventTapTableViewCell.swift */; };
@@ -182,6 +186,10 @@
 		A9C351C624E46F3500F3D0B4 /* SlideMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideMenuTableViewCell.xib; sourceTree = "<group>"; };
 		A9C351C824E4763800F3D0B4 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		A9C8DA9224D043E4006F63FC /* UIMapView + zoomMap().swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIMapView + zoomMap().swift"; sourceTree = "<group>"; };
+		A9C9284024F29A940000B1CC /* MyEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventTableViewCell.swift; sourceTree = "<group>"; };
+		A9C9284224F29AA10000B1CC /* MyEventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyEventTableViewCell.xib; sourceTree = "<group>"; };
+		A9C9284424F29AB30000B1CC /* AddEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventTableViewCell.swift; sourceTree = "<group>"; };
+		A9C9284624F29ABE0000B1CC /* AddEventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddEventTableViewCell.xib; sourceTree = "<group>"; };
 		A9CCF39724DF320500361894 /* ProfileMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMainTableViewCell.swift; sourceTree = "<group>"; };
 		A9CCF39924DF321700361894 /* ProfileMainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileMainTableViewCell.xib; sourceTree = "<group>"; };
 		A9CCF39B24DF37C400361894 /* ProfileEventTapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEventTapTableViewCell.swift; sourceTree = "<group>"; };
@@ -479,6 +487,7 @@
 		A963CCEF24E148AF0016EAF7 /* MyEvent */ = {
 			isa = PBXGroup;
 			children = (
+				A9C9283E24F29A4B0000B1CC /* MyEventTableViewCell */,
 				A963CCF024E148CC0016EAF7 /* MyEventViewController.swift */,
 				A963CCF224E148DA0016EAF7 /* MyEventView.swift */,
 				A963CCF424E148FE0016EAF7 /* MyEventCoordinator.swift */,
@@ -559,6 +568,17 @@
 				A9C351C624E46F3500F3D0B4 /* SlideMenuTableViewCell.xib */,
 			);
 			path = SlideMenuTableViewCell;
+			sourceTree = "<group>";
+		};
+		A9C9283E24F29A4B0000B1CC /* MyEventTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A9C9284024F29A940000B1CC /* MyEventTableViewCell.swift */,
+				A9C9284224F29AA10000B1CC /* MyEventTableViewCell.xib */,
+				A9C9284424F29AB30000B1CC /* AddEventTableViewCell.swift */,
+				A9C9284624F29ABE0000B1CC /* AddEventTableViewCell.xib */,
+			);
+			path = MyEventTableViewCell;
 			sourceTree = "<group>";
 		};
 		A9CCF39624DF31E300361894 /* ProfileTableViewCell */ = {
@@ -654,11 +674,13 @@
 				A9CCF39E24DF37DC00361894 /* ProfileEventTapTableViewCell.xib in Resources */,
 				A995BE5B24C6CAE500B2E63A /* CompletionEventCell.xib in Resources */,
 				A9CCF3B624E0018700361894 /* ProfileSettingEmailAndPhoneTableViewCell.xib in Resources */,
+				A9C9284724F29ABE0000B1CC /* AddEventTableViewCell.xib in Resources */,
 				A9CCF39A24DF321700361894 /* ProfileMainTableViewCell.xib in Resources */,
 				A9CCF3AE24DFF0D400361894 /* ProfileSettingMainTableViewCell.xib in Resources */,
 				56D7E44824B3601D00933B04 /* LaunchScreen.storyboard in Resources */,
 				56D7E44524B3601D00933B04 /* Assets.xcassets in Resources */,
 				A9CCF3A224DF3D1200361894 /* ProfileBetweenLineSectionTableViewCell.xib in Resources */,
+				A9C9284324F29AA10000B1CC /* MyEventTableViewCell.xib in Resources */,
 				A995BE6224C6EA4000B2E63A /* ActionEventCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -692,6 +714,7 @@
 				A963CCF524E148FE0016EAF7 /* MyEventCoordinator.swift in Sources */,
 				A9C351C524E46F1F00F3D0B4 /* SlideMenuTableViewCell.swift in Sources */,
 				A995BE5624C6C61800B2E63A /* ActionEventPresenter.swift in Sources */,
+				A9C9284524F29AB30000B1CC /* AddEventTableViewCell.swift in Sources */,
 				569AF47F24B498CA00D9DC88 /* GrayLineView.swift in Sources */,
 				56A824E624D96DF000019B37 /* EventAnnotationView.swift in Sources */,
 				A9D6102D24BE48DC00C1C207 /* ProfileCoordinator.swift in Sources */,
@@ -738,6 +761,7 @@
 				A94B8DE924D84DF70025656B /* SlideMenuPresenter.swift in Sources */,
 				A91769E224BAF01100EEE26A /* MainView.swift in Sources */,
 				A981FB2624B7454100A3D205 /* RestorePasswordCoordinator.swift in Sources */,
+				A9C9284124F29A940000B1CC /* MyEventTableViewCell.swift in Sources */,
 				A94B8DE524D84DD40025656B /* SlideMenuView.swift in Sources */,
 				A995BE6024C6EA2F00B2E63A /* ActionEventCell.swift in Sources */,
 				A94B8DE324D84DC90025656B /* SlideMenuViewController .swift in Sources */,

@@ -15,8 +15,18 @@ protocol MyEventViewImpl {
 
 final class MyEventView: UIView {
     
+    //MARK: - Open properties
+    // для проверки, работоспособности кода
+    var eventArray = [1,1,1]
+    //  var eventArray: [Int] = []
+    
     //MARK: - Private properties
     private var presenter: MyEventViewAction?
+    private var checkEvent: Bool {
+        get {
+            return eventArray.count != 0 ? true : false
+        }
+    }
     
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -26,11 +36,30 @@ final class MyEventView: UIView {
         return scrollView
     }()
     
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.settingFooter()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.register(MyEventTableViewCell.nib, forCellReuseIdentifier: MyEventTableViewCell.reuseId)
+        tableView.register(AddEventTableViewCell.nib, forCellReuseIdentifier: AddEventTableViewCell.reuseId)
+        tableView.register(ProfileBetweenLineSectionTableViewCell.nib, forCellReuseIdentifier: ProfileBetweenLineSectionTableViewCell.reuseId)
+        
+        tableView.separatorStyle = .none
+        tableView.alwaysBounceVertical = false
+        tableView.backgroundColor = UIColor.systemGray5
+        
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
+    
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = UIColor.systemGray6
         
-        imageView.layer.cornerRadius = 5
+        imageView.layer.cornerRadius = 10
         imageView.clipsToBounds = true
         
         imageView.layer.shadowOffset = CGSize(width: 0, height: 2)
@@ -39,6 +68,8 @@ final class MyEventView: UIView {
         imageView.layer.shadowRadius = 3
         imageView.layer.masksToBounds = false
         
+        imageView.image = UIImage(named: "logoEvent")
+        imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -58,7 +89,7 @@ final class MyEventView: UIView {
     private lazy var greatMyEventButton: UIButton = {
         let button = RoundedButtonWithShadow(type: .system)
         
-        button.setTitle("Создать просьбу", for: .normal)
+        button.setTitle("Cоздать просьбу", for: .normal)
         button.titleLabel?.font = UIFont(name: "", size: 20)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .marineButton
@@ -80,21 +111,31 @@ final class MyEventView: UIView {
     
     private func setupUI() {
         self.backgroundColor = UIColor.systemGray5
-        
-        setupScrollView()
-        setupImageView()
-        setupMyEventLabel()
-        setupGreatMyEventButton()
+        checkEvent == true ? setupUIIsHaveEvent() : setupUIIfNotEvent()
     }
     
-    private func setupScrollView() {
+    private func setupUIIfNotEvent() {
         self.addSubview(scrollView)
         
         scrollView.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor).isActive = true
         scrollView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
         scrollView.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: 0).isActive = true
         scrollView.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 0).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true 
+        scrollView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
+        
+        setupImageView()
+        setupMyEventLabel()
+        setupGreatMyEventButton()
+    }
+    
+    private func setupUIIsHaveEvent() {
+        self.addSubview(tableView)
+        
+        tableView.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
+        tableView.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: 0).isActive = true
+        tableView.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 0).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
     }
     
     private func setupImageView() {
@@ -157,4 +198,47 @@ extension MyEventView {
     private var imageHeight: CGFloat { return 150.0 }
     private var imageWidth: CGFloat { return 220.0 }
     
+}
+
+// MARK: - MyEventView: Delegate
+extension MyEventView: UITableViewDelegate {
+    
+}
+
+//MARK: - MyEventView: DataSource
+extension MyEventView: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        eventArray.count + 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let lastIndexes = eventArray.count + 1
+        
+        if indexPath.row == lastIndexes - 1 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileBetweenLineSectionTableViewCell.reuseId,
+                                                           for: indexPath) as? ProfileBetweenLineSectionTableViewCell else {
+                                                            return UITableViewCell()
+            }
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none
+            return cell
+        } else if indexPath.row == lastIndexes {
+            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: AddEventTableViewCell.reuseId,
+                                                           for: indexPath) as? AddEventTableViewCell else {
+                                                            return UITableViewCell()
+            }
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none
+            cell.addEventButton.addTarget(self, action: #selector(greatMyEventAction), for: .touchUpInside)
+            return cell
+        } else {
+            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: MyEventTableViewCell.reuseId,
+                                                           for: indexPath) as? MyEventTableViewCell else {
+                                                            return UITableViewCell()
+            }
+            cell.modal(indexPath: indexPath, lastIndex: lastIndexes)
+            return cell
+        }
+    }
 }
