@@ -38,7 +38,7 @@ final class MyEventView: UIView {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.settingFooter()
+        tableView.setupFooter()
         
         tableView.delegate = self
         tableView.dataSource = self

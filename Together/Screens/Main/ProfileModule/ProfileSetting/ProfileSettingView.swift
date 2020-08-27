@@ -20,6 +20,8 @@ final class ProfileSettingView: UIView {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
+        
+        tableView.setupFooter()
         tableView.backgroundColor = UIColor.systemGray5
         
         tableView.delegate = self
@@ -86,7 +88,6 @@ final class ProfileSettingView: UIView {
         tableView.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
         tableView.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor).isActive = true
-        tableView.settingFooter()
     }
     
     private func setupNewSettingButton() {

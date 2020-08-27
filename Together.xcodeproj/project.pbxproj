@@ -13,6 +13,10 @@
 		566DB78D24BCDF4A007409BE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566DB78C24BCDF4A007409BE /* MainViewController.swift */; };
 		566DB78F24BCEB5C007409BE /* UINavigationController+setTabBarTitleAndImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566DB78E24BCEB5C007409BE /* UINavigationController+setTabBarTitleAndImage.swift */; };
 		56892F4424F8004500247741 /* MockCategoryRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56892F4324F8004500247741 /* MockCategoryRepo.swift */; };
+		56892F4624F8058700247741 /* SlideMenuTableViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56892F4524F8058700247741 /* SlideMenuTableViewProvider.swift */; };
+		56892F4824F805B300247741 /* TableViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56892F4724F805B300247741 /* TableViewProvider.swift */; };
+		56892F4A24F80E2D00247741 /* UITableView+setupFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56892F4924F80E2D00247741 /* UITableView+setupFooter.swift */; };
+		56892F4C24F81B9C00247741 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56892F4B24F81B9C00247741 /* ReusableView.swift */; };
 		569AF46824B4503B00D9DC88 /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569AF46724B4503B00D9DC88 /* SignInPresenter.swift */; };
 		569AF46A24B4542A00D9DC88 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569AF46924B4542A00D9DC88 /* SignInView.swift */; };
 		569AF46C24B45B8D00D9DC88 /* IdHaving+id.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569AF46B24B45B8D00D9DC88 /* IdHaving+id.swift */; };
@@ -81,8 +85,8 @@
 		A9C2FC4E24C5887000756DE6 /* ProfileSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2FC4D24C5887000756DE6 /* ProfileSettingView.swift */; };
 		A9C2FC5024C5888700756DE6 /* ProfileSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2FC4F24C5888700756DE6 /* ProfileSettingCoordinator.swift */; };
 		A9C2FC5224C588AF00756DE6 /* ProfileSettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2FC5124C588AF00756DE6 /* ProfileSettingPresenter.swift */; };
-		A9C351C524E46F1F00F3D0B4 /* SlideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C351C424E46F1F00F3D0B4 /* SlideMenuTableViewCell.swift */; };
-		A9C351C724E46F3500F3D0B4 /* SlideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9C351C624E46F3500F3D0B4 /* SlideMenuTableViewCell.xib */; };
+		A9C351C524E46F1F00F3D0B4 /* SlideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C351C424E46F1F00F3D0B4 /* SlideMenuCell.swift */; };
+		A9C351C724E46F3500F3D0B4 /* SlideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9C351C624E46F3500F3D0B4 /* SlideMenuCell.xib */; };
 		A9C351C924E4763800F3D0B4 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C351C824E4763800F3D0B4 /* Category.swift */; };
 		A9C8DA9324D043E4006F63FC /* UIMapView + zoomMap().swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8DA9224D043E4006F63FC /* UIMapView + zoomMap().swift */; };
 		A9C9284124F29A940000B1CC /* MyEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C9284024F29A940000B1CC /* MyEventTableViewCell.swift */; };
@@ -95,7 +99,6 @@
 		A9CCF39E24DF37DC00361894 /* ProfileEventTapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CCF39D24DF37DC00361894 /* ProfileEventTapTableViewCell.xib */; };
 		A9CCF3A024DF3CE400361894 /* ProfileBetweenLineSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CCF39F24DF3CE400361894 /* ProfileBetweenLineSectionTableViewCell.swift */; };
 		A9CCF3A224DF3D1200361894 /* ProfileBetweenLineSectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CCF3A124DF3D1200361894 /* ProfileBetweenLineSectionTableViewCell.xib */; };
-		A9CCF3A824DFEA5E00361894 /* UITableView + settingFooter().swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CCF3A724DFEA5E00361894 /* UITableView + settingFooter().swift */; };
 		A9CCF3AC24DFF00700361894 /* ProfileSettingMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CCF3AB24DFF00700361894 /* ProfileSettingMainTableViewCell.swift */; };
 		A9CCF3AE24DFF0D400361894 /* ProfileSettingMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CCF3AD24DFF0D400361894 /* ProfileSettingMainTableViewCell.xib */; };
 		A9CCF3B024DFFB0300361894 /* UITextField + maxLength.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CCF3AF24DFFB0300361894 /* UITextField + maxLength.swift */; };
@@ -114,6 +117,10 @@
 		566DB78C24BCDF4A007409BE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		566DB78E24BCEB5C007409BE /* UINavigationController+setTabBarTitleAndImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+setTabBarTitleAndImage.swift"; sourceTree = "<group>"; };
 		56892F4324F8004500247741 /* MockCategoryRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCategoryRepo.swift; sourceTree = "<group>"; };
+		56892F4524F8058700247741 /* SlideMenuTableViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuTableViewProvider.swift; sourceTree = "<group>"; };
+		56892F4724F805B300247741 /* TableViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewProvider.swift; sourceTree = "<group>"; };
+		56892F4924F80E2D00247741 /* UITableView+setupFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+setupFooter.swift"; sourceTree = "<group>"; };
+		56892F4B24F81B9C00247741 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		569AF46724B4503B00D9DC88 /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
 		569AF46924B4542A00D9DC88 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		569AF46B24B45B8D00D9DC88 /* IdHaving+id.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IdHaving+id.swift"; sourceTree = "<group>"; };
@@ -184,8 +191,8 @@
 		A9C2FC4D24C5887000756DE6 /* ProfileSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingView.swift; sourceTree = "<group>"; };
 		A9C2FC4F24C5888700756DE6 /* ProfileSettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingCoordinator.swift; sourceTree = "<group>"; };
 		A9C2FC5124C588AF00756DE6 /* ProfileSettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingPresenter.swift; sourceTree = "<group>"; };
-		A9C351C424E46F1F00F3D0B4 /* SlideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuTableViewCell.swift; sourceTree = "<group>"; };
-		A9C351C624E46F3500F3D0B4 /* SlideMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideMenuTableViewCell.xib; sourceTree = "<group>"; };
+		A9C351C424E46F1F00F3D0B4 /* SlideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuCell.swift; sourceTree = "<group>"; };
+		A9C351C624E46F3500F3D0B4 /* SlideMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideMenuCell.xib; sourceTree = "<group>"; };
 		A9C351C824E4763800F3D0B4 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		A9C8DA9224D043E4006F63FC /* UIMapView + zoomMap().swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIMapView + zoomMap().swift"; sourceTree = "<group>"; };
 		A9C9284024F29A940000B1CC /* MyEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventTableViewCell.swift; sourceTree = "<group>"; };
@@ -198,7 +205,6 @@
 		A9CCF39D24DF37DC00361894 /* ProfileEventTapTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileEventTapTableViewCell.xib; sourceTree = "<group>"; };
 		A9CCF39F24DF3CE400361894 /* ProfileBetweenLineSectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBetweenLineSectionTableViewCell.swift; sourceTree = "<group>"; };
 		A9CCF3A124DF3D1200361894 /* ProfileBetweenLineSectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileBetweenLineSectionTableViewCell.xib; sourceTree = "<group>"; };
-		A9CCF3A724DFEA5E00361894 /* UITableView + settingFooter().swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView + settingFooter().swift"; sourceTree = "<group>"; };
 		A9CCF3AB24DFF00700361894 /* ProfileSettingMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingMainTableViewCell.swift; sourceTree = "<group>"; };
 		A9CCF3AD24DFF0D400361894 /* ProfileSettingMainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileSettingMainTableViewCell.xib; sourceTree = "<group>"; };
 		A9CCF3AF24DFFB0300361894 /* UITextField + maxLength.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + maxLength.swift"; sourceTree = "<group>"; };
@@ -261,8 +267,8 @@
 				566DB78E24BCEB5C007409BE /* UINavigationController+setTabBarTitleAndImage.swift */,
 				A946127024BD7AF900FD57CB /* UIMapView + centerLocation().swift */,
 				A9C8DA9224D043E4006F63FC /* UIMapView + zoomMap().swift */,
-				A9CCF3A724DFEA5E00361894 /* UITableView + settingFooter().swift */,
 				A9CCF3AF24DFFB0300361894 /* UITextField + maxLength.swift */,
+				56892F4924F80E2D00247741 /* UITableView+setupFooter.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -299,6 +305,8 @@
 			children = (
 				56A824E124D46D5800019B37 /* ViewAstions.swift */,
 				56A824E324D46E4D00019B37 /* PresenterHaving.swift */,
+				56892F4724F805B300247741 /* TableViewProvider.swift */,
+				56892F4B24F81B9C00247741 /* ReusableView.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -481,6 +489,7 @@
 				A9C351C324E46EFE00F3D0B4 /* SlideMenuTableViewCell */,
 				A94B8DE224D84DC90025656B /* SlideMenuViewController .swift */,
 				A94B8DE424D84DD40025656B /* SlideMenuView.swift */,
+				56892F4524F8058700247741 /* SlideMenuTableViewProvider.swift */,
 				A94B8DE624D84DE30025656B /* SlideMenuCoordinator.swift */,
 				A94B8DE824D84DF70025656B /* SlideMenuPresenter.swift */,
 			);
@@ -567,8 +576,8 @@
 		A9C351C324E46EFE00F3D0B4 /* SlideMenuTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				A9C351C424E46F1F00F3D0B4 /* SlideMenuTableViewCell.swift */,
-				A9C351C624E46F3500F3D0B4 /* SlideMenuTableViewCell.xib */,
+				A9C351C424E46F1F00F3D0B4 /* SlideMenuCell.swift */,
+				A9C351C624E46F3500F3D0B4 /* SlideMenuCell.xib */,
 			);
 			path = SlideMenuTableViewCell;
 			sourceTree = "<group>";
@@ -673,7 +682,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9C351C724E46F3500F3D0B4 /* SlideMenuTableViewCell.xib in Resources */,
+				A9C351C724E46F3500F3D0B4 /* SlideMenuCell.xib in Resources */,
 				A9CCF39E24DF37DC00361894 /* ProfileEventTapTableViewCell.xib in Resources */,
 				A995BE5B24C6CAE500B2E63A /* CompletionEventCell.xib in Resources */,
 				A9CCF3B624E0018700361894 /* ProfileSettingEmailAndPhoneTableViewCell.xib in Resources */,
@@ -711,11 +720,12 @@
 				56DCF7FE24CEE92E0037B97B /* Address.swift in Sources */,
 				A995BE5424C6C5F300B2E63A /* ActionEventCoordinator.swift in Sources */,
 				A9D6102924BE48B100C1C207 /* ProfileViewController.swift in Sources */,
+				56892F4824F805B300247741 /* TableViewProvider.swift in Sources */,
 				56A824DF24D461F200019B37 /* CustomMapView.swift in Sources */,
 				56D7E43E24B3601800933B04 /* SceneDelegate.swift in Sources */,
 				A9C2FC4E24C5887000756DE6 /* ProfileSettingView.swift in Sources */,
 				A963CCF524E148FE0016EAF7 /* MyEventCoordinator.swift in Sources */,
-				A9C351C524E46F1F00F3D0B4 /* SlideMenuTableViewCell.swift in Sources */,
+				A9C351C524E46F1F00F3D0B4 /* SlideMenuCell.swift in Sources */,
 				A995BE5624C6C61800B2E63A /* ActionEventPresenter.swift in Sources */,
 				A9C9284524F29AB30000B1CC /* AddEventTableViewCell.swift in Sources */,
 				569AF47F24B498CA00D9DC88 /* GrayLineView.swift in Sources */,
@@ -726,10 +736,12 @@
 				569AF46824B4503B00D9DC88 /* SignInPresenter.swift in Sources */,
 				A904DCE124B5C66200ACB761 /* RegisterAccountPresenter.swift in Sources */,
 				569AF48424B4A65800D9DC88 /* GrayTextField.swift in Sources */,
+				56892F4624F8058700247741 /* SlideMenuTableViewProvider.swift in Sources */,
 				A9CCF3B024DFFB0300361894 /* UITextField + maxLength.swift in Sources */,
 				A904DCDB24B5C0FD00ACB761 /* RegisterAccountViewController.swift in Sources */,
 				A91769E424BAF02400EEE26A /* MainMapCoordinator.swift in Sources */,
 				56A824E224D46D5800019B37 /* ViewAstions.swift in Sources */,
+				56892F4C24F81B9C00247741 /* ReusableView.swift in Sources */,
 				A9CCF39C24DF37C400361894 /* ProfileEventTapTableViewCell.swift in Sources */,
 				A91769E624BAF03400EEE26A /* MainMapPresenter.swift in Sources */,
 				A963CCF124E148CC0016EAF7 /* MyEventViewController.swift in Sources */,
@@ -742,7 +754,6 @@
 				A904DCDD24B5C59000ACB761 /* RegisterAccountView.swift in Sources */,
 				A946126F24BD795A00FD57CB /* LocationService.swift in Sources */,
 				A904DCD824B5B67F00ACB761 /* UIColor + customColor.swift in Sources */,
-				A9CCF3A824DFEA5E00361894 /* UITableView + settingFooter().swift in Sources */,
 				A995BE5024C6C5CA00B2E63A /* ActionEventViewController.swift in Sources */,
 				A995BE4E24C6C5B900B2E63A /* CompletionEventPresenter.swift in Sources */,
 				A9CCF3A024DF3CE400361894 /* ProfileBetweenLineSectionTableViewCell.swift in Sources */,
@@ -762,6 +773,7 @@
 				56A824DD24D4480300019B37 /* RoundMapButton.swift in Sources */,
 				56892F4424F8004500247741 /* MockCategoryRepo.swift in Sources */,
 				A981FB2424B7452A00A3D205 /* RestorePasswordView.swift in Sources */,
+				56892F4A24F80E2D00247741 /* UITableView+setupFooter.swift in Sources */,
 				A94B8DE924D84DF70025656B /* SlideMenuPresenter.swift in Sources */,
 				A91769E224BAF01100EEE26A /* MainView.swift in Sources */,
 				A981FB2624B7454100A3D205 /* RestorePasswordCoordinator.swift in Sources */,
