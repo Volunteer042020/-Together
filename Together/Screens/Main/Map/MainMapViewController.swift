@@ -16,8 +16,6 @@ final class MainMapViewController: UIViewController {
     //MARK: - Private properties
     private lazy var mainView = view as? (MainMapViewImpl & PresenterHaving)
     
-    private let slideMenuViewControllerHeight: CGFloat = 135
-    
     //MARK: - Life cycle
     override func loadView() {
         view = MainView(frame: UIScreen.main.bounds)

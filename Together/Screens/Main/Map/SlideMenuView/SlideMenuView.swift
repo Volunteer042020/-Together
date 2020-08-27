@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SlideMenuViewImpl {
-    //функции типа, покажи данные
+    func showCategories(_ categories: [Category])
     
 }
 
@@ -24,7 +24,6 @@ final class SlideMenuView: UIView {
     var presenter: SlideMenuViewAction?
     
     //MARK: - Private properties
-    private var listCategories: [Categories] = []
     
     private var viewState: SlideUpViewState = .collapsed
     
@@ -61,19 +60,11 @@ final class SlideMenuView: UIView {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.settingFooter()
-        
-        tableView.register(SlideMenuTableViewCell.nib,
-                           forCellReuseIdentifier: SlideMenuTableViewCell.reuseId)
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.separatorStyle = .none
-        tableView.alwaysBounceVertical = false
-        
-        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.setupFooter()
         return tableView
     }()
+    
+    private var tableViewProvider: SlideMenuTableViewProviderImpl?
     
     //MARK: - Init
     override init(frame: CGRect) {
@@ -103,8 +94,6 @@ final class SlideMenuView: UIView {
         
         let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(panGesture))
         self.addGestureRecognizer(gesture)
-        
-        listCategories = Categories.getCategories()
         
         setupLineView()
         setupSearchBar()
@@ -170,11 +159,31 @@ final class SlideMenuView: UIView {
     private func setupTableView() {
         self.addSubview(tableView)
         
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: lineNavView.bottomAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        
+        setupTableViewProvider()
+        registerCells()
     }
+    
+    private func setupTableViewProvider() {
+        let provider = SlideMenuTableViewProvider(tableView: tableView)
+        self.tableViewProvider = provider
+        
+        tableView.delegate = provider
+        tableView.dataSource = provider
+    }
+    
+    private func registerCells() {
+        print(SlideMenuCell.nib)
+        print(SlideMenuCell.reuseId)
+        tableView.register(SlideMenuCell.nib,
+                           forCellReuseIdentifier: SlideMenuCell.reuseId)
+    }
+    
     
     private func animateView(toState state: SlideUpViewState) {
         switch state {
@@ -207,6 +216,16 @@ final class SlideMenuView: UIView {
 }
 
 
+//MARK: - SlideMenuViewImpl
+extension SlideMenuView: SlideMenuViewImpl {
+    
+    func showCategories(_ categories: [Category]) {
+        tableViewProvider?.showContent(data: categories)
+    }
+}
+
+
+//MARK: - PresenterHaving
 extension SlideMenuView: PresenterHaving {
     
     func setPresenter(_ presenter: ViewAstions) {
@@ -217,6 +236,7 @@ extension SlideMenuView: PresenterHaving {
 }
 
 
+//MARK: - UISearchBarDelegate
 extension SlideMenuView: UISearchBarDelegate {
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
@@ -241,23 +261,3 @@ extension SlideMenuView: UISearchBarDelegate {
     }
 }
 
-extension SlideMenuView: UITableViewDelegate {
-    
-}
-
-extension SlideMenuView: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listCategories.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: SlideMenuTableViewCell.reuseId, for: indexPath) as? SlideMenuTableViewCell else { return UITableViewCell() }
-        cell.showCategories(categories: listCategories, indexPath: indexPath)
-        return cell
-    }
-}

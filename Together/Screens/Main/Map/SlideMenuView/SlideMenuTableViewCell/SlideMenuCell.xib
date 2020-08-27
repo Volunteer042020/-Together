@@ -8,7 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SlideMenuTableCell" rowHeight="70" id="Tde-sn-LSd" customClass="SlideMenuTableViewCell" customModule="Together" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="45" id="Tde-sn-LSd" customClass="SlideMenuCell" customModule="Together" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tde-sn-LSd" id="QSY-fP-aPb">
@@ -16,46 +16,30 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l5Y-dx-IhO">
-                        <rect key="frame" x="10" y="20" width="30" height="30"/>
+                        <rect key="frame" x="8" y="20" width="30" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="6I0-ht-Uan"/>
                             <constraint firstAttribute="width" secondItem="l5Y-dx-IhO" secondAttribute="height" multiplier="1:1" id="CN5-7F-LSj"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NameHelp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Efl-it-dxv">
-                        <rect key="frame" x="55" y="20" width="309" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="30" id="0tD-oG-qEM"/>
-                        </constraints>
+                        <rect key="frame" x="54" y="24.5" width="344" height="21.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9to-Kp-IFc">
-                        <rect key="frame" x="15" y="69" width="384" height="1"/>
-                        <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="1" id="eoO-Fr-IfR"/>
-                        </constraints>
-                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Efl-it-dxv" firstAttribute="leading" secondItem="l5Y-dx-IhO" secondAttribute="trailing" constant="15" id="2ZA-4F-rkI"/>
+                    <constraint firstItem="Efl-it-dxv" firstAttribute="leading" secondItem="l5Y-dx-IhO" secondAttribute="trailing" constant="16" id="2ZA-4F-rkI"/>
                     <constraint firstItem="Efl-it-dxv" firstAttribute="centerY" secondItem="QSY-fP-aPb" secondAttribute="centerY" id="8In-ab-Qbs"/>
-                    <constraint firstAttribute="trailing" secondItem="Efl-it-dxv" secondAttribute="trailing" constant="50" id="8wr-Gs-yx1"/>
-                    <constraint firstItem="l5Y-dx-IhO" firstAttribute="leading" secondItem="QSY-fP-aPb" secondAttribute="leading" constant="10" id="fsZ-xU-ARf"/>
+                    <constraint firstAttribute="trailing" secondItem="Efl-it-dxv" secondAttribute="trailing" constant="16" id="8wr-Gs-yx1"/>
+                    <constraint firstItem="l5Y-dx-IhO" firstAttribute="leading" secondItem="QSY-fP-aPb" secondAttribute="leading" constant="8" id="fsZ-xU-ARf"/>
                     <constraint firstItem="l5Y-dx-IhO" firstAttribute="centerY" secondItem="QSY-fP-aPb" secondAttribute="centerY" id="yGS-vU-Dmi"/>
                 </constraints>
             </tableViewCellContentView>
-            <constraints>
-                <constraint firstItem="9to-Kp-IFc" firstAttribute="leading" secondItem="Tde-sn-LSd" secondAttribute="leading" constant="15" id="dGU-hK-PSb"/>
-                <constraint firstAttribute="trailing" secondItem="9to-Kp-IFc" secondAttribute="trailing" constant="15" id="oMP-2r-sdj"/>
-                <constraint firstAttribute="bottom" secondItem="9to-Kp-IFc" secondAttribute="bottom" id="w5p-rX-CX5"/>
-            </constraints>
             <connections>
                 <outlet property="helpCategoryLabel" destination="Efl-it-dxv" id="pSW-cr-Arw"/>
                 <outlet property="helpImage" destination="l5Y-dx-IhO" id="nOY-p1-crb"/>
-                <outlet property="lineView" destination="9to-Kp-IFc" id="ZJ6-Uh-r6u"/>
             </connections>
             <point key="canvasLocation" x="47.826086956521742" y="136.60714285714286"/>
         </tableViewCell>

@@ -23,13 +23,20 @@ final class SlideMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-        if let view = slideMenuView, let presenter = presenter {
-            view.setPresenter(presenter)
+        if let presenter = presenter {
+            slideMenuView?.setPresenter(presenter)
+            presenter.viewDidLoad()
         }
     }
 }
 
 
+ //MARK: - SlideMenuViewControllerImpl
 extension SlideMenuViewController: SlideMenuViewControllerImpl {
+    
+    func showCategories(_ categories: [Category]) {
+        slideMenuView?.showCategories(categories)
+    }
+    
     
 }
