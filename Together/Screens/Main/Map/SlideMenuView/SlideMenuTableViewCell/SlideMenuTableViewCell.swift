@@ -28,7 +28,7 @@ class SlideMenuTableViewCell: UITableViewCell {
     @IBOutlet weak var helpCategoryLabel: UILabel!
     @IBOutlet weak var lineView: UIView!
     
-    func showCategories(categories: [Categories], indexPath: IndexPath) {
+    func showCategories(categories: [Category], indexPath: IndexPath) {
         let category = categories[indexPath.row]
         if indexPath.row <= 3 {
             helpCategoryLabel.text = category.name

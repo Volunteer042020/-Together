@@ -7,11 +7,11 @@
 //
 
 protocol SlideMenuViewAction: class, ViewAstions {
-     //фунции типа кнопка войти, забыли пароль, и тп. была нажата
+     func viewDidLoad()
 }
 
 protocol SlideMenuViewControllerImpl: class {
-    //функции типа показать загрузку, установить делегатов
+    func showCategories(_ categories: [Category])
 }
 
 
@@ -21,7 +21,6 @@ final class SlideMenuPresenter {
     private weak var view: SlideMenuViewControllerImpl?
     private let coordinator: SlideMenuCoordination
     
-    
     //MARK: - Init
     init(view: SlideMenuViewControllerImpl, coordinator: SlideMenuCoordination) {
         self.view = view
@@ -30,7 +29,14 @@ final class SlideMenuPresenter {
 }
 
 
+ //MARK: - SlideMenuViewAction
 extension SlideMenuPresenter: SlideMenuViewAction {
+    
+    func viewDidLoad() {
+        let categories = MockCategoryRepo.sharedData.categories
+        view?.showCategories(categories)
+    }
+    
     
     
 }

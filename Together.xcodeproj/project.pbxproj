@@ -12,6 +12,7 @@
 		566DB78B24BCDE98007409BE /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566DB78A24BCDE98007409BE /* MainCoordinator.swift */; };
 		566DB78D24BCDF4A007409BE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566DB78C24BCDF4A007409BE /* MainViewController.swift */; };
 		566DB78F24BCEB5C007409BE /* UINavigationController+setTabBarTitleAndImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566DB78E24BCEB5C007409BE /* UINavigationController+setTabBarTitleAndImage.swift */; };
+		56892F4424F8004500247741 /* MockCategoryRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56892F4324F8004500247741 /* MockCategoryRepo.swift */; };
 		569AF46824B4503B00D9DC88 /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569AF46724B4503B00D9DC88 /* SignInPresenter.swift */; };
 		569AF46A24B4542A00D9DC88 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569AF46924B4542A00D9DC88 /* SignInView.swift */; };
 		569AF46C24B45B8D00D9DC88 /* IdHaving+id.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569AF46B24B45B8D00D9DC88 /* IdHaving+id.swift */; };
@@ -82,7 +83,7 @@
 		A9C2FC5224C588AF00756DE6 /* ProfileSettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2FC5124C588AF00756DE6 /* ProfileSettingPresenter.swift */; };
 		A9C351C524E46F1F00F3D0B4 /* SlideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C351C424E46F1F00F3D0B4 /* SlideMenuTableViewCell.swift */; };
 		A9C351C724E46F3500F3D0B4 /* SlideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9C351C624E46F3500F3D0B4 /* SlideMenuTableViewCell.xib */; };
-		A9C351C924E4763800F3D0B4 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C351C824E4763800F3D0B4 /* Categories.swift */; };
+		A9C351C924E4763800F3D0B4 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C351C824E4763800F3D0B4 /* Category.swift */; };
 		A9C8DA9324D043E4006F63FC /* UIMapView + zoomMap().swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8DA9224D043E4006F63FC /* UIMapView + zoomMap().swift */; };
 		A9C9284124F29A940000B1CC /* MyEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C9284024F29A940000B1CC /* MyEventTableViewCell.swift */; };
 		A9C9284324F29AA10000B1CC /* MyEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9C9284224F29AA10000B1CC /* MyEventTableViewCell.xib */; };
@@ -112,6 +113,7 @@
 		566DB78A24BCDE98007409BE /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		566DB78C24BCDF4A007409BE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		566DB78E24BCEB5C007409BE /* UINavigationController+setTabBarTitleAndImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+setTabBarTitleAndImage.swift"; sourceTree = "<group>"; };
+		56892F4324F8004500247741 /* MockCategoryRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCategoryRepo.swift; sourceTree = "<group>"; };
 		569AF46724B4503B00D9DC88 /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
 		569AF46924B4542A00D9DC88 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		569AF46B24B45B8D00D9DC88 /* IdHaving+id.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IdHaving+id.swift"; sourceTree = "<group>"; };
@@ -184,7 +186,7 @@
 		A9C2FC5124C588AF00756DE6 /* ProfileSettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingPresenter.swift; sourceTree = "<group>"; };
 		A9C351C424E46F1F00F3D0B4 /* SlideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		A9C351C624E46F3500F3D0B4 /* SlideMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideMenuTableViewCell.xib; sourceTree = "<group>"; };
-		A9C351C824E4763800F3D0B4 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		A9C351C824E4763800F3D0B4 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		A9C8DA9224D043E4006F63FC /* UIMapView + zoomMap().swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIMapView + zoomMap().swift"; sourceTree = "<group>"; };
 		A9C9284024F29A940000B1CC /* MyEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventTableViewCell.swift; sourceTree = "<group>"; };
 		A9C9284224F29AA10000B1CC /* MyEventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyEventTableViewCell.xib; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 			isa = PBXGroup;
 			children = (
 				56DCF7F924CED8120037B97B /* MockEventsRepo.swift */,
+				56892F4324F8004500247741 /* MockCategoryRepo.swift */,
 			);
 			path = Repo;
 			sourceTree = "<group>";
@@ -445,7 +448,7 @@
 				A995BE5C24C6E37B00B2E63A /* Event.swift */,
 				56DCF7FD24CEE92E0037B97B /* Address.swift */,
 				56DCF7FF24CF1E8C0037B97B /* EventMapPin.swift */,
-				A9C351C824E4763800F3D0B4 /* Categories.swift */,
+				A9C351C824E4763800F3D0B4 /* Category.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -748,7 +751,7 @@
 				A963CCF324E148DA0016EAF7 /* MyEventView.swift in Sources */,
 				A9CCF3B224DFFFCB00361894 /* ProfileSettingEmailAndPhoneTableViewCell.swift in Sources */,
 				56DCF80024CF1E8C0037B97B /* EventMapPin.swift in Sources */,
-				A9C351C924E4763800F3D0B4 /* Categories.swift in Sources */,
+				A9C351C924E4763800F3D0B4 /* Category.swift in Sources */,
 				A9CCF39824DF320500361894 /* ProfileMainTableViewCell.swift in Sources */,
 				566DB78B24BCDE98007409BE /* MainCoordinator.swift in Sources */,
 				569AF48624B4AAB800D9DC88 /* RoundedButtonWithShadow.swift in Sources */,
@@ -757,6 +760,7 @@
 				A946127124BD7AF900FD57CB /* UIMapView + centerLocation().swift in Sources */,
 				566DB78824B4F6D3007409BE /* VerticalStack.swift in Sources */,
 				56A824DD24D4480300019B37 /* RoundMapButton.swift in Sources */,
+				56892F4424F8004500247741 /* MockCategoryRepo.swift in Sources */,
 				A981FB2424B7452A00A3D205 /* RestorePasswordView.swift in Sources */,
 				A94B8DE924D84DF70025656B /* SlideMenuPresenter.swift in Sources */,
 				A91769E224BAF01100EEE26A /* MainView.swift in Sources */,

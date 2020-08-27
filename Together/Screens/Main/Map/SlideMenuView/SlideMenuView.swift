@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SlideMenuViewImpl {
-    //функции типа, покажи данные
+    func showCategories(_ categories: [Category])
     
 }
 
@@ -24,7 +24,7 @@ final class SlideMenuView: UIView {
     var presenter: SlideMenuViewAction?
     
     //MARK: - Private properties
-    private var listCategories: [Categories] = []
+    private var listCategories: [Category] = []
     
     private var viewState: SlideUpViewState = .collapsed
     
@@ -103,8 +103,6 @@ final class SlideMenuView: UIView {
         
         let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(panGesture))
         self.addGestureRecognizer(gesture)
-        
-        listCategories = Categories.getCategories()
         
         setupLineView()
         setupSearchBar()
@@ -207,6 +205,16 @@ final class SlideMenuView: UIView {
 }
 
 
+//MARK: - SlideMenuViewImpl
+extension SlideMenuView: SlideMenuViewImpl {
+    
+    func showCategories(_ categories: [Category]) {
+        self.listCategories = categories
+    }
+}
+
+
+//MARK: - PresenterHaving
 extension SlideMenuView: PresenterHaving {
     
     func setPresenter(_ presenter: ViewAstions) {
@@ -217,6 +225,7 @@ extension SlideMenuView: PresenterHaving {
 }
 
 
+//MARK: - UISearchBarDelegate
 extension SlideMenuView: UISearchBarDelegate {
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
@@ -241,10 +250,13 @@ extension SlideMenuView: UISearchBarDelegate {
     }
 }
 
+
+//MARK: - UITableViewDelegate
 extension SlideMenuView: UITableViewDelegate {
     
 }
 
+//MARK: - UITableViewDataSource
 extension SlideMenuView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
