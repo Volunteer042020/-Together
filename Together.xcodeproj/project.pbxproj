@@ -108,6 +108,7 @@
 		A9D6102B24BE48C400C1C207 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D6102A24BE48C400C1C207 /* ProfileView.swift */; };
 		A9D6102D24BE48DC00C1C207 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D6102C24BE48DC00C1C207 /* ProfileCoordinator.swift */; };
 		A9D6102F24BE48FA00C1C207 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D6102E24BE48FA00C1C207 /* ProfilePresenter.swift */; };
+		A9EE0C8724FBC28100C007D1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EE0C8624FBC28100C007D1 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -214,6 +215,7 @@
 		A9D6102A24BE48C400C1C207 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = Together/Screens/Main/ProfileModule/Profile/ProfileView.swift; sourceTree = SOURCE_ROOT; };
 		A9D6102C24BE48DC00C1C207 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileCoordinator.swift; path = Together/Screens/Main/ProfileModule/Profile/ProfileCoordinator.swift; sourceTree = SOURCE_ROOT; };
 		A9D6102E24BE48FA00C1C207 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfilePresenter.swift; path = Together/Screens/Main/ProfileModule/Profile/ProfilePresenter.swift; sourceTree = SOURCE_ROOT; };
+		A9EE0C8624FBC28100C007D1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -453,6 +455,7 @@
 		A90B8F2B24BF0608003BE9EF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A9EE0C8624FBC28100C007D1 /* User.swift */,
 				A995BE5C24C6E37B00B2E63A /* Event.swift */,
 				56DCF7FD24CEE92E0037B97B /* Address.swift */,
 				56DCF7FF24CF1E8C0037B97B /* EventMapPin.swift */,
@@ -717,6 +720,7 @@
 				A94B8DE724D84DE30025656B /* SlideMenuCoordinator.swift in Sources */,
 				A9D6102B24BE48C400C1C207 /* ProfileView.swift in Sources */,
 				56DCF7FC24CEDAF80037B97B /* GeocodingService.swift in Sources */,
+				A9EE0C8724FBC28100C007D1 /* User.swift in Sources */,
 				56DCF7FE24CEE92E0037B97B /* Address.swift in Sources */,
 				A995BE5424C6C5F300B2E63A /* ActionEventCoordinator.swift in Sources */,
 				A9D6102924BE48B100C1C207 /* ProfileViewController.swift in Sources */,
