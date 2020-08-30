@@ -68,15 +68,6 @@ extension ProfileCoordinator: ProfileCoordination {
         self.setDependence(withChildCoordinator: coordinator)
         coordinator.start()
     }
-    
-//    func showSignIn() {
-//        let signInListener: SignInShowing? = findListener(parent: self.parentCoordinator)
-//        signInListener?.showSignIn()
-//        let coordinator = signInListener as? Coordinator
-//        coordinator?.childCoordinators = []
-//        
-//        // завершаем сессию пользователя
-//        UserDefaults.standard.set(false, forKey: "UID")
-//    }
+
 }
 
