@@ -17,6 +17,8 @@
 		56892F4824F805B300247741 /* TableViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56892F4724F805B300247741 /* TableViewProvider.swift */; };
 		56892F4A24F80E2D00247741 /* UITableView+setupFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56892F4924F80E2D00247741 /* UITableView+setupFooter.swift */; };
 		56892F4C24F81B9C00247741 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56892F4B24F81B9C00247741 /* ReusableView.swift */; };
+		56892F4E24FCF09A00247741 /* ScrollableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56892F4D24FCF09A00247741 /* ScrollableViewController.swift */; };
+		56892F5024FCF16600247741 /* ScrollableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56892F4F24FCF16600247741 /* ScrollableView.swift */; };
 		569AF46824B4503B00D9DC88 /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569AF46724B4503B00D9DC88 /* SignInPresenter.swift */; };
 		569AF46A24B4542A00D9DC88 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569AF46924B4542A00D9DC88 /* SignInView.swift */; };
 		569AF46C24B45B8D00D9DC88 /* IdHaving+id.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569AF46B24B45B8D00D9DC88 /* IdHaving+id.swift */; };
@@ -122,6 +124,8 @@
 		56892F4724F805B300247741 /* TableViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewProvider.swift; sourceTree = "<group>"; };
 		56892F4924F80E2D00247741 /* UITableView+setupFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+setupFooter.swift"; sourceTree = "<group>"; };
 		56892F4B24F81B9C00247741 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		56892F4D24FCF09A00247741 /* ScrollableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableViewController.swift; sourceTree = "<group>"; };
+		56892F4F24FCF16600247741 /* ScrollableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableView.swift; sourceTree = "<group>"; };
 		569AF46724B4503B00D9DC88 /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
 		569AF46924B4542A00D9DC88 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		569AF46B24B45B8D00D9DC88 /* IdHaving+id.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IdHaving+id.swift"; sourceTree = "<group>"; };
@@ -258,6 +262,23 @@
 			path = Chat;
 			sourceTree = "<group>";
 		};
+		56892F5124FCF24900247741 /* ScrollableVC */ = {
+			isa = PBXGroup;
+			children = (
+				56892F4D24FCF09A00247741 /* ScrollableViewController.swift */,
+				56892F4F24FCF16600247741 /* ScrollableView.swift */,
+			);
+			path = ScrollableVC;
+			sourceTree = "<group>";
+		};
+		56892F5224FD56BA00247741 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				56892F5124FCF24900247741 /* ScrollableVC */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		569AF46D24B45E1300D9DC88 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,6 +408,7 @@
 			isa = PBXGroup;
 			children = (
 				56D7E45424B3783E00933B04 /* BaseCoordirator.swift */,
+				56892F5224FD56BA00247741 /* ViewControllers */,
 				566DB78624B4F698007409BE /* StackViews */,
 				569AF48724B4AB6000D9DC88 /* Buttons */,
 				569AF48924B4AB7700D9DC88 /* TextFields */,
@@ -760,6 +782,7 @@
 				A904DCD824B5B67F00ACB761 /* UIColor + customColor.swift in Sources */,
 				A995BE5024C6C5CA00B2E63A /* ActionEventViewController.swift in Sources */,
 				A995BE4E24C6C5B900B2E63A /* CompletionEventPresenter.swift in Sources */,
+				56892F5024FCF16600247741 /* ScrollableView.swift in Sources */,
 				A9CCF3A024DF3CE400361894 /* ProfileBetweenLineSectionTableViewCell.swift in Sources */,
 				569AF46C24B45B8D00D9DC88 /* IdHaving+id.swift in Sources */,
 				56D7E45A24B37C2100933B04 /* SignInCoordinator.swift in Sources */,
@@ -789,6 +812,7 @@
 				566DB78524B4EFE8007409BE /* LogoView.swift in Sources */,
 				A9C2FC5224C588AF00756DE6 /* ProfileSettingPresenter.swift in Sources */,
 				56A824E824D96FFA00019B37 /* ClusterAnnotationView.swift in Sources */,
+				56892F4E24FCF09A00247741 /* ScrollableViewController.swift in Sources */,
 				A995BE4A24C6C58900B2E63A /* CompletionEventView.swift in Sources */,
 				A91769E024BAEFED00EEE26A /* MainMapViewController.swift in Sources */,
 				569AF46A24B4542A00D9DC88 /* SignInView.swift in Sources */,
