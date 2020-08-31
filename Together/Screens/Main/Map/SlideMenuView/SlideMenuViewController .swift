@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class SlideMenuViewController: UIViewController {
+final class SlideMenuViewController: ScrollableViewController {
     
     var presenter: SlideMenuViewAction?
     
